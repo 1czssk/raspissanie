@@ -1,5 +1,5 @@
 /* Расписсание — GitHub Pages PWA. No third-party network requests are intercepted. */
-const CACHE_NAME = 'raspissanie-languages-27-2026-11-21-v14';
+const CACHE_NAME = 'raspissanie-28-lang-klingon-ja-nohelp-v18';
 const CORE = [
   './', './index.html', './editor/', './editor/index.html',
   './editor/app.js', './editor/style.css', './assets/pwa.js', './assets/i18n.js',
