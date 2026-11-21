@@ -1,12 +1,12 @@
 /* Расписсание — GitHub Pages PWA. No third-party network requests are intercepted. */
-const CACHE_NAME = 'raspissanie-room-patterns-2026-11-21-v11';
+const CACHE_NAME = 'raspissanie-languages-27-2026-11-21-v14';
 const CORE = [
   './', './index.html', './editor/', './editor/index.html',
-  './editor/app.js', './editor/style.css', './assets/pwa.js',
+  './editor/app.js', './editor/style.css', './assets/pwa.js', './assets/i18n.js',
   './manifest.webmanifest', './assets/raspissanie-mark.svg',
   './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   './assets/icons/icon-maskable-512.png', './assets/icons/apple-touch-icon.png',
-  './data/teachers.json', './data/room-patterns.json', './data/weeks/manifest.json'
+  './data/teachers.json', './data/subjects.json', './data/i18n.json', './data/room-patterns.json', './data/weeks/manifest.json'
 ];
 const BASE = new URL(self.registration.scope);
 const scoped = rel => new URL(rel, BASE).href;

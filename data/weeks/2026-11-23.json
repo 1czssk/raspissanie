@@ -35,7 +35,8 @@
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-electrical-engineering-electronics"
             },
             {
               "id": "101-2026-11-23-2",
@@ -44,7 +45,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "101-2026-11-23-3",
@@ -53,7 +55,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "101-2026-11-23-4",
@@ -61,7 +64,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -70,20 +74,22 @@
             {
               "id": "101-2026-11-24-1",
               "number": 1,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "101-2026-11-24-2",
               "number": 2,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "101-2026-11-24-3",
@@ -92,7 +98,8 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "101-2026-11-24-4",
@@ -100,7 +107,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -113,21 +121,23 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "101-2026-11-25-2",
               "number": 2,
-              "subject": "Приборное оборудование однодвигательного ВС",
+              "subject": "Приборное оборудование однодвигательного воздушного судна",
               "room": "35",
               "teacher": "Пшеничников",
               "kind": "lesson",
-              "teacherId": "teacher-pshenichnikov"
+              "teacherId": "teacher-pshenichnikov",
+              "subjectId": "subject-singleengine-aircraft-instruments"
             },
             {
               "id": "101-2026-11-25-3",
               "number": 3,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -136,18 +146,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -156,7 +172,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -165,7 +182,7 @@
             {
               "id": "101-2026-11-26-1",
               "number": 1,
-              "subject": "Инженерная графика / Физо",
+              "subject": "Инженерная графика / Физическая подготовка",
               "room": "24 / с/з",
               "teacher": "Бражникова / Сотников",
               "kind": "split",
@@ -174,28 +191,35 @@
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 },
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 }
               ],
               "teacherIds": [
                 "teacher-brazhnikova",
                 "teacher-sotnikov"
+              ],
+              "subjectIds": [
+                "subject-engineering-drawing",
+                "subject-physical-training"
               ]
             },
             {
               "id": "101-2026-11-26-2",
               "number": 2,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "101-2026-11-26-3",
@@ -204,7 +228,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "101-2026-11-26-4",
@@ -212,7 +237,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -221,11 +247,12 @@
             {
               "id": "101-2026-11-27-1",
               "number": 1,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "101-2026-11-27-2",
@@ -234,7 +261,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "101-2026-11-27-3",
@@ -243,7 +271,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "101-2026-11-27-4",
@@ -251,7 +280,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -260,27 +290,33 @@
             {
               "id": "101-2026-11-28-1",
               "number": 1,
-              "subject": "Физо / Инженерная графика",
+              "subject": "Физическая подготовка / Инженерная графика",
               "room": "с/з / 24",
               "teacher": "Сотников / Бражникова",
               "kind": "split",
               "variants": [
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 },
                 {
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 }
               ],
               "teacherIds": [
                 "teacher-sotnikov",
                 "teacher-brazhnikova"
+              ],
+              "subjectIds": [
+                "subject-physical-training",
+                "subject-engineering-drawing"
               ]
             },
             {
@@ -290,7 +326,8 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "101-2026-11-28-3",
@@ -299,7 +336,8 @@
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-air-navigation"
             }
           ]
         }
@@ -318,7 +356,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "102-2026-11-23-2",
@@ -327,7 +366,8 @@
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-electrical-engineering-electronics"
             },
             {
               "id": "102-2026-11-23-3",
@@ -336,7 +376,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "102-2026-11-23-4",
@@ -344,7 +385,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -357,25 +399,28 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "102-2026-11-24-2",
               "number": 2,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "102-2026-11-24-3",
               "number": 3,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "102-2026-11-24-4",
@@ -383,7 +428,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -392,7 +438,7 @@
             {
               "id": "102-2026-11-25-1",
               "number": 1,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -401,18 +447,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -422,16 +474,18 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "102-2026-11-25-3",
               "number": 3,
-              "subject": "Приборное оборудование однодвигательного ВС",
+              "subject": "Приборное оборудование однодвигательного воздушного судна",
               "room": "35",
               "teacher": "Пшеничников",
               "kind": "lesson",
-              "teacherId": "teacher-pshenichnikov"
+              "teacherId": "teacher-pshenichnikov",
+              "subjectId": "subject-singleengine-aircraft-instruments"
             },
             {
               "id": "102-2026-11-25-4",
@@ -439,7 +493,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -452,12 +507,13 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "102-2026-11-26-2",
               "number": 2,
-              "subject": "Инженерная графика / Физо",
+              "subject": "Инженерная графика / Физическая подготовка",
               "room": "24 / с/з",
               "teacher": "Бражникова / Сотников",
               "kind": "split",
@@ -466,28 +522,35 @@
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 },
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 }
               ],
               "teacherIds": [
                 "teacher-brazhnikova",
                 "teacher-sotnikov"
+              ],
+              "subjectIds": [
+                "subject-engineering-drawing",
+                "subject-physical-training"
               ]
             },
             {
               "id": "102-2026-11-26-3",
               "number": 3,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "102-2026-11-26-4",
@@ -495,7 +558,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -508,16 +572,18 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "102-2026-11-27-2",
               "number": 2,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "102-2026-11-27-3",
@@ -526,7 +592,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "102-2026-11-27-4",
@@ -534,7 +601,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -547,32 +615,39 @@
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "102-2026-11-28-2",
               "number": 2,
-              "subject": "Физо / Инженерная графика",
+              "subject": "Физическая подготовка / Инженерная графика",
               "room": "с/з / 24",
               "teacher": "Сотников / Бражникова",
               "kind": "split",
               "variants": [
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 },
                 {
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 }
               ],
               "teacherIds": [
                 "teacher-sotnikov",
                 "teacher-brazhnikova"
+              ],
+              "subjectIds": [
+                "subject-physical-training",
+                "subject-engineering-drawing"
               ]
             },
             {
@@ -582,7 +657,8 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             }
           ]
         }
@@ -601,7 +677,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "103-2026-11-23-2",
@@ -610,7 +687,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "103-2026-11-23-3",
@@ -619,7 +697,8 @@
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-electrical-engineering-electronics"
             },
             {
               "id": "103-2026-11-23-4",
@@ -627,7 +706,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -636,11 +716,12 @@
             {
               "id": "103-2026-11-24-1",
               "number": 1,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "103-2026-11-24-2",
@@ -649,16 +730,18 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "103-2026-11-24-3",
               "number": 3,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "103-2026-11-24-4",
@@ -666,7 +749,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -675,16 +759,17 @@
             {
               "id": "103-2026-11-25-1",
               "number": 1,
-              "subject": "Приборное оборудование однодвигательного ВС",
+              "subject": "Приборное оборудование однодвигательного воздушного судна",
               "room": "35",
               "teacher": "Пшеничников",
               "kind": "lesson",
-              "teacherId": "teacher-pshenichnikov"
+              "teacherId": "teacher-pshenichnikov",
+              "subjectId": "subject-singleengine-aircraft-instruments"
             },
             {
               "id": "103-2026-11-25-2",
               "number": 2,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -693,18 +778,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -714,7 +805,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "103-2026-11-25-4",
@@ -722,7 +814,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -731,11 +824,12 @@
             {
               "id": "103-2026-11-26-1",
               "number": 1,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "103-2026-11-26-2",
@@ -744,12 +838,13 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "103-2026-11-26-3",
               "number": 3,
-              "subject": "Инженерная графика / Физо",
+              "subject": "Инженерная графика / Физическая подготовка",
               "room": "24 / с/з",
               "teacher": "Бражникова / Сотников",
               "kind": "split",
@@ -758,18 +853,24 @@
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 },
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 }
               ],
               "teacherIds": [
                 "teacher-brazhnikova",
                 "teacher-sotnikov"
+              ],
+              "subjectIds": [
+                "subject-engineering-drawing",
+                "subject-physical-training"
               ]
             },
             {
@@ -778,7 +879,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -791,7 +893,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "103-2026-11-27-2",
@@ -800,16 +903,18 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "103-2026-11-27-3",
               "number": 3,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "103-2026-11-27-4",
@@ -817,7 +922,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -830,7 +936,8 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "103-2026-11-28-2",
@@ -839,32 +946,39 @@
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "103-2026-11-28-3",
               "number": 3,
-              "subject": "Физо / Инженерная графика",
+              "subject": "Физическая подготовка / Инженерная графика",
               "room": "с/з / 24",
               "teacher": "Сотников / Бражникова",
               "kind": "split",
               "variants": [
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 },
                 {
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 }
               ],
               "teacherIds": [
                 "teacher-sotnikov",
                 "teacher-brazhnikova"
+              ],
+              "subjectIds": [
+                "subject-physical-training",
+                "subject-engineering-drawing"
               ]
             }
           ]
@@ -880,7 +994,7 @@
             {
               "id": "104-2026-11-23-1",
               "number": 1,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -889,18 +1003,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -910,32 +1030,39 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "104-2026-11-23-3",
               "number": 3,
-              "subject": "Физо / Инженерная графика",
+              "subject": "Физическая подготовка / Инженерная графика",
               "room": "с/з / 24",
               "teacher": "Сотников / Бражникова",
               "kind": "split",
               "variants": [
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 },
                 {
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 }
               ],
               "teacherIds": [
                 "teacher-sotnikov",
                 "teacher-brazhnikova"
+              ],
+              "subjectIds": [
+                "subject-physical-training",
+                "subject-engineering-drawing"
               ]
             },
             {
@@ -944,7 +1071,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -957,7 +1085,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "104-2026-11-24-2",
@@ -966,12 +1095,13 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "104-2026-11-24-3",
               "number": 3,
-              "subject": "Инженерная графика / Физо",
+              "subject": "Инженерная графика / Физическая подготовка",
               "room": "24 / с/з",
               "teacher": "Бражникова / Сотников",
               "kind": "split",
@@ -980,18 +1110,24 @@
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 },
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 }
               ],
               "teacherIds": [
                 "teacher-brazhnikova",
                 "teacher-sotnikov"
+              ],
+              "subjectIds": [
+                "subject-engineering-drawing",
+                "subject-physical-training"
               ]
             },
             {
@@ -1000,7 +1136,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1013,7 +1150,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "104-2026-11-25-2",
@@ -1022,16 +1160,18 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "104-2026-11-25-3",
               "number": 3,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "104-2026-11-25-4",
@@ -1039,7 +1179,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1048,11 +1189,12 @@
             {
               "id": "104-2026-11-26-1",
               "number": 1,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "104-2026-11-26-2",
@@ -1061,7 +1203,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-flight-safety"
             },
             {
               "id": "104-2026-11-26-3",
@@ -1070,7 +1213,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "104-2026-11-26-4",
@@ -1078,7 +1222,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1091,16 +1236,18 @@
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-electrical-engineering-electronics"
             },
             {
               "id": "104-2026-11-27-2",
               "number": 2,
-              "subject": "Приборное оборудование однодвигательного ВС",
+              "subject": "Приборное оборудование однодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-singleengine-aircraft-instruments"
             },
             {
               "id": "104-2026-11-27-3",
@@ -1109,7 +1256,8 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "104-2026-11-27-4",
@@ -1117,7 +1265,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1130,7 +1279,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "104-2026-11-28-2",
@@ -1139,7 +1289,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "104-2026-11-28-3",
@@ -1148,7 +1299,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             }
           ]
         }
@@ -1167,32 +1319,39 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "105-2026-11-23-2",
               "number": 2,
-              "subject": "Физо / Инженерная графика",
+              "subject": "Физическая подготовка / Инженерная графика",
               "room": "с/з / 24",
               "teacher": "Сотников / Бражникова",
               "kind": "split",
               "variants": [
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 },
                 {
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 }
               ],
               "teacherIds": [
                 "teacher-sotnikov",
                 "teacher-brazhnikova"
+              ],
+              "subjectIds": [
+                "subject-physical-training",
+                "subject-engineering-drawing"
               ]
             },
             {
@@ -1201,7 +1360,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "105-2026-11-23-4",
@@ -1210,7 +1370,8 @@
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-electrical-engineering-electronics"
             }
           ]
         },
@@ -1219,7 +1380,7 @@
             {
               "id": "105-2026-11-24-1",
               "number": 1,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -1228,24 +1389,30 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
               "id": "105-2026-11-24-2",
               "number": 2,
-              "subject": "Инженерная графика / Физо",
+              "subject": "Инженерная графика / Физическая подготовка",
               "room": "24 / с/з",
               "teacher": "Бражникова / Сотников",
               "kind": "split",
@@ -1254,18 +1421,24 @@
                   "subject": "Инженерная графика",
                   "room": "24",
                   "teacher": "Бражникова",
-                  "teacherId": "teacher-brazhnikova"
+                  "teacherId": "teacher-brazhnikova",
+                  "subjectId": "subject-engineering-drawing"
                 },
                 {
-                  "subject": "Физо",
+                  "subject": "Физическая подготовка",
                   "room": "с/з",
                   "teacher": "Сотников",
-                  "teacherId": "teacher-sotnikov"
+                  "teacherId": "teacher-sotnikov",
+                  "subjectId": "subject-physical-training"
                 }
               ],
               "teacherIds": [
                 "teacher-brazhnikova",
                 "teacher-sotnikov"
+              ],
+              "subjectIds": [
+                "subject-engineering-drawing",
+                "subject-physical-training"
               ]
             },
             {
@@ -1275,7 +1448,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "105-2026-11-24-4",
@@ -1283,7 +1457,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1296,16 +1471,18 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "105-2026-11-25-2",
               "number": 2,
-              "subject": "Самолёт однодвигательный и его системы",
+              "subject": "Однодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-singleengine-aircraft-systems"
             },
             {
               "id": "105-2026-11-25-3",
@@ -1314,7 +1491,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "105-2026-11-25-4",
@@ -1322,7 +1500,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1335,7 +1514,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "105-2026-11-26-2",
@@ -1344,16 +1524,18 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "105-2026-11-26-3",
               "number": 3,
-              "subject": "Двигатель с-та Cessna-172S",
+              "subject": "Двигатель самолёта Cessna-172S",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-cessna-172s-engine"
             },
             {
               "id": "105-2026-11-26-4",
@@ -1361,7 +1543,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1374,7 +1557,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-flight-safety"
             },
             {
               "id": "105-2026-11-27-2",
@@ -1383,16 +1567,18 @@
               "room": "37",
               "teacher": "Жданова",
               "kind": "lesson",
-              "teacherId": "teacher-zhdanova"
+              "teacherId": "teacher-zhdanova",
+              "subjectId": "subject-mathematics"
             },
             {
               "id": "105-2026-11-27-3",
               "number": 3,
-              "subject": "Приборное оборудование однодвигательного ВС",
+              "subject": "Приборное оборудование однодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-singleengine-aircraft-instruments"
             },
             {
               "id": "105-2026-11-27-4",
@@ -1400,7 +1586,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1413,7 +1600,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-economics-fundamentals"
             },
             {
               "id": "105-2026-11-28-2",
@@ -1422,7 +1610,8 @@
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-technical-mechanics"
             },
             {
               "id": "105-2026-11-28-3",
@@ -1431,7 +1620,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             }
           ]
         }
@@ -1446,11 +1636,12 @@
             {
               "id": "201-2026-11-23-1",
               "number": 1,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "201-2026-11-23-2",
@@ -1459,16 +1650,18 @@
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-aviation-security"
             },
             {
               "id": "201-2026-11-23-3",
               "number": 3,
-              "subject": "Силовые установки ВС",
+              "subject": "Силовые установки воздушных судов",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-aircraft-powerplants"
             },
             {
               "id": "201-2026-11-23-4",
@@ -1476,7 +1669,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1489,7 +1683,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "201-2026-11-24-2",
@@ -1498,7 +1693,8 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "201-2026-11-24-3",
@@ -1506,16 +1702,18 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "201-2026-11-24-4",
               "number": 4,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             }
           ]
         },
@@ -1528,7 +1726,8 @@
               "room": "24",
               "teacher": "Бражникова",
               "kind": "lesson",
-              "teacherId": "teacher-brazhnikova"
+              "teacherId": "teacher-brazhnikova",
+              "subjectId": "subject-occupational-safety"
             },
             {
               "id": "201-2026-11-25-2",
@@ -1537,16 +1736,18 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-instrument-flight-rules"
             },
             {
               "id": "201-2026-11-25-3",
               "number": 3,
-              "subject": "Воздушное право РФ",
+              "subject": "Воздушное право Российской Федерации",
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-russian-aviation-law"
             },
             {
               "id": "201-2026-11-25-4",
@@ -1554,7 +1755,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1567,25 +1769,28 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "201-2026-11-26-2",
               "number": 2,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             },
             {
               "id": "201-2026-11-26-3",
               "number": 3,
-              "subject": "Подготовка авиа/персонала в области Ч/Ф",
+              "subject": "Подготовка авиационного персонала в области человеческого фактора",
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-aviation-human-factors"
             },
             {
               "id": "201-2026-11-26-4",
@@ -1593,7 +1798,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1606,25 +1812,28 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "201-2026-11-27-2",
               "number": 2,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "201-2026-11-27-3",
               "number": 3,
-              "subject": "Физо",
+              "subject": "Физическая подготовка",
               "room": "с/з",
               "teacher": "Сотников",
               "kind": "lesson",
-              "teacherId": "teacher-sotnikov"
+              "teacherId": "teacher-sotnikov",
+              "subjectId": "subject-physical-training"
             },
             {
               "id": "201-2026-11-27-4",
@@ -1632,7 +1841,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1645,12 +1855,13 @@
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-emergency-rescue-training"
             },
             {
               "id": "201-2026-11-28-2",
               "number": 2,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -1659,18 +1870,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -1680,7 +1897,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             }
           ]
         }
@@ -1699,7 +1917,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "202-2026-11-23-2",
@@ -1707,7 +1926,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "202-2026-11-23-3",
@@ -1716,16 +1936,18 @@
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-aviation-security"
             },
             {
               "id": "202-2026-11-23-4",
               "number": 4,
-              "subject": "Силовые установки ВС",
+              "subject": "Силовые установки воздушных судов",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-aircraft-powerplants"
             }
           ]
         },
@@ -1734,11 +1956,12 @@
             {
               "id": "202-2026-11-24-1",
               "number": 1,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             },
             {
               "id": "202-2026-11-24-2",
@@ -1747,7 +1970,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-instrument-flight-rules"
             },
             {
               "id": "202-2026-11-24-3",
@@ -1756,7 +1980,8 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "202-2026-11-24-4",
@@ -1764,7 +1989,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1773,20 +1999,22 @@
             {
               "id": "202-2026-11-25-1",
               "number": 1,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "202-2026-11-25-2",
               "number": 2,
-              "subject": "Воздушное право РФ",
+              "subject": "Воздушное право Российской Федерации",
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-russian-aviation-law"
             },
             {
               "id": "202-2026-11-25-3",
@@ -1795,7 +2023,8 @@
               "room": "24",
               "teacher": "Бражникова",
               "kind": "lesson",
-              "teacherId": "teacher-brazhnikova"
+              "teacherId": "teacher-brazhnikova",
+              "subjectId": "subject-occupational-safety"
             },
             {
               "id": "202-2026-11-25-4",
@@ -1803,7 +2032,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1812,20 +2042,22 @@
             {
               "id": "202-2026-11-26-1",
               "number": 1,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             },
             {
               "id": "202-2026-11-26-2",
               "number": 2,
-              "subject": "Подготовка авиа/персонала в области Ч/Ф",
+              "subject": "Подготовка авиационного персонала в области человеческого фактора",
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-aviation-human-factors"
             },
             {
               "id": "202-2026-11-26-3",
@@ -1834,7 +2066,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "202-2026-11-26-4",
@@ -1842,7 +2075,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1851,11 +2085,12 @@
             {
               "id": "202-2026-11-27-1",
               "number": 1,
-              "subject": "Физо",
+              "subject": "Физическая подготовка",
               "room": "с/з",
               "teacher": "Сотников",
               "kind": "lesson",
-              "teacherId": "teacher-sotnikov"
+              "teacherId": "teacher-sotnikov",
+              "subjectId": "subject-physical-training"
             },
             {
               "id": "202-2026-11-27-2",
@@ -1864,16 +2099,18 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "202-2026-11-27-3",
               "number": 3,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "202-2026-11-27-4",
@@ -1881,7 +2118,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1890,7 +2128,7 @@
             {
               "id": "202-2026-11-28-1",
               "number": 1,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -1899,18 +2137,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -1920,7 +2164,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "202-2026-11-28-3",
@@ -1929,7 +2174,8 @@
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-emergency-rescue-training"
             }
           ]
         }
@@ -1948,16 +2194,18 @@
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-aviation-security"
             },
             {
               "id": "203-2026-11-23-2",
               "number": 2,
-              "subject": "Силовые установки ВС",
+              "subject": "Силовые установки воздушных судов",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-aircraft-powerplants"
             },
             {
               "id": "203-2026-11-23-3",
@@ -1966,7 +2214,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "203-2026-11-23-4",
@@ -1974,7 +2223,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -1987,7 +2237,8 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "203-2026-11-24-2",
@@ -1995,7 +2246,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "203-2026-11-24-3",
@@ -2004,16 +2256,18 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "203-2026-11-24-4",
               "number": 4,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-aircraft-performance"
             }
           ]
         },
@@ -2026,7 +2280,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "203-2026-11-25-2",
@@ -2035,7 +2290,8 @@
               "room": "24",
               "teacher": "Бражникова",
               "kind": "lesson",
-              "teacherId": "teacher-brazhnikova"
+              "teacherId": "teacher-brazhnikova",
+              "subjectId": "subject-occupational-safety"
             },
             {
               "id": "203-2026-11-25-3",
@@ -2044,7 +2300,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-instrument-flight-rules"
             },
             {
               "id": "203-2026-11-25-4",
@@ -2052,7 +2309,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2061,11 +2319,12 @@
             {
               "id": "203-2026-11-26-1",
               "number": 1,
-              "subject": "Подготовка авиа/персонала в области Ч/Ф",
+              "subject": "Подготовка авиационного персонала в области человеческого фактора",
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-aviation-human-factors"
             },
             {
               "id": "203-2026-11-26-2",
@@ -2073,25 +2332,28 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "203-2026-11-26-3",
               "number": 3,
-              "subject": "Воздушное право РФ",
+              "subject": "Воздушное право Российской Федерации",
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-russian-aviation-law"
             },
             {
               "id": "203-2026-11-26-4",
               "number": 4,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             }
           ]
         },
@@ -2100,20 +2362,22 @@
             {
               "id": "203-2026-11-27-1",
               "number": 1,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "203-2026-11-27-2",
               "number": 2,
-              "subject": "Физо",
+              "subject": "Физическая подготовка",
               "room": "с/з",
               "teacher": "Сотников",
               "kind": "lesson",
-              "teacherId": "teacher-sotnikov"
+              "teacherId": "teacher-sotnikov",
+              "subjectId": "subject-physical-training"
             },
             {
               "id": "203-2026-11-27-3",
@@ -2122,7 +2386,8 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "203-2026-11-27-4",
@@ -2130,7 +2395,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2139,11 +2405,12 @@
             {
               "id": "203-2026-11-28-1",
               "number": 1,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             },
             {
               "id": "203-2026-11-28-2",
@@ -2152,12 +2419,13 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-emergency-rescue-training"
             },
             {
               "id": "203-2026-11-28-3",
               "number": 3,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -2166,18 +2434,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             }
           ]
@@ -2193,20 +2467,22 @@
             {
               "id": "204-2026-11-23-1",
               "number": 1,
-              "subject": "Силовые установки ВС",
+              "subject": "Силовые установки воздушных судов",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-aircraft-powerplants"
             },
             {
               "id": "204-2026-11-23-2",
               "number": 2,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "204-2026-11-23-3",
@@ -2215,7 +2491,8 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "204-2026-11-23-4",
@@ -2223,7 +2500,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2236,7 +2514,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-instrument-flight-rules"
             },
             {
               "id": "204-2026-11-24-2",
@@ -2245,16 +2524,18 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "204-2026-11-24-3",
               "number": 3,
-              "subject": "Приборное оборудование ВС",
+              "subject": "Приборное оборудование воздушных судов",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-aircraft-instruments"
             },
             {
               "id": "204-2026-11-24-4",
@@ -2262,7 +2543,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2275,25 +2557,28 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "204-2026-11-25-2",
               "number": 2,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             },
             {
               "id": "204-2026-11-25-3",
               "number": 3,
-              "subject": "Физо",
+              "subject": "Физическая подготовка",
               "room": "с/з",
               "teacher": "Сотников",
               "kind": "lesson",
-              "teacherId": "teacher-sotnikov"
+              "teacherId": "teacher-sotnikov",
+              "subjectId": "subject-physical-training"
             },
             {
               "id": "204-2026-11-25-4",
@@ -2301,7 +2586,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2310,25 +2596,27 @@
             {
               "id": "204-2026-11-26-1",
               "number": 1,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "204-2026-11-26-2",
               "number": 2,
-              "subject": "Воздушное право РФ",
+              "subject": "Воздушное право Российской Федерации",
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-russian-aviation-law"
             },
             {
               "id": "204-2026-11-26-3",
               "number": 3,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -2337,18 +2625,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -2357,7 +2651,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2370,7 +2665,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "204-2026-11-27-2",
@@ -2379,7 +2675,8 @@
               "room": "24",
               "teacher": "Бражникова",
               "kind": "lesson",
-              "teacherId": "teacher-brazhnikova"
+              "teacherId": "teacher-brazhnikova",
+              "subjectId": "subject-occupational-safety"
             },
             {
               "id": "204-2026-11-27-3",
@@ -2388,7 +2685,8 @@
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-aviation-security"
             },
             {
               "id": "204-2026-11-27-4",
@@ -2396,7 +2694,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2409,7 +2708,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-emergency-rescue-training"
             },
             {
               "id": "204-2026-11-28-2",
@@ -2418,16 +2718,18 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "204-2026-11-28-3",
               "number": 3,
-              "subject": "Подготовка авиа/персонала в области Ч/Ф",
+              "subject": "Подготовка авиационного персонала в области человеческого фактора",
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-aviation-human-factors"
             }
           ]
         }
@@ -2442,11 +2744,12 @@
             {
               "id": "205-2026-11-23-1",
               "number": 1,
-              "subject": "Физо",
+              "subject": "Физическая подготовка",
               "room": "с/з",
               "teacher": "Сотников",
               "kind": "lesson",
-              "teacherId": "teacher-sotnikov"
+              "teacherId": "teacher-sotnikov",
+              "subjectId": "subject-physical-training"
             },
             {
               "id": "205-2026-11-23-2",
@@ -2455,16 +2758,18 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "205-2026-11-23-3",
               "number": 3,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "205-2026-11-23-4",
@@ -2472,7 +2777,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2485,16 +2791,18 @@
               "room": "24",
               "teacher": "Бражникова",
               "kind": "lesson",
-              "teacherId": "teacher-brazhnikova"
+              "teacherId": "teacher-brazhnikova",
+              "subjectId": "subject-occupational-safety"
             },
             {
               "id": "205-2026-11-24-2",
               "number": 2,
-              "subject": "Приборное оборудование ВС",
+              "subject": "Приборное оборудование воздушных судов",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-aircraft-instruments"
             },
             {
               "id": "205-2026-11-24-3",
@@ -2503,7 +2811,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-instrument-flight-rules"
             },
             {
               "id": "205-2026-11-24-4",
@@ -2511,7 +2820,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2523,7 +2833,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "205-2026-11-25-2",
@@ -2532,25 +2843,28 @@
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "205-2026-11-25-3",
               "number": 3,
-              "subject": "Подготовка авиа/персонала в области Ч/Ф",
+              "subject": "Подготовка авиационного персонала в области человеческого фактора",
               "room": "48",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-aviation-human-factors"
             },
             {
               "id": "205-2026-11-25-4",
               "number": 4,
-              "subject": "УВД",
+              "subject": "Управление воздушным движением",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-air-traffic-control"
             }
           ]
         },
@@ -2559,29 +2873,32 @@
             {
               "id": "205-2026-11-26-1",
               "number": 1,
-              "subject": "Воздушное право РФ",
+              "subject": "Воздушное право Российской Федерации",
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-russian-aviation-law"
             },
             {
               "id": "205-2026-11-26-2",
               "number": 2,
-              "subject": "Силовые установки ВС",
+              "subject": "Силовые установки воздушных судов",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-aircraft-powerplants"
             },
             {
               "id": "205-2026-11-26-3",
               "number": 3,
-              "subject": "Лётно-технические характеристики ВС",
+              "subject": "Лётно-технические характеристики воздушных судов",
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-aircraft-performance"
             },
             {
               "id": "205-2026-11-26-4",
@@ -2589,7 +2906,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2598,7 +2916,7 @@
             {
               "id": "205-2026-11-27-1",
               "number": 1,
-              "subject": "Иностранный язык",
+              "subject": "Иностранный язык / Иностранный язык",
               "room": "33 / 31",
               "teacher": "Батагралиева / Салтыкова",
               "kind": "split",
@@ -2607,18 +2925,24 @@
                   "subject": "Иностранный язык",
                   "room": "33",
                   "teacher": "Батагралиева",
-                  "teacherId": "teacher-batagralieva"
+                  "teacherId": "teacher-batagralieva",
+                  "subjectId": "subject-foreign-language"
                 },
                 {
                   "subject": "Иностранный язык",
                   "room": "31",
                   "teacher": "Салтыкова",
-                  "teacherId": "teacher-saltykova"
+                  "teacherId": "teacher-saltykova",
+                  "subjectId": "subject-foreign-language"
                 }
               ],
               "teacherIds": [
                 "teacher-batagralieva",
                 "teacher-saltykova"
+              ],
+              "subjectIds": [
+                "subject-foreign-language",
+                "subject-foreign-language"
               ]
             },
             {
@@ -2628,7 +2952,8 @@
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-aviation-security"
             },
             {
               "id": "205-2026-11-27-3",
@@ -2637,7 +2962,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "205-2026-11-27-4",
@@ -2645,7 +2971,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2658,7 +2985,8 @@
               "room": "40",
               "teacher": "Данилова",
               "kind": "lesson",
-              "teacherId": "teacher-danilova"
+              "teacherId": "teacher-danilova",
+              "subjectId": "subject-industry-resources"
             },
             {
               "id": "205-2026-11-28-2",
@@ -2667,7 +2995,8 @@
               "room": "23",
               "teacher": "Лифарь",
               "kind": "lesson",
-              "teacherId": "teacher-lifar"
+              "teacherId": "teacher-lifar",
+              "subjectId": "subject-aerodynamics-flight-dynamics"
             },
             {
               "id": "205-2026-11-28-3",
@@ -2676,7 +3005,8 @@
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-emergency-rescue-training"
             }
           ]
         }
@@ -2691,29 +3021,32 @@
             {
               "id": "301-2026-11-23-1",
               "number": 1,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             },
             {
               "id": "301-2026-11-23-2",
               "number": 2,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "301-2026-11-23-3",
               "number": 3,
-              "subject": "Самолёт многодвигательный и его системы",
+              "subject": "Многодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-multiengine-aircraft-systems"
             },
             {
               "id": "301-2026-11-23-4",
@@ -2721,7 +3054,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2733,34 +3067,38 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "301-2026-11-24-2",
               "number": 2,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             },
             {
               "id": "301-2026-11-24-3",
               "number": 3,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "301-2026-11-24-4",
               "number": 4,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             }
           ]
         },
@@ -2772,34 +3110,38 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "301-2026-11-25-2",
               "number": 2,
-              "subject": "Силовые установки многодвигательного ВС",
+              "subject": "Силовые установки многодвигательного воздушного судна",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-multiengine-aircraft-powerplants"
             },
             {
               "id": "301-2026-11-25-3",
               "number": 3,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "301-2026-11-25-4",
               "number": 4,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             }
           ]
         },
@@ -2808,29 +3150,32 @@
             {
               "id": "301-2026-11-26-1",
               "number": 1,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "301-2026-11-26-2",
               "number": 2,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "301-2026-11-26-3",
               "number": 3,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "301-2026-11-26-4",
@@ -2838,7 +3183,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -2850,34 +3196,38 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "301-2026-11-27-2",
               "number": 2,
-              "subject": "Аварийно-спасательное оборудование ВС",
+              "subject": "Аварийно-спасательное оборудование воздушного судна",
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-aircraft-emergency-equipment"
             },
             {
               "id": "301-2026-11-27-3",
               "number": 3,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "301-2026-11-27-4",
               "number": 4,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             }
           ]
         },
@@ -2886,29 +3236,32 @@
             {
               "id": "301-2026-11-28-1",
               "number": 1,
-              "subject": "Самолёт многодвигательный и его системы",
+              "subject": "Многодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-multiengine-aircraft-systems"
             },
             {
               "id": "301-2026-11-28-2",
               "number": 2,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "301-2026-11-28-3",
               "number": 3,
-              "subject": "Силовые установки многодвигательного ВС",
+              "subject": "Силовые установки многодвигательного воздушного судна",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-multiengine-aircraft-powerplants"
             }
           ]
         }
@@ -2926,34 +3279,38 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "302-2026-11-23-2",
               "number": 2,
-              "subject": "Самолёт многодвигательный и его системы",
+              "subject": "Многодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-multiengine-aircraft-systems"
             },
             {
               "id": "302-2026-11-23-3",
               "number": 3,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "302-2026-11-23-4",
               "number": 4,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             }
           ]
         },
@@ -2962,29 +3319,32 @@
             {
               "id": "302-2026-11-24-1",
               "number": 1,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "302-2026-11-24-2",
               "number": 2,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "302-2026-11-24-3",
               "number": 3,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             },
             {
               "id": "302-2026-11-24-4",
@@ -2992,7 +3352,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3001,29 +3362,32 @@
             {
               "id": "302-2026-11-25-1",
               "number": 1,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             },
             {
               "id": "302-2026-11-25-2",
               "number": 2,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "302-2026-11-25-3",
               "number": 3,
-              "subject": "Силовые установки многодвигательного ВС",
+              "subject": "Силовые установки многодвигательного воздушного судна",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-multiengine-aircraft-powerplants"
             },
             {
               "id": "302-2026-11-25-4",
@@ -3031,7 +3395,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3043,34 +3408,38 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "302-2026-11-26-2",
               "number": 2,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "302-2026-11-26-3",
               "number": 3,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "302-2026-11-26-4",
               "number": 4,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             }
           ]
         },
@@ -3079,29 +3448,32 @@
             {
               "id": "302-2026-11-27-1",
               "number": 1,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             },
             {
               "id": "302-2026-11-27-2",
               "number": 2,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "302-2026-11-27-3",
               "number": 3,
-              "subject": "Аварийно-спасательное оборудование ВС",
+              "subject": "Аварийно-спасательное оборудование воздушного судна",
               "room": "38",
               "teacher": "Понкрашёв",
               "kind": "lesson",
-              "teacherId": "teacher-ponkrashyov"
+              "teacherId": "teacher-ponkrashyov",
+              "subjectId": "subject-aircraft-emergency-equipment"
             },
             {
               "id": "302-2026-11-27-4",
@@ -3109,7 +3481,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3118,29 +3491,32 @@
             {
               "id": "302-2026-11-28-1",
               "number": 1,
-              "subject": "Силовые установки многодвигательного ВС",
+              "subject": "Силовые установки многодвигательного воздушного судна",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-multiengine-aircraft-powerplants"
             },
             {
               "id": "302-2026-11-28-2",
               "number": 2,
-              "subject": "Самолёт многодвигательный и его системы",
+              "subject": "Многодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-multiengine-aircraft-systems"
             },
             {
               "id": "302-2026-11-28-3",
               "number": 3,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             }
           ]
         }
@@ -3155,20 +3531,22 @@
             {
               "id": "303-2026-11-23-1",
               "number": 1,
-              "subject": "Метрология, С.С.",
+              "subject": "Метрология, стандартизация и сертификация",
               "room": "24",
               "teacher": "Бражникова",
               "kind": "lesson",
-              "teacherId": "teacher-brazhnikova"
+              "teacherId": "teacher-brazhnikova",
+              "subjectId": "subject-metrology-standardization-certification"
             },
             {
               "id": "303-2026-11-23-2",
               "number": 2,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "303-2026-11-23-3",
@@ -3176,16 +3554,18 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "303-2026-11-23-4",
               "number": 4,
-              "subject": "Общий курс беспилотных транспортных систем",
+              "subject": "Общий курс беспилотных авиационных систем",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-unmanned-aircraft-systems"
             }
           ]
         },
@@ -3194,29 +3574,32 @@
             {
               "id": "303-2026-11-24-1",
               "number": 1,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             },
             {
               "id": "303-2026-11-24-2",
               "number": 2,
-              "subject": "Правовое обеспечение проф. деятельности",
+              "subject": "Правовое обеспечение профессиональной деятельности",
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-professional-legal-support"
             },
             {
               "id": "303-2026-11-24-3",
               "number": 3,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "303-2026-11-24-4",
@@ -3224,7 +3607,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3233,20 +3617,22 @@
             {
               "id": "303-2026-11-25-1",
               "number": 1,
-              "subject": "Физо",
+              "subject": "Физическая подготовка",
               "room": "с/з",
               "teacher": "Сотников",
               "kind": "lesson",
-              "teacherId": "teacher-sotnikov"
+              "teacherId": "teacher-sotnikov",
+              "subjectId": "subject-physical-training"
             },
             {
               "id": "303-2026-11-25-2",
               "number": 2,
-              "subject": "Приборное оборудование многодвигательного ВС",
+              "subject": "Приборное оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-instruments"
             },
             {
               "id": "303-2026-11-25-3",
@@ -3255,7 +3641,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-life-safety"
             },
             {
               "id": "303-2026-11-25-4",
@@ -3263,7 +3650,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3272,11 +3660,12 @@
             {
               "id": "303-2026-11-26-1",
               "number": 1,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "303-2026-11-26-2",
@@ -3285,7 +3674,8 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "303-2026-11-26-3",
@@ -3293,16 +3683,18 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "303-2026-11-26-4",
               "number": 4,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-aircraft-operation"
             }
           ]
         },
@@ -3311,20 +3703,22 @@
             {
               "id": "303-2026-11-27-1",
               "number": 1,
-              "subject": "Правовое обеспечение проф. деятельности",
+              "subject": "Правовое обеспечение профессиональной деятельности",
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-professional-legal-support"
             },
             {
               "id": "303-2026-11-27-2",
               "number": 2,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "303-2026-11-27-3",
@@ -3333,7 +3727,8 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-life-safety"
             },
             {
               "id": "303-2026-11-27-4",
@@ -3341,7 +3736,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3354,25 +3750,28 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "303-2026-11-28-2",
               "number": 2,
-              "subject": "Силовые установки многодвигательного ВС",
+              "subject": "Силовые установки многодвигательного воздушного судна",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-multiengine-aircraft-powerplants"
             },
             {
               "id": "303-2026-11-28-3",
               "number": 3,
-              "subject": "Самолёт многодвигательный и его системы",
+              "subject": "Многодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-multiengine-aircraft-systems"
             }
           ]
         }
@@ -3390,7 +3789,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "304-2026-11-23-2",
@@ -3399,25 +3799,28 @@
               "room": "41",
               "teacher": "Якунин",
               "kind": "lesson",
-              "teacherId": "teacher-yakunin"
+              "teacherId": "teacher-yakunin",
+              "subjectId": "subject-air-navigation"
             },
             {
               "id": "304-2026-11-23-3",
               "number": 3,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "304-2026-11-23-4",
               "number": 4,
-              "subject": "Самолёт многодвигательный и его системы",
+              "subject": "Многодвигательный самолёт и его системы",
               "room": "22",
               "teacher": "Пелешко",
               "kind": "lesson",
-              "teacherId": "teacher-peleshko"
+              "teacherId": "teacher-peleshko",
+              "subjectId": "subject-multiengine-aircraft-systems"
             }
           ]
         },
@@ -3429,34 +3832,38 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             },
             {
               "id": "304-2026-11-24-2",
               "number": 2,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "304-2026-11-24-3",
               "number": 3,
-              "subject": "Правовое обеспечение проф. деятельности",
+              "subject": "Правовое обеспечение профессиональной деятельности",
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-professional-legal-support"
             },
             {
               "id": "304-2026-11-24-4",
               "number": 4,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             }
           ]
         },
@@ -3465,29 +3872,32 @@
             {
               "id": "304-2026-11-25-1",
               "number": 1,
-              "subject": "Силовые установки многодвигательного ВС",
+              "subject": "Силовые установки многодвигательного воздушного судна",
               "room": "21",
               "teacher": "Широцкий",
               "kind": "lesson",
-              "teacherId": "teacher-shirotskiy"
+              "teacherId": "teacher-shirotskiy",
+              "subjectId": "subject-multiengine-aircraft-powerplants"
             },
             {
               "id": "304-2026-11-25-2",
               "number": 2,
-              "subject": "Физо",
+              "subject": "Физическая подготовка",
               "room": "с/з",
               "teacher": "Сотников",
               "kind": "lesson",
-              "teacherId": "teacher-sotnikov"
+              "teacherId": "teacher-sotnikov",
+              "subjectId": "subject-physical-training"
             },
             {
               "id": "304-2026-11-25-3",
               "number": 3,
-              "subject": "Радиотехническое оборудование м/л ВС",
+              "subject": "Радиотехническое оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-radio"
             },
             {
               "id": "304-2026-11-25-4",
@@ -3495,7 +3905,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3504,29 +3915,32 @@
             {
               "id": "304-2026-11-26-1",
               "number": 1,
-              "subject": "Практическая а/дин-ка многодвигательного ВС",
+              "subject": "Практическая аэродинамика многодвигательного воздушного судна",
               "room": "42",
               "teacher": "Володько",
               "kind": "lesson",
-              "teacherId": "teacher-volodko"
+              "teacherId": "teacher-volodko",
+              "subjectId": "subject-multiengine-practical-aerodynamics"
             },
             {
               "id": "304-2026-11-26-2",
               "number": 2,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "304-2026-11-26-3",
               "number": 3,
-              "subject": "Общий курс беспилотных транспортных систем",
+              "subject": "Общий курс беспилотных авиационных систем",
               "room": "30",
               "teacher": "Чижов",
               "kind": "lesson",
-              "teacherId": "teacher-chizhov"
+              "teacherId": "teacher-chizhov",
+              "subjectId": "subject-unmanned-aircraft-systems"
             },
             {
               "id": "304-2026-11-26-4",
@@ -3534,7 +3948,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3543,11 +3958,12 @@
             {
               "id": "304-2026-11-27-1",
               "number": 1,
-              "subject": "Метрология, С.С.",
+              "subject": "Метрология, стандартизация и сертификация",
               "room": "24",
               "teacher": "Бражникова",
               "kind": "lesson",
-              "teacherId": "teacher-brazhnikova"
+              "teacherId": "teacher-brazhnikova",
+              "subjectId": "subject-metrology-standardization-certification"
             },
             {
               "id": "304-2026-11-27-2",
@@ -3556,16 +3972,18 @@
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-life-safety"
             },
             {
               "id": "304-2026-11-27-3",
               "number": 3,
-              "subject": "Иностранный язык в проф. деятельности",
+              "subject": "Иностранный язык в профессиональной деятельности",
               "room": "31",
               "teacher": "Салтыкова",
               "kind": "lesson",
-              "teacherId": "teacher-saltykova"
+              "teacherId": "teacher-saltykova",
+              "subjectId": "subject-professional-foreign-language"
             },
             {
               "id": "304-2026-11-27-4",
@@ -3573,7 +3991,8 @@
               "subject": "Самоподготовка",
               "room": null,
               "teacher": null,
-              "kind": "self_study"
+              "kind": "self_study",
+              "subjectId": "activity-self-study"
             }
           ]
         },
@@ -3582,29 +4001,32 @@
             {
               "id": "304-2026-11-28-1",
               "number": 1,
-              "subject": "Радиотехническое оборудование м/л ВС",
+              "subject": "Радиотехническое оборудование многодвигательного воздушного судна",
               "room": "40",
               "teacher": "Капустян",
               "kind": "lesson",
-              "teacherId": "teacher-kapustyan"
+              "teacherId": "teacher-kapustyan",
+              "subjectId": "subject-multiengine-aircraft-radio"
             },
             {
               "id": "304-2026-11-28-2",
               "number": 2,
-              "subject": "Лётная эксплуатация многодвигательного ВС",
+              "subject": "Лётная эксплуатация многодвигательного воздушного судна",
               "room": "49",
               "teacher": "Киселёв",
               "kind": "lesson",
-              "teacherId": "teacher-kiselyov"
+              "teacherId": "teacher-kiselyov",
+              "subjectId": "subject-multiengine-aircraft-operation"
             },
             {
               "id": "304-2026-11-28-3",
               "number": 3,
-              "subject": "Правовое обеспечение проф. деятельности",
+              "subject": "Правовое обеспечение профессиональной деятельности",
               "room": "32",
               "teacher": "Ребенок",
               "kind": "lesson",
-              "teacherId": "teacher-rebenok"
+              "teacherId": "teacher-rebenok",
+              "subjectId": "subject-professional-legal-support"
             }
           ]
         }

@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" href="./assets/icons/favicon-48.png" />
   <meta name="description" content="Любительский проект расписания занятий." />
   <title>Расписсание</title>
+  <script src="./assets/i18n.js" data-locales="./data/i18n.json"></script>
   <style>
     :root{color-scheme:light;--blue:#1265a3;--blueDark:#084b80;--blueLight:#eaf3fa;--green:#18865d;--ink:#232f39;--muted:#72808b;--border:#d9e0e5;--pale:#faf9e9;--row:#f6f9fb;--bg:#fff;--red:#cf4c6c}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.48}button,input,select{font:inherit}button,select{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #7ac4ef;outline-offset:2px}button:disabled{opacity:.48;cursor:not-allowed}a{color:var(--blue)}
@@ -21,6 +22,7 @@
     .result-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:28px 0 12px}.result-title h2{font-size:20px;line-height:1.25;margin:0 0 4px;font-weight:700}.result-title span{font-size:12px;color:#809099}.result-controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.mini-btn{font-size:12px;border:1px solid #d3dfe7;border-radius:4px;background:#fff;color:#235f87;padding:7px 9px}.mini-btn:hover{background:#eff7fc}.mini-btn.is-active{background:#e9f5fc;border-color:#8abbd9}.status-note{background:#f0f8fc;border-left:3px solid #61a5cc;padding:10px 13px;margin:10px 0 19px;font-size:12px;color:#435d70}.status-note.warning{background:#fff8ea;border-color:#d9a045;color:#795c32}.results{display:grid;gap:17px}.day{border:1px solid var(--border);border-radius:3px;background:#fff;overflow:hidden}.day-head{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#f2f6f8;border-bottom:1px solid #dce5eb;padding:11px 15px}.day-head strong{font-size:15px;color:#244258}.day-head span{font-size:12px;color:#81909c;font-weight:400;margin-left:9px}.day-head .day-extra{font-size:12px;color:#7e8d96;display:flex;align-items:center;gap:12px}.day-head .add-day{border:0;background:transparent;color:var(--blue);font-size:12px;font-weight:650;text-decoration:underline}.schedule{border-collapse:collapse;width:100%;table-layout:fixed}.schedule th{text-align:left;font-size:11px;color:#8394a0;letter-spacing:.035em;font-weight:650;text-transform:uppercase;border-bottom:1px solid #e2e9ed;padding:8px 12px;background:#fcfdfe}.schedule td{font-size:13px;padding:12px;border-top:1px solid #e6ebee;vertical-align:top}.schedule tbody tr:first-child td{border-top:0}.schedule tr:nth-child(even){background:#fbfcfd}.schedule tr:hover{background:#f1f8fc}.col-pair{width:72px}.col-subject{width:auto}.col-person{width:190px}.col-room{width:115px}.col-group{width:100px}.pair-no{display:inline-block;color:#145f8e;font-weight:750;font-size:14px}.lesson-name{font-weight:650;color:#243a4a;line-height:1.43}.meta-line{display:block;margin-top:4px;color:#82929b;font-size:11px}.meta-line .tag{color:#547b9b}.self-row td{color:#89959d}.self-row .lesson-name{font-weight:450;color:#81929b}.self-row .pair-no{color:#9aa9b1}.split-list{display:flex;flex-direction:column;gap:8px}.split-variant{border-left:2px solid #87bbd7;padding:0 0 0 10px}.split-variant small{display:block;color:#768992;font-size:11px;margin-top:3px}.tag-split{font-size:10px;color:#2677a2;background:#eaf5fb;display:inline-block;padding:3px 6px;border-radius:3px;margin-bottom:4px}.edit-link{border:0;background:none;color:#2f78a1;font-size:11px;margin-left:8px;text-decoration:underline;cursor:pointer}.review-note{margin-top:5px;color:#ab6a25;font-size:11px}.empty-day{padding:12px 14px;color:#99a5ad;font-size:12px}.empty-all{border:1px dashed #ccdae3;border-radius:4px;padding:28px;background:#f9fcfe;color:#607584;font-size:14px}.empty-all b{display:block;color:#324a5b;margin-bottom:6px}
     .teacher-list{max-height:min(55vh,480px);overflow:auto;border:1px solid #e0e8ed;border-radius:4px}.teacher-entry{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;gap:10px;background:white;border:0;border-bottom:1px solid #edf1f3;padding:11px 14px;color:#225a80;font-size:14px;cursor:pointer}.teacher-entry:last-child{border-bottom:0}.teacher-entry:hover,.teacher-entry:focus-visible{background:#eef7fc}.teacher-entry small{color:#758893;font-size:12px}.teacher-note{font-size:12px;color:#6a7c87;margin-bottom:12px}.teacher-search{width:100%;border:1px solid #cfdae1;padding:10px 12px;border-radius:4px;margin:0 0 12px;font-size:14px}
     .brand-accent{color:#c64679}.brand-text strong{font-size:21px;letter-spacing:-.035em}.headline h1 .brand-accent{color:#c64679}.install-link{border:0;background:transparent;color:#0c6ba6;font-size:12px;font-weight:650;cursor:pointer;padding:6px 0}.install-link:hover{text-decoration:underline}.pwa-note{font-size:12px;color:#5e7585;margin:7px 0 0}
+    .language-control{display:flex;gap:10px;align-items:center;flex-shrink:0;white-space:nowrap}.language-control label{font-size:12px;color:#627d90;display:flex;align-items:center;gap:6px}.language-control select{font-size:12px;max-width:212px;background:#fff;border:1px solid #cadbe4;border-radius:7px;color:#254f68;padding:9px 31px 9px 11px;box-shadow:0 1px 4px #1843650b;cursor:pointer}.language-control select:hover{border-color:#8cbbd4}.language-notice{font-size:11px;color:#a16a46;white-space:normal;max-width:180px}
     .footer{margin-top:31px;border-top:1px solid #e1e8ec;padding-top:18px;display:flex;justify-content:space-between;gap:15px;color:#8796a0;font-size:12px}.footer strong{color:#44647b}.footer a{text-decoration:none}
     .modal::backdrop{background:#10273880}.modal{border:1px solid #bfd0d8;border-radius:6px;box-shadow:0 28px 70px #11233735;width:min(600px,calc(100% - 24px));max-height:90vh;padding:0;color:var(--ink)}.modal-header{background:#f1f6f9;border-bottom:1px solid #dde6eb;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px}.modal-header h2{font-size:18px;margin:0}.modal-close{border:0;background:none;font-size:25px;color:#687d8d;line-height:1}.modal-body{padding:19px 20px}.modal-fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.modal label{display:block;font-size:12px;color:#526572;margin-bottom:4px}.modal input,.modal select{width:100%;padding:9px 10px;border:1px solid #cfdae1;border-radius:4px;background:#fff;color:var(--ink);font-size:13px}.modal .full{grid-column:1/-1}.modal .variant-fieldset{grid-column:1/-1;border:1px solid #dce5eb;background:#f7fafc;padding:10px;margin:0}.variant-grid{display:grid;grid-template-columns:1fr 1fr 86px;gap:10px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:18px}.modal-actions .danger{margin-right:auto;color:#bb4260;border-color:#ecb8c7;background:#fff}
     .toast{position:fixed;bottom:18px;right:18px;z-index:100;background:#25465b;color:white;padding:12px 17px;box-shadow:0 12px 35px #092b4933;border-radius:4px;font-size:13px;max-width:320px;opacity:0;pointer-events:none;transform:translateY(12px);transition:.2s}.toast.show{opacity:1;transform:none}
@@ -59,7 +61,7 @@
       </div></div>
       <div id="messageArea" aria-live="polite"></div><div id="results" class="results"></div>
     </section>
-    <footer class="footer" id="help"><span><strong>Расписсание</strong> — любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.</span></footer>
+    <footer class="footer" id="help"><span><strong>Расписсание</strong> — любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.</span><div class="language-control"><label for="siteLanguage">🌐 <span>Язык</span></label><select id="siteLanguage" aria-label="Выбор языка"><option value="ru">Русский</option></select><span id="languageNotice" class="language-notice" hidden></span></div></footer>
   </main>
   <dialog id="teachersDialog" class="modal" aria-labelledby="teacherDirectoryTitle">
     <div class="modal-header"><h2 id="teacherDirectoryTitle">Справочник преподавателей</h2><button class="modal-close" id="closeTeachers" type="button" aria-label="Закрыть">×</button></div>
@@ -84,23 +86,32 @@
   (()=>{
     'use strict';
     const $=id=>document.getElementById(id);
+    const I18n=window.RaspI18n;
     const src={};
     let allWeeks=[];
     let manifest=[];
     const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const cp=x=>JSON.parse(JSON.stringify(x));
     const russianForm=(n,one,few,many)=>n%100>=11&&n%100<=14?many:n%10===1?one:n%10>=2&&n%10<=4?few:many;
-    const lessonCount=n=>n+' '+russianForm(n,'занятие','занятия','занятий');
-    const selfCount=n=>n+' '+russianForm(n,'блок','блока','блоков')+' самоподготовки';
-    const groupCount=n=>n+' '+russianForm(n,'загруженная группа','загруженные группы','загруженных групп');
+    const lessonCount=n=>I18n.count(n,'lessons');
+    const selfCount=n=>I18n.count(n,'self');
+    const groupCount=n=>I18n.count(n,'groups');
+    let subjects=[];
+    const subjectById=new Map();const subjectByName=new Map();
+    function registerSubjects(list){subjects=list;subjectById.clear();subjectByName.clear();for(const s of list){subjectById.set(s.id,s);for(const name of [s.name,...(s.aliases||[])])subjectByName.set(name.toLocaleLowerCase('ru').trim(),s)}}
+    function subjectRec(value){return subjectById.get(value)||subjectByName.get(String(value||'').toLocaleLowerCase('ru').trim())||subjectById.get(I18n.subjectId(value))||null}
+    function canonicalSubject(value){return subjectRec(value)?.name||value}
     let teachers=[];
     const teacherById=new Map();
     const teacherByName=new Map();
-    function registerTeachers(list){teachers=list;teacherById.clear();teacherByName.clear();for(const t of teachers){teacherById.set(t.id,t);for(const key of [t.surname,t.displayName,...(t.aliases||[])])teacherByName.set(key.toLocaleLowerCase('ru').trim(),t.id)}}
-    const idForTeacher=name=>teacherByName.get(String(name||'').toLocaleLowerCase('ru').trim())||null;
+    function registerTeachers(list){teachers=list;I18n.registerTeachers(list);teacherById.clear();teacherByName.clear();for(const t of teachers){teacherById.set(t.id,t);for(const key of [t.surname,t.displayName,...(t.aliases||[])])teacherByName.set(key.toLocaleLowerCase('ru').trim(),t.id)}}
+    const idForTeacher=name=>teacherByName.get(String(name||'').toLocaleLowerCase('ru').trim())||teachers.find(t=>I18n.teacher(t).toLocaleLowerCase()===String(name||'').toLocaleLowerCase())?.id||null;
     const canonicalName=name=>teacherById.get(idForTeacher(name))?.surname||name;
-    const teacherName=(id,fallback)=>teacherById.get(idForTeacher(fallback))?.displayName||teacherById.get(id)?.displayName||canonicalName(fallback)||'—';
+    const teacherName=(id,fallback)=>{const t=teacherById.get(idForTeacher(fallback))||teacherById.get(id);return t?I18n.teacher(t):canonicalName(fallback)||'—'};
     function normalizeLesson(l){
+      if(l.kind==='self_study'){l.subject='Самоподготовка';l.subjectId='activity-self-study'}
+      else if(l.variants?.length){l.subjectIds=[];l.variants.forEach(v=>{v.subject=canonicalSubject(v.subject);v.subjectId=subjectRec(v.subject)?.id||v.subjectId||null;if(v.subjectId)l.subjectIds.push(v.subjectId)});l.subject=l.variants.map(v=>v.subject).join(' / ')}
+      else{l.subject=canonicalSubject(l.subject);l.subjectId=subjectRec(l.subject)?.id||l.subjectId||null}
       if(l.teacher)l.teacher=canonicalName(l.teacher);
       if(l.variants?.length){l.teacherIds=[];l.variants.forEach(v=>{if(v.teacher){v.teacher=canonicalName(v.teacher);v.teacherId=idForTeacher(v.teacher)||v.teacherId||null;if(v.teacherId)l.teacherIds.push(v.teacherId)}})}
       else if(l.teacher){l.teacherId=idForTeacher(l.teacher)||l.teacherId||null}
@@ -109,8 +120,8 @@
     function teacherForLesson(l){return l.variants?.length?l.variants.map(v=>teacherName(v.teacherId,v.teacher)).join(' / '):teacherName(l.teacherId,l.teacher)}
     function teacherMatches(l,id){return (l.variants?.length?l.variants:[l]).some(v=>(idForTeacher(v.teacher)||v.teacherId)===id)}
     const state={week:null,data:null,group:'',teacher:'',room:'',text:'',edit:false,editing:null};
-    const niceDate=s=>new Date(s+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
-    const dayName=s=>new Date(s+'T12:00:00').toLocaleDateString('ru-RU',{weekday:'long'});
+    const niceDate=s=>I18n.date(s,{day:'numeric',month:'long'});
+    const dayName=s=>I18n.date(s,{weekday:'long'});
     const dates=()=>Array.from({length:6},(_,i)=>{const [y,m,d]=state.week.split('-').map(Number);return new Date(Date.UTC(y,m-1,d+i)).toISOString().slice(0,10)});
     const key=week=>'raspissanie-local-v3:'+week;
     // The preferred group is private to this browser. It is not tied to a specific week.
@@ -136,11 +147,11 @@
       groups.innerHTML='<option value="">Все группы</option>'+[1,2,3].map(course=>'<optgroup label="'+course+' курс">'+Array.from({length:5},(_,i)=>''+course+'0'+(i+1)).map(g=>'<option value="'+g+'">'+g+(state.data.groups[g]?'':' — нет данных')+'</option>').join('')+'</optgroup>').join('');
       const rs=new Set();for(const {lesson:l} of lessonRows()){const items=l.variants?.length?l.variants:[l];for(const item of items){if(item.room)rs.add(item.room)}}
       const options=(values,label)=>'<option value="">'+label+'</option>'+Array.from(values).sort(sortText).map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join('');
-      teacher.innerHTML='<option value="">— любой —</option>'+teachers.map(t=>'<option value="'+esc(t.id)+'">'+esc(t.displayName)+'</option>').join('');room.innerHTML=options(rs,'— любой —');
+      teacher.innerHTML='<option value="">— любой —</option>'+teachers.map(t=>'<option value="'+esc(t.id)+'">'+esc(I18n.teacher(t))+'</option>').join('');room.innerHTML=options(rs,'— любой —');
       groups.value=state.group;teacher.value=state.teacher;if(teacher.value!==state.teacher)state.teacher='';room.value=state.room;if(room.value!==state.room)state.room='';$('filterText').value=state.text;
     }
     async function loadWeekAsync(week){if(!src[week]){const info=manifest.find(m=>m.weekStart===week);if(!info)throw new Error('Week manifest entry not found: '+week);const resp=await fetch(info.file);if(!resp.ok)throw new Error('Failed to load '+info.file);src[week]=await resp.json();}load(week);populateOptions();render()}
-    function allSubjects(l){const variants=l.variants?.length?l.variants:[l];return variants.map(v=>[v.subject,v.teacher,v.room].join(' ')).join(' ')+' '+[l.subject,l.teacher,l.room].join(' ')}
+    function allSubjects(l){const variants=l.variants?.length?l.variants:[l];return variants.map(v=>[v.subject,I18n.subject(v.subjectId||subjectRec(v.subject)?.id,v.subject),...(subjectRec(v.subject)?.aliases||[]),v.teacher,I18n.teacher(v.teacherId),v.room].join(' ')).join(' ')+' '+[l.subject,l.teacher,l.room].join(' ')}
     function passes(row){const l=row.lesson, variants=l.variants?.length?l.variants:[l];if(state.group&&row.group!==state.group)return false;
       if(state.teacher&&!teacherMatches(l,state.teacher))return false;
       if(state.room&&!variants.some(v=>(v.room||'').split('/').some(s=>s.trim()===state.room)||v.room===state.room))return false;
@@ -148,19 +159,19 @@
       return true;
     }
     const filtered=()=>lessonRows().filter(passes);
-    function renderWeekNav(){ $('weekNav').innerHTML=allWeeks.map(w=>{const data=src[w]||manifest.find(m=>m.weekStart===w),selected=w===state.week,archive=w!==allWeeks[allWeeks.length-1];return '<button class="week-card '+(archive?'archive ':'')+(selected?'selected':'')+'" data-week="'+w+'" aria-pressed="'+selected+'"><strong>'+data.academicWeek+'-я учебная неделя</strong><span>'+niceDate(w)+' — '+niceDate(data.weekEnd)+'</span><em>'+(archive?'Архив':'Новая неделя')+'</em></button>'}).join('');
+    function renderWeekNav(){ $('weekNav').innerHTML=allWeeks.map(w=>{const data=src[w]||manifest.find(m=>m.weekStart===w),selected=w===state.week,archive=w!==allWeeks[allWeeks.length-1];return '<button class="week-card '+(archive?'archive ':'')+(selected?'selected':'')+'" data-week="'+w+'" aria-pressed="'+selected+'"><strong>'+I18n.week(data.academicWeek)+'</strong><span>'+niceDate(w)+' — '+niceDate(data.weekEnd)+'</span><em>'+(archive?'Архив':'Новая неделя')+'</em></button>'}).join('');
       for(const b of $('weekNav').querySelectorAll('[data-week]'))b.addEventListener('click',()=>{loadWeekAsync(b.dataset.week)});
     }
     function editButton(row){if(!state.edit)return '';return '<button type="button" class="edit-link" data-edit="'+esc(row.lesson.id)+'" data-group="'+esc(row.group)+'" data-date="'+esc(row.date)+'">изменить</button>'}
     function metadata(l){return l.kind==='self_study'?'Самоподготовка':l.kind==='split'?'Занятия по подгруппам':'Учебное занятие'}
-    function lessonSubject(l){if(l.kind==='self_study')return '<span class="lesson-name">Самоподготовка</span>';
-      if(l.variants?.length){return '<span class="tag-split">Параллельно · подгруппы</span><div class="split-list">'+l.variants.map((v,i)=>'<div class="split-variant"><span class="lesson-name">'+esc(v.subject)+'</span><small>'+esc(teacherName(v.teacherId,v.teacher))+' · '+esc(v.room==='с/з'?'спортзал':('класс '+(v.room||'—')))+'</small></div>').join('')+'</div>'}
-      return '<span class="lesson-name">'+esc(l.subject)+'</span>';}
+    function lessonSubject(l){if(l.kind==='self_study')return '<span class="lesson-name">'+esc(I18n.localize('Самоподготовка'))+'</span>';
+      if(l.variants?.length){return '<span class="tag-split">Параллельно · подгруппы</span><div class="split-list">'+l.variants.map((v,i)=>'<div class="split-variant"><span class="lesson-name">'+esc(I18n.subject(v.subjectId||subjectRec(v.subject)?.id,v.subject))+'</span><small>'+esc(teacherName(v.teacherId,v.teacher))+' · '+esc(v.room==='с/з'?'спортзал':('класс '+(v.room||'—')))+'</small></div>').join('')+'</div>'}
+      return '<span class="lesson-name">'+esc(I18n.subject(l.subjectId||subjectRec(l.subject)?.id,l.subject))+'</span>';}
     function teacherText(l){if(l.kind==='self_study')return '—';return esc(teacherForLesson(l))}
     function roomText(l){if(l.kind==='self_study')return '—';return esc(l.room==='с/з'?'Спортзал':(l.room||'—'))}
     function tableRow(row,multi){const l=row.lesson,self=l.kind==='self_study';return '<tr class="'+(self?'self-row':'')+'"><td class="pair-cell"><span class="pair-no">'+esc(l.number)+'</span></td><td class="subject-cell">'+lessonSubject(l)+editButton(row)+(l.reviewNote?'<div class="review-note">'+esc(l.reviewNote)+'</div>':'')+'</td><td class="person-cell">'+teacherText(l)+'</td><td class="room-cell">'+roomText(l)+'</td>'+(multi?'<td class="group-cell"><b>'+esc(row.group)+'</b></td>':'')+'</tr>'}
     function render(){const data=state.data,all=filtered(),multi=!state.group;
-      $('periodSubheading').textContent=data.academicWeek+'-я учебная неделя · '+niceDate(data.weekStart)+' — '+niceDate(data.weekEnd)+' 2026 г.';
+      $('periodSubheading').textContent=I18n.week(data.academicWeek)+' · '+niceDate(data.weekStart)+' — '+niceDate(data.weekEnd)+' · '+data.weekStart.slice(0,4);
       renderWeekNav();
       $('editToggle').classList.toggle('is-active',state.edit);$('editToggle').textContent=state.edit?'✓ Режим правок включён':'✎ Локальные правки';
       const groupKnown=!!data.groups[state.group],isMissing=state.group&&!groupKnown;let title=multi?'Все группы':state.group;
@@ -191,8 +202,8 @@
     function openEditor(group,date,id){const gd=state.data.groups[group];if(!gd)return;const l=id?cp(getLesson(group,date,id)):null;state.editing={group,date,id};
       $('editTitle').textContent=id?'Изменить занятие':'Добавить занятие';$('editGroup').value=group;$('editDate').value=date;
       $('editNumber').innerHTML=Array.from({length:8},(_,i)=>'<option value="'+(i+1)+'">'+(i+1)+'</option>').join('');$('editNumber').value=l?.number||((gd.days[date]?.lessons?.length||0)+1);
-      $('editKind').value=l?.kind||'lesson';$('editSubject').value=l?.kind==='split'?'':l?.subject||'';$('editTeacher').value=l?.kind==='split'?'':l?teacherName(l.teacherId,l.teacher):'';$('editRoom').value=l?.kind==='split'?'':l?.room||'';
-      $('variantInputs').innerHTML='';const variants=l?.variants||[{subject:'',teacher:'',room:''},{subject:'',teacher:'',room:''}];for(let i=0;i<2;i++){const v=variants[i]||{};$('variantInputs').insertAdjacentHTML('beforeend','<div class="variant-grid" style="margin-bottom:8px"><div><label>Подгруппа '+(i+1)+' · дисциплина</label><input data-v="'+i+'" data-field="subject"></div><div><label>Преподаватель</label><input data-v="'+i+'" data-field="teacher"></div><div><label>Аудитория</label><input data-v="'+i+'" data-field="room"></div></div>');for(const inp of $('variantInputs').querySelectorAll('[data-v="'+i+'"]'))inp.value=v[inp.dataset.field]||''}
+      $('editKind').value=l?.kind||'lesson';$('editSubject').value=l?.kind==='split'?'':l?I18n.subject(l.subjectId||subjectRec(l.subject)?.id,l.subject):'';$('editTeacher').value=l?.kind==='split'?'':l?teacherName(l.teacherId,l.teacher):'';$('editRoom').value=l?.kind==='split'?'':l?.room||'';
+      $('variantInputs').innerHTML='';const variants=l?.variants||[{subject:'',teacher:'',room:''},{subject:'',teacher:'',room:''}];for(let i=0;i<2;i++){const v=variants[i]||{};$('variantInputs').insertAdjacentHTML('beforeend','<div class="variant-grid" style="margin-bottom:8px"><div><label>Подгруппа '+(i+1)+' · дисциплина</label><input data-v="'+i+'" data-field="subject"></div><div><label>Преподаватель</label><input data-v="'+i+'" data-field="teacher"></div><div><label>Аудитория</label><input data-v="'+i+'" data-field="room"></div></div>');for(const inp of $('variantInputs').querySelectorAll('[data-v="'+i+'"]'))inp.value=inp.dataset.field==='subject'?I18n.subject(v.subjectId||subjectRec(v.subject)?.id,v.subject||''):(inp.dataset.field==='teacher'?teacherName(v.teacherId,v.teacher):v[inp.dataset.field]||'')}
       $('deleteLesson').hidden=!id;adjustKind();$('editor').showModal();
     }
     function adjustKind(){const kind=$('editKind').value;$('variantFields').hidden=kind!=='split';for(const el of $('editForm').querySelectorAll('.single-field'))el.hidden=kind!=='lesson'}
@@ -208,15 +219,15 @@
     function exportJSON(){const text=JSON.stringify(state.data,null,2),blob=new Blob([text],{type:'application/json;charset=utf-8'}),href=URL.createObjectURL(blob),a=document.createElement('a');a.href=href;a.download='raspissanie-'+state.week+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),500);toast('JSON недели скачан')}
     async function init(){
       const embedded=$('embeddedArchive');
-      if(embedded){const bundle=JSON.parse(embedded.textContent);registerTeachers(bundle.teachers.teachers);manifest=bundle.manifest;Object.assign(src,bundle.weeks)}
-      else {const [mf,td]=await Promise.all([fetch('./data/weeks/manifest.json').then(r=>{if(!r.ok)throw new Error('manifest');return r.json()}),fetch('./data/teachers.json').then(r=>{if(!r.ok)throw new Error('teachers');return r.json()})]);manifest=mf;registerTeachers(td.teachers)}
+      if(embedded){const bundle=JSON.parse(embedded.textContent);registerTeachers(bundle.teachers.teachers);registerSubjects(bundle.subjects?.subjects||[]);manifest=bundle.manifest;Object.assign(src,bundle.weeks)}
+      else {const [mf,td,sd]=await Promise.all([fetch('./data/weeks/manifest.json').then(r=>{if(!r.ok)throw new Error('manifest');return r.json()}),fetch('./data/teachers.json').then(r=>{if(!r.ok)throw new Error('teachers');return r.json()}),fetch('./data/subjects.json').then(r=>{if(!r.ok)throw new Error('subjects');return r.json()})]);manifest=mf;registerTeachers(td.teachers);registerSubjects(sd.subjects)}
       allWeeks=manifest.map(m=>m.weekStart).sort();state.group=readPreferredGroup();state.week=allWeeks[allWeeks.length-1];await loadWeekAsync(state.week)
     }
     function renderTeacherDirectory(){
       const query=$('teachersSearch').value.trim().toLocaleLowerCase('ru');
-      const matches=teachers.filter(t=>t.displayName.toLocaleLowerCase('ru').includes(query));
+      const matches=teachers.filter(t=>t.displayName.toLocaleLowerCase('ru').includes(query)||I18n.teacher(t).toLocaleLowerCase().includes(query));
       $('teachersNote').textContent=teachers.length+' '+russianForm(teachers.length,'преподаватель','преподавателя','преподавателей')+' в справочнике. Выберите фамилию, чтобы увидеть занятия за выбранную неделю.';
-      $('teachersList').innerHTML=matches.length?matches.map(t=>'<button class="teacher-entry" type="button" data-teacher="'+esc(t.id)+'"><span>'+esc(t.displayName)+'</span><small>Показать расписание</small></button>').join(''):'<div class="empty-day">Не найдено</div>';
+      $('teachersList').innerHTML=matches.length?matches.map(t=>'<button class="teacher-entry" type="button" data-teacher="'+esc(t.id)+'"><span>'+esc(I18n.teacher(t))+'</span><small>Показать расписание</small></button>').join(''):'<div class="empty-day">Не найдено</div>';
       $('teachersList').querySelectorAll('[data-teacher]').forEach(button=>button.onclick=()=>{
         state.group='';state.teacher=button.dataset.teacher;state.room='';state.text='';populateOptions();$('filterGroup').value='';$('filterTeacher').value=state.teacher;render();$('teachersDialog').close();$('results').scrollIntoView({behavior:'smooth',block:'start'})
       });
@@ -232,6 +243,7 @@
     $('editKind').onchange=adjustKind;$('editForm').onsubmit=saveEdit;$('closeEditor').onclick=closeEditor;$('cancelEditor').onclick=closeEditor;
     $('deleteLesson').onclick=()=>{const x=state.editing;if(!x||!x.id)return;if(!confirm('Удалить эту строку расписания?'))return;const a=state.data.groups[x.group].days[x.date].lessons;const i=a.findIndex(l=>l.id===x.id);if(i<0)return;a.splice(i,1);save();closeEditor();render();toast('Строка удалена локально')};
     $('editor').addEventListener('click',e=>{if(e.target===$('editor'))closeEditor()});
+    window.addEventListener('raspissanie-language-change',()=>{if(state.data){populateOptions();render();if($('teachersDialog').open)renderTeacherDirectory()}});
     init().catch(err=>{console.error(err);$('messageArea').innerHTML='<div class="status-note warning">Не удалось загрузить данные расписания. Для локального просмотра запустите сайт через сервер (например, <code>python -m http.server</code>) или откройте GitHub Pages.</div>';});
   })();
   </script>

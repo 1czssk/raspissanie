@@ -1,6 +1,7 @@
 /* Расписсание. Локальный редактор расписания — без серверной записи. */
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
+const I18n=window.RaspI18n;
 const isoDate=d=>new Date(d).toISOString().slice(0,10);
 const cp=o=>JSON.parse(JSON.stringify(o));
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -8,11 +9,11 @@ const dayNames=['Понедельник','Вторник','Среда','Четв
 const norm=x=>String(x??'').normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase('ru');
 const addDays=(iso,n)=>{const [y,m,d]=iso.split('-').map(Number);return isoDate(Date.UTC(y,m-1,d+n))};
 const monday=iso=>{const d=new Date(iso+'T12:00:00Z');return addDays(iso,-((d.getUTCDay()+6)%7))};
-const nice=iso=>new Date(iso+'T12:00:00Z').toLocaleDateString('ru-RU',{day:'numeric',month:'long',timeZone:'UTC'});
+const nice=iso=>I18n.date(iso,{day:'numeric',month:'long'});
 const academicWeek=iso=>{const year=Number(iso.slice(0,4));const sep= year&&iso < `${year}-09-01`?`${year-1}-09-01`:`${year}-09-01`;return Math.floor((Date.parse(monday(iso))-Date.parse(monday(sep)))/604800000)+1};
 const storageKey=w=>'raspissanie-editor-draft-v2:'+w;
 const GROUPS=Array.from({length:3},(_,course)=>Array.from({length:5},(_,i)=>`${course+1}0${i+1}`)).flat();
-const state={weeks:{},active:'',course:3,day:0,mode:'manual',dirty:false,teachers:[],roomPatterns:null,subjects:[],rooms:[],stage:[],stageWarnings:[],stageSource:'',stagePreviewUrl:null,editing:null,initialized:false};
+const state={weeks:{},active:'',course:3,day:0,mode:'manual',dirty:false,teachers:[],roomPatterns:null,subjectDirectory:[],subjects:[],rooms:[],stage:[],stageWarnings:[],stageSource:'',stagePreviewUrl:null,editing:null,initialized:false};
 let toastTimer;
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3600)}
 function getWeek(){return state.weeks[state.active]}
@@ -23,14 +24,55 @@ function randId(g,d,num){return `${g}-${d}-${num}-${Math.random().toString(36).s
 function currentDay(){return addDays(state.active,state.day)}
 function yearRange(iso){return `${nice(iso)} — ${nice(addDays(iso,5))}`}
 function validity(week){return !!(week&&typeof week==='object'&&/^\d{4}-\d\d-\d\d$/.test(week.weekStart||'')&&typeof week.groups==='object'&&week.groups!==null&&Object.values(week.groups).every(g=>g&&typeof g.days==='object'&&Object.values(g.days).every(day=>day&&Array.isArray(day.lessons))))}
-function teacherRec(str){return state.teachers.find(t=>[t.displayName,t.surname,...(t.aliases||[])].some(s=>norm(s)===norm(str)))}
+function subjectRec(str){const value=norm(str),translatedId=I18n.subjectId(str);return state.subjectDirectory.find(s=>s.id===str||s.id===translatedId||[s.name,...(s.aliases||[])].some(name=>norm(name)===value))||null}
+function canonicalSubject(str){const raw=String(str||'').trim();const rec=subjectRec(raw);return {subject:rec?.name||raw,subjectId:rec?.id||null}}
+function subjectTeachers(subject){return subjectRec(subject)?.teachers||[]}
+function describeSubjectHint(subject,teacher){
+ const rec=subjectRec(subject);if(!rec)return subject?'В справочнике нет такой дисциплины. Можно сохранить новое название.':'';
+ const candidates=rec.teachers||[];if(!candidates.length)return 'Предмет есть в справочнике, но преподаватели пока не подтверждены.';
+ const selected=teacherRec(teacher);const filtered=selected?candidates.filter(t=>t.teacherId===selected.id):candidates;
+ const items=filtered.length?filtered:candidates;
+ const notes=items.slice(0,5).map(t=>`${t.teacherName} — ${Object.keys(t.rooms||{}).length?Object.entries(t.rooms).map(([room,n])=>`ауд. ${room} (${n})`).join(', '):'аудитория не указана'}`);
+ const prefix=selected&&filtered.length?'По выбранному преподавателю: ':'В архиве этот предмет вели: ';
+ return prefix+notes.join('; ')+(items.length>5?'; …':'')+(rec.needsConfirmation?' Название курса беспилотных систем объединено предварительно.':'');
+}
+function fillSuggestion(subjectInput,teacherInput,roomInput){
+ const rec=subjectRec(subjectInput.value);if(!rec){toast('Выбери дисциплину из справочника');return}
+ subjectInput.value=rec.name;
+ const candidates=rec.teachers||[];
+ let selected=teacherRec(teacherInput.value);
+ let pair=selected?candidates.find(t=>t.teacherId===selected.id):null;
+ // Не выбираем преподавателя за пользователя, если у одного предмета их несколько.
+ if(!selected&&candidates.length===1){pair=candidates[0];teacherInput.value=pair.teacherName}
+ if(!roomInput.value.trim()){
+   let suggested=pair?.usualRoom;
+   if(!suggested&&pair){const rooms=Object.entries(pair.rooms||{}).sort((a,b)=>b[1]-a[1]);if(rooms.length===1)suggested=rooms[0][0]}
+   if(!suggested&&candidates.length===1){const rooms=Object.keys(candidates[0].rooms||{});if(rooms.length===1)suggested=rooms[0]}
+   if(suggested)roomInput.value=suggested;
+ }
+ renderRoomHint();
+}
+function renderSubjectHints(){
+ if($('lessonKind').value==='lesson'){
+  const subject=$('lessonSubject').value,teacher=$('lessonTeacher').value;
+  const hint=describeSubjectHint(subject,teacher),el=$('subjectHint');el.textContent=hint;el.hidden=!hint;
+  $('fillSubjectSuggestion').hidden=!subjectRec(subject);
+ }else if($('lessonKind').value==='split'){
+  for(const i of [0,1]){
+   const sub=$('splitFieldRows').querySelector(`[data-v="${i}"][data-f="subject"]`),te=$('splitFieldRows').querySelector(`[data-v="${i}"][data-f="teacher"]`),hint=$('splitFieldRows').querySelector(`[data-subject-hint="${i}"]`),btn=$('splitFieldRows').querySelector(`[data-fill-v="${i}"]`);
+   if(!sub||!te||!hint||!btn)continue;const text=describeSubjectHint(sub.value,te.value);
+   hint.textContent=text;hint.hidden=!text;btn.hidden=!subjectRec(sub.value);
+  }
+ }
+}
+function teacherRec(str){return state.teachers.find(t=>[t.displayName,t.surname,I18n.teacher(t),...(t.aliases||[])].some(s=>norm(s)===norm(str)))}
 function canonicalTeacher(str){const item=teacherRec(str);return item?{teacher:item.surname,teacherId:item.id}:{teacher:String(str||'').trim(),teacherId:null}}
-function teacherLabel(id,fallback){const match=teacherRec(fallback)||state.teachers.find(t=>t.id===id);return match?.displayName||fallback||'—'}
+function teacherLabel(id,fallback){const match=teacherRec(fallback)||state.teachers.find(t=>t.id===id);return match?I18n.teacher(match):fallback||'—'}
 // Предпочитаемые аудитории сформированы только по опубликованным неделям.
 // Локальные правки и будущие недели НЕ переучивают справочник автоматически.
 function typicalRoom(teacher,subject){
  const t=teacherRec(teacher);if(!t||!state.roomPatterns)return null;
- const s=norm(subject);
+ const s=norm(canonicalSubject(subject).subject);
  const matching=state.roomPatterns.teacherSubjects?.find(r=>r.teacherId===t.id&&norm(r.subject)===s);
  const source=matching?.preferredRoom?matching:state.roomPatterns.teachers?.[t.id];
  if(!source?.preferredRoom)return null;
@@ -57,7 +99,7 @@ function renderRoomHint(){
   if(comparison){warning=true;notes.push(prefix+roomWarningText(comparison))}
   else notes.push(`${prefix}Обычно ${base.room} — ${base.rooms[base.room]} из ${base.count} занятий (две недели). Это подсказка, не правило.`);
  }
- const node=$('roomHint');node.hidden=!notes.length;node.classList.toggle('warning',warning);node.textContent=notes.join('  •  ');
+ const node=$('roomHint');node.hidden=!notes.length;node.classList.toggle('warning',warning);node.textContent=notes.join('  •  ');renderSubjectHints();
 }
 function changedRoomWarnings(l,prev){
  const current=l.kind==='split'?l.variants||[]:l.kind==='self_study'?[]:[l];
@@ -66,30 +108,30 @@ function changedRoomWarnings(l,prev){
   .map(({value})=>roomDifference(value.teacher,value.subject,value.room)).filter(Boolean);
 }
 
-function normalizeLesson(l,g,date,index){const kind=l.kind||'lesson';const res={...l,id:l.id||randId(g,date,l.number||index+1),number:Number(l.number)||index+1,kind};if(kind==='self_study'){res.subject='Самоподготовка';res.teacher=null;res.room=null;delete res.teacherId;delete res.teacherIds;delete res.variants;return res}if(kind==='split'){
- res.variants=(l.variants||[]).map(v=>{const rec=canonicalTeacher(v.teacher);return {subject:String(v.subject||'').trim(),teacher:rec.teacher,room:String(v.room||'').trim(),...(rec.teacherId?{teacherId:rec.teacherId}:{})}});
- res.subject=res.variants.map(v=>v.subject).join(' / ');res.teacher=res.variants.map(v=>v.teacher).join(' / ');res.room=res.variants.map(v=>v.room).join(' / ');delete res.teacherId;res.teacherIds=res.variants.map(v=>v.teacherId).filter(Boolean);return res}
- const rec=canonicalTeacher(l.teacher);res.subject=String(l.subject||'').trim();res.teacher=rec.teacher||null;res.room=l.room==null?null:String(l.room).trim();if(rec.teacherId)res.teacherId=rec.teacherId;else delete res.teacherId;delete res.teacherIds;delete res.variants;return res}
+function normalizeLesson(l,g,date,index){const kind=l.kind||'lesson';const res={...l,id:l.id||randId(g,date,l.number||index+1),number:Number(l.number)||index+1,kind};if(kind==='self_study'){res.subject='Самоподготовка';res.subjectId='activity-self-study';delete res.subjectIds;res.teacher=null;res.room=null;delete res.teacherId;delete res.teacherIds;delete res.variants;return res}if(kind==='split'){
+ res.variants=(l.variants||[]).map(v=>{const rec=canonicalTeacher(v.teacher);return {...canonicalSubject(v.subject),teacher:rec.teacher,room:String(v.room||'').trim(),...(rec.teacherId?{teacherId:rec.teacherId}:{})}});
+ res.subject=res.variants.map(v=>v.subject).join(' / ');res.teacher=res.variants.map(v=>v.teacher).join(' / ');res.room=res.variants.map(v=>v.room).join(' / ');delete res.teacherId;delete res.subjectId;res.subjectIds=res.variants.map(v=>v.subjectId).filter(Boolean);res.teacherIds=res.variants.map(v=>v.teacherId).filter(Boolean);return res}
+ const rec=canonicalTeacher(l.teacher);Object.assign(res,canonicalSubject(l.subject));delete res.subjectIds;res.teacher=rec.teacher||null;res.room=l.room==null?null:String(l.room).trim();if(rec.teacherId)res.teacherId=rec.teacherId;else delete res.teacherId;delete res.teacherIds;delete res.variants;return res}
 function normalizeWeek(week){const w=cp(week);w.schemaVersion=2;w.weekStart=monday(w.weekStart);w.weekEnd=addDays(w.weekStart,5);w.academicWeek=academicWeek(w.weekStart);delete w.institution;w.groups=w.groups||{};for(const [g,gd] of Object.entries(w.groups))for(const [date,day] of Object.entries(gd.days||{})){day.lessons=(day.lessons||[]).map((l,i)=>normalizeLesson(l,g,date,i)).sort((a,b)=>a.number-b.number)}w.missingGroups=GROUPS.filter(g=>!w.groups[g]);return w}
 function markDirty(){state.dirty=true;$('dirtyBadge').textContent='Есть локальные правки';$('dirtyBadge').classList.add('dirty');try{localStorage.setItem(storageKey(state.active),JSON.stringify(getWeek()));$('storageStatus').textContent='Черновик сохранён локально · '+new Date().toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})}catch(e){$('storageStatus').textContent='Локальное хранилище недоступно — скачай JSON!'} }
 function restoreDraft(base){let draft;try{draft=JSON.parse(localStorage.getItem(storageKey(base.weekStart))||'null')}catch(e){}return validity(draft)?normalizeWeek(draft):normalizeWeek(base)}
 function newEmptyWeek(start){return {schemaVersion:2,weekStart:monday(start),weekEnd:addDays(monday(start),5),academicWeek:academicWeek(monday(start)),source:{kind:'manual',description:'Создано в браузерном редакторе'},missingGroups:[...GROUPS],groups:{}}}
 function normalizeImportedWeek(w){return normalizeWeek(w)}
 function upsertWeek(w,mark=false){w=normalizeImportedWeek(w);state.weeks[w.weekStart]=w;if(mark){state.active=w.weekStart;markDirty()}populateWeeks()}
-function populateWeeks(){const list=Object.keys(state.weeks).sort();$('weekSelect').innerHTML=list.map(w=>`<option value="${esc(w)}">${state.weeks[w].academicWeek}-я неделя · ${nice(w)}–${nice(addDays(w,5))}</option>`).join('');$('weekSelect').value=state.active;$('weekRange').textContent=state.active?`${yearRange(state.active)} · ${state.active.slice(0,4)} г.`:''}
-function populateDay(){const w=getWeek();$('daySelect').innerHTML=dayNames.map((day,i)=>`<option value="${i}">${day}, ${nice(addDays(w.weekStart,i))}</option>`).join('');$('daySelect').value=String(state.day)}
+function populateWeeks(){const list=Object.keys(state.weeks).sort();$('weekSelect').innerHTML=list.map(w=>`<option value="${esc(w)}">${I18n.week(state.weeks[w].academicWeek)} · ${nice(w)}–${nice(addDays(w,5))}</option>`).join('');$('weekSelect').value=state.active;$('weekRange').textContent=state.active?`${yearRange(state.active)} · ${state.active.slice(0,4)}`:''}
+function populateDay(){const w=getWeek();$('daySelect').innerHTML=dayNames.map((day,i)=>`<option value="${i}">${I18n.localize(day)}, ${nice(addDays(w.weekStart,i))}</option>`).join('');$('daySelect').value=String(state.day)}
 function switchWeek(week){if(!state.weeks[week])return;state.active=week;state.dirty=false;$('dirtyBadge').textContent='Черновик готов';$('dirtyBadge').classList.remove('dirty');state.day=0;populateWeeks();populateDay();renderGrid();runChecks(false)}
-function renderGrid(){const w=getWeek(),glist=weekGroups(),date=currentDay();$('gridInfo').textContent=`${dayNames[state.day]}, ${nice(date)} · ${state.course}-й курс · все 5 групп`;
+function renderGrid(){const w=getWeek(),glist=weekGroups(),date=currentDay();$('gridInfo').textContent=`${I18n.localize(dayNames[state.day])}, ${nice(date)} · ${state.course}-й курс · все 5 групп`;
  const thead=$('scheduleGrid').tHead,tbody=$('scheduleGrid').tBodies[0];thead.innerHTML='<tr><th scope="col">Пара</th>'+glist.map(g=>`<th scope="col">${g}</th>`).join('')+'</tr>';
  const maxSlot=Math.max(4,...glist.flatMap(g=>(w.groups[g]?.days?.[date]?.lessons||[]).map(l=>l.number)),1);let rows='';for(let slot=1;slot<=maxSlot;slot++){
- rows+=`<tr><td>${slot}</td>`;for(const group of glist){const matches=(w.groups[group]?.days?.[date]?.lessons||[]).filter(l=>l.number===slot);let content;if(matches.length){content=matches.map(l=>{let subj=l.kind==='self_study'?'Самоподготовка':l.kind==='split'?l.variants.map(v=>v.subject).join(' / '):l.subject;const details=l.kind==='self_study'?'':l.kind==='split'?'По подгруппам':`${teacherLabel(l.teacherId,l.teacher)} · ${l.room==='с/з'?'спортзал':('кл. '+(l.room||'—'))}`;return `<button class="cell-lesson ${l.kind==='self_study'?'self':''} ${l.kind==='split'?'split':''} ${matches.length>1?'duplicate':''}" data-group="${group}" data-slot="${slot}" data-id="${esc(l.id)}"><span>${esc(subj)}</span>${details?`<small>${esc(details)}</small>`:''}</button>`}).join('')}
+ rows+=`<tr><td>${slot}</td>`;for(const group of glist){const matches=(w.groups[group]?.days?.[date]?.lessons||[]).filter(l=>l.number===slot);let content;if(matches.length){content=matches.map(l=>{let subj=l.kind==='self_study'?I18n.localize('Самоподготовка'):l.kind==='split'?l.variants.map(v=>I18n.subject(v.subjectId||subjectRec(v.subject)?.id,v.subject)).join(' / '):I18n.subject(l.subjectId||subjectRec(l.subject)?.id,l.subject);const details=l.kind==='self_study'?'':l.kind==='split'?'По подгруппам':`${teacherLabel(l.teacherId,l.teacher)} · ${l.room==='с/з'?'спортзал':('кл. '+(l.room||'—'))}`;return `<button class="cell-lesson ${l.kind==='self_study'?'self':''} ${l.kind==='split'?'split':''} ${matches.length>1?'duplicate':''}" data-group="${group}" data-slot="${slot}" data-id="${esc(l.id)}"><span>${esc(subj)}</span>${details?`<small>${esc(details)}</small>`:''}</button>`}).join('')}
  else content=`<button class="cell-lesson empty" data-group="${group}" data-slot="${slot}" aria-label="Добавить занятие для ${group} группы на ${slot}-ю пару">+ Добавить</button>`;rows+=`<td>${content}</td>`}rows+='</tr>'}
  tbody.innerHTML=rows;tbody.querySelectorAll('[data-group]').forEach(btn=>btn.addEventListener('click',()=>openLesson(btn.dataset.group,Number(btn.dataset.slot),btn.dataset.id||null)));
 }
 function setTab(tab){state.mode=tab;for(const name of ['manual','import','checks']){$(`${name}Panel`).hidden=name!==tab;const btn=document.querySelector(`.tab[data-tab="${name}"]`);btn.classList.toggle('active',name===tab);btn.setAttribute('aria-selected',String(name===tab))}if(tab==='checks')runChecks(true)}
-function buildLists(){const subs=new Set(),rooms=new Set();for(const w of Object.values(state.weeks))for(const gd of Object.values(w.groups||{}))for(const day of Object.values(gd.days||{}))for(const l of day.lessons||[]){if(l.kind==='self_study')continue;for(const v of l.kind==='split'?(l.variants||[]):[l]){if(v.subject)subs.add(v.subject);if(v.room)rooms.add(v.room)}}state.subjects=[...subs].sort((a,b)=>a.localeCompare(b,'ru'));state.rooms=[...rooms].sort((a,b)=>a.localeCompare(b,'ru',{numeric:true}));$('subjectsList').innerHTML=state.subjects.map(s=>`<option value="${esc(s)}"></option>`).join('');$('teachersList').innerHTML=state.teachers.map(t=>`<option value="${esc(t.displayName)}"></option>`).join('');$('roomsList').innerHTML=state.rooms.map(s=>`<option value="${esc(s)}"></option>`).join('')}
-function openLesson(group,number,id){state.editing={group,date:currentDay(),id};const list=getWeek().groups[group]?.days?.[currentDay()]?.lessons||[];const old=id?list.find(x=>x.id===id):null;$('lessonDialogTitle').textContent=id?'Изменить занятие':'Добавить занятие';$('lessonContext').textContent=`${group} · ${dayNames[state.day]}, ${nice(currentDay())}`;$('lessonNumber').innerHTML=Array.from({length:8},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');$('lessonNumber').value=String(old?.number||number);$('lessonKind').value=old?.kind||'lesson';$('lessonSubject').value=old?.kind==='split'?'':old?.subject||'';$('lessonTeacher').value=old?.kind==='split'?'':old?teacherLabel(old.teacherId,old.teacher):'';$('lessonRoom').value=old?.kind==='split'?'':old?.room||'';
- const variants=old?.variants||[{subject:'',teacher:'',room:''},{subject:'',teacher:'',room:''}];$('splitFieldRows').innerHTML=[0,1].map(i=>{const v=variants[i]||{};return `<div class="split-box"><h3>Подгруппа ${i+1}</h3><div class="form-grid"><label class="full">Дисциплина<input data-v="${i}" data-f="subject" list="subjectsList" value="${esc(v.subject||'')}"></label><label>Преподаватель<input data-v="${i}" data-f="teacher" list="teachersList" value="${esc(teacherLabel(v.teacherId,v.teacher)==='—'?'':teacherLabel(v.teacherId,v.teacher))}"></label><label>Аудитория<input data-v="${i}" data-f="room" list="roomsList" value="${esc(v.room||'')}"></label></div></div>`}).join('');$('deleteLessonBtn').hidden=!id;adjustKind();renderRoomHint();$('lessonDialog').showModal()}
+function buildLists(){const subs=new Set(),rooms=new Set();for(const w of Object.values(state.weeks))for(const gd of Object.values(w.groups||{}))for(const day of Object.values(gd.days||{}))for(const l of day.lessons||[]){if(l.kind==='self_study')continue;for(const v of l.kind==='split'?(l.variants||[]):[l]){if(v.subject)subs.add(v.subject);if(v.room)rooms.add(v.room)}}state.subjects=[...new Set([...state.subjectDirectory.map(s=>s.name),...subs])].sort((a,b)=>a.localeCompare(b,'ru'));state.rooms=[...rooms].sort((a,b)=>a.localeCompare(b,'ru',{numeric:true}));$('subjectsList').innerHTML=state.subjects.map(s=>`<option value="${esc(I18n.subject(subjectRec(s)?.id,s))}"></option>`).join('');$('teachersList').innerHTML=state.teachers.map(t=>`<option value="${esc(I18n.teacher(t))}"></option>`).join('');$('roomsList').innerHTML=state.rooms.map(s=>`<option value="${esc(s)}"></option>`).join('')}
+function openLesson(group,number,id){state.editing={group,date:currentDay(),id};const list=getWeek().groups[group]?.days?.[currentDay()]?.lessons||[];const old=id?list.find(x=>x.id===id):null;$('lessonDialogTitle').textContent=id?'Изменить занятие':'Добавить занятие';$('lessonContext').textContent=`${group} · ${I18n.localize(dayNames[state.day])}, ${nice(currentDay())}`;$('lessonNumber').innerHTML=Array.from({length:8},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');$('lessonNumber').value=String(old?.number||number);$('lessonKind').value=old?.kind||'lesson';$('lessonSubject').value=old?.kind==='split'?'':old?I18n.subject(old.subjectId||subjectRec(old.subject)?.id,old.subject):'';$('lessonTeacher').value=old?.kind==='split'?'':old?teacherLabel(old.teacherId,old.teacher):'';$('lessonRoom').value=old?.kind==='split'?'':old?.room||'';
+ const variants=old?.variants||[{subject:'',teacher:'',room:''},{subject:'',teacher:'',room:''}];$('splitFieldRows').innerHTML=[0,1].map(i=>{const v=variants[i]||{};return `<div class="split-box"><h3>Подгруппа ${i+1}</h3><div class="form-grid"><label class="full">Дисциплина<input data-v="${i}" data-f="subject" list="subjectsList" value="${esc(I18n.subject(v.subjectId||subjectRec(v.subject)?.id,v.subject||''))}"></label><label>Преподаватель<input data-v="${i}" data-f="teacher" list="teachersList" value="${esc(teacherLabel(v.teacherId,v.teacher)==='—'?'':teacherLabel(v.teacherId,v.teacher))}"></label><label>Аудитория<input data-v="${i}" data-f="room" list="roomsList" value="${esc(v.room||'')}"></label></div><div class="suggestion-action"><span class="subject-hint" data-subject-hint="${i}" hidden></span><button class="suggestion-btn" type="button" data-fill-v="${i}" hidden>Подставить из справочника</button></div></div>`}).join('');$('deleteLessonBtn').hidden=!id;adjustKind();renderRoomHint();$('lessonDialog').showModal()}
 function adjustKind(){const kind=$('lessonKind').value;$('singleFields').hidden=kind!=='lesson';$('splitFields').hidden=kind!=='split';renderRoomHint()}
 function closeLesson(){$('lessonDialog').close();state.editing=null}
 function saveLesson(ev){ev.preventDefault();const {group,date,id}=state.editing||{};if(!group)return;const list=ensureDay(getWeek(),group,date);const prev=id?list.find(l=>l.id===id):null;const kind=$('lessonKind').value,number=Number($('lessonNumber').value);let l=prev?cp(prev):{id:randId(group,date,number)};l.number=number;l.kind=kind;
@@ -97,7 +139,7 @@ function saveLesson(ev){ev.preventDefault();const {group,date,id}=state.editing|
  else if(kind==='lesson'){l.subject=$('lessonSubject').value.trim();if(!l.subject){toast('Укажи название дисциплины');return}const r=canonicalTeacher($('lessonTeacher').value);l.teacher=r.teacher||null;l.room=$('lessonRoom').value.trim()||null;if(r.teacherId)l.teacherId=r.teacherId;else delete l.teacherId;delete l.variants}
  else{const vs=[0,1].map(i=>{const v={};for(const inp of $('splitFieldRows').querySelectorAll(`[data-v="${i}"]`))v[inp.dataset.f]=inp.value.trim();const rec=canonicalTeacher(v.teacher);return {...v,teacher:rec.teacher,...(rec.teacherId?{teacherId:rec.teacherId}:{})}});if(vs.some(v=>!v.subject)){toast('Заполни названия дисциплин обеих подгрупп');return}l.variants=vs;l.subject=vs.map(v=>v.subject).join(' / ');l.teacher=vs.map(v=>v.teacher).join(' / ');l.room=vs.map(v=>v.room).join(' / ');delete l.teacherId}
  const atypical=changedRoomWarnings(l,prev);if(atypical.length&&!confirm(atypical.map(roomWarningText).join('\n\n')+'\n\nСохранить это занятие с указанной аудиторией?'))return;
- if(prev)list[list.indexOf(prev)]=l;else list.push(l);list.sort((a,b)=>a.number-b.number);markDirty();closeLesson();buildLists();renderGrid();runChecks(false);toast('Сохранено в локальном черновике')}
+ l=normalizeLesson(l,group,date,number-1);if(prev)list[list.indexOf(prev)]=l;else list.push(l);list.sort((a,b)=>a.number-b.number);markDirty();closeLesson();buildLists();renderGrid();runChecks(false);toast('Сохранено в локальном черновике')}
 function delLesson(){const e=state.editing;if(!e||!e.id)return;if(!confirm('Удалить это занятие из черновика?'))return;const list=ensureDay(getWeek(),e.group,e.date);const i=list.findIndex(l=>l.id===e.id);if(i>=0)list.splice(i,1);markDirty();closeLesson();renderGrid();runChecks(false);toast('Занятие удалено')}
 function createWeek(ev){ev.preventDefault();const start=monday($('newWeekDate').value);if(!start){toast('Выбери дату');return}if(state.weeks[start]&&!confirm('Такая неделя уже существует. Заменить её локальным черновиком?'))return;
  let nw=newEmptyWeek(start);if($('newWeekMethod').value==='copy'){const old=getWeek();for(const [g,gd] of Object.entries(old.groups)){for(const [date,day] of Object.entries(gd.days||{})){const d=Math.round((Date.parse(date)-Date.parse(old.weekStart))/86400000);if(d<0||d>5)continue;const nd=addDays(start,d);const target=ensureDay(nw,g,nd);target.push(...day.lessons.map(l=>({...cp(l),id:randId(g,nd,l.number)})))}}}
@@ -112,7 +154,7 @@ async function importJsonFile(file){const obj=JSON.parse(await file.text());if(!
 function checkWeek(w){const issues=[],seenTeachers=new Map(),seenRooms=new Map(),seenIds=new Set();
  function add(level,title,details){issues.push({level,title,details})}
  for(const [g,gd] of Object.entries(w.groups))for(const [date,day] of Object.entries(gd.days||{})){const perSlot=new Map();for(const l of day.lessons||[]){const pos=`${date} · ${g} · ${l.number}-я пара`;if(seenIds.has(l.id))add('error','Повторяющийся ID занятия',pos);seenIds.add(l.id);if(!Number.isInteger(l.number)||l.number<1||l.number>8)add('error','Неверный номер пары',pos);if(!perSlot.has(l.number))perSlot.set(l.number,[]);perSlot.get(l.number).push(l);if(l.kind==='self_study')continue;const vars=l.kind==='split'?l.variants||[]:[l];if(l.kind==='split'&&vars.length<2)add('warning','Неполное деление на подгруппы',pos);
- for(const v of vars){if(!String(v.subject||'').trim())add('error','Не указана дисциплина',pos);if(!String(v.teacher||'').trim())add('warning','Преподаватель не указан',pos);else if(!teacherRec(v.teacher))add('warning','Фамилия отсутствует в справочнике',`${pos} · ${v.teacher}`);if(!String(v.room||'').trim())add('warning','Не указана аудитория',pos);else if(!state.rooms.includes(v.room)&&!String(v.room).includes('/'))add('info','Новая аудитория',`${pos} · ${v.room}`);const unusual=roomDifference(v.teacher,v.subject,v.room);if(unusual)add('warning','Аудитория отличается от привычной',`${pos} · ${roomWarningText(unusual)}`);
+ for(const v of vars){if(!String(v.subject||'').trim())add('error','Не указана дисциплина',pos);else if(!subjectRec(v.subject))add('warning','Новая дисциплина',`${pos} · ${v.subject} — отсутствует в справочнике`);if(!String(v.teacher||'').trim())add('warning','Преподаватель не указан',pos);else if(!teacherRec(v.teacher))add('warning','Фамилия отсутствует в справочнике',`${pos} · ${v.teacher}`);else if(subjectRec(v.subject)?.teachers?.length&&!subjectRec(v.subject).teachers.some(x=>x.teacherId===teacherRec(v.teacher)?.id))add('warning','Новый преподаватель по дисциплине',`${pos} · ${v.teacher}: раньше этот предмет вёл другой преподаватель — проверь по оригиналу`);if(!String(v.room||'').trim())add('warning','Не указана аудитория',pos);else if(!state.rooms.includes(v.room)&&!String(v.room).includes('/'))add('warning','Новая аудитория',`${pos} · ${v.room}`);const unusual=roomDifference(v.teacher,v.subject,v.room);if(unusual)add('warning','Аудитория отличается от привычной',`${pos} · ${roomWarningText(unusual)}`);
  const payload={date,slot:l.number,group:g,subject:v.subject||'',teacher:v.teacher||'',room:v.room||'',position:pos};for(const [key,map] of [[v.teacher?`${date}|${l.number}|${norm(v.teacher)}`:null,seenTeachers],[v.room?`${date}|${l.number}|${norm(v.room)}`:null,seenRooms]])if(key){const prev=map.get(key)||[];prev.push(payload);map.set(key,prev)} }
  }
  for(const [slot,lessons] of perSlot)if(lessons.length>1)add('error','Две записи на один слот',`${date} · ${g} · ${slot}-я пара`)}
@@ -132,6 +174,7 @@ function stageRow(row,from){const group=String(row.group||'').match(/[123]0[1-5]
  if(room.toLowerCase()==='с/п'||subject.toLowerCase()==='с/п'||norm(subject)==='самоподготовка'){kind='self_study';subject='Самоподготовка';teacher='';room=''}
  if(/^(с\/з|спортзал)$/i.test(room))room='с/з';
  if(teacher){const rec=canonicalTeacher(teacher);if(rec.teacherId)teacher=rec.teacher}
+ if(kind!=='self_study')subject=canonicalSubject(subject).subject;
  return {group,date,number,subject,teacher,room,kind,from:from||'',confidence:row.confidence||'review',selected:true}}
 function parseCSV(text){const first=(text.replace(/^\uFEFF/,'').split(/\r?\n/,1)[0]||'');const delim=first.includes('\t')?'\t':(first.split(';').length>first.split(',').length?';':',');const rows=[];let row=[],field='',quote=false;for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quote&&text[i+1]==='"'){field+='"';i++}else quote=!quote}else if(!quote&&c===delim){row.push(field);field=''}else if(!quote&&(c==='\n'||c==='\r')){if(c==='\r'&&text[i+1]==='\n')i++;row.push(field);if(row.some(x=>String(x).trim()))rows.push(row);row=[];field=''}else field+=c}row.push(field);if(row.some(x=>String(x).trim()))rows.push(row);return rows}
 function parseNormalizedRows(rows,source){const headers={date:['дата','date','день','day'],group:['группа','group'],number:['пара','номер пары','№ пары','number','lesson'],subject:['предмет','дисциплина','название предмета','наименование предмета','subject'],teacher:['преподаватель','фамилия преподавателя','teacher'],room:['класс','аудитория','кабинет','room'],kind:['тип','kind','type']};
@@ -195,6 +238,16 @@ function renderSourcePreview(url,file,rawText){const view=$('sourcePreview');if(
 function renderStageRoomNotes(){
  const notices=state.stageWarnings.map(s=>`<div>⚠ ${esc(s)}</div>`);
  const different=state.stage.map((r,i)=>({row:r,i,match:r.kind==='self_study'?null:roomDifference(r.teacher,r.subject,r.room)})).filter(r=>r.match);
+ const unexpected=[];
+ for(const [i,r] of state.stage.entries()){
+  if(r.kind==='self_study')continue;
+  const sub=subjectRec(r.subject),teacher=teacherRec(r.teacher);
+  if(r.subject&&!sub)unexpected.push(`Строка ${i+1}: новая или нераспознанная дисциплина «${r.subject}»`);
+  if(r.teacher&&!teacher)unexpected.push(`Строка ${i+1}: неизвестный преподаватель «${r.teacher}»`);
+  if(sub&&teacher&&sub.teachers?.length&&!sub.teachers.some(t=>t.teacherId===teacher.id))unexpected.push(`Строка ${i+1}: ранее преподаватель «${r.teacher}» не вёл «${sub.name}»`);
+  if(r.room&&r.room!=='с/з'&&!state.rooms.includes(r.room))unexpected.push(`Строка ${i+1}: новая аудитория «${r.room}»`);
+ }
+ if(unexpected.length){notices.push(`<div><strong>Новые или необычные записи (${unexpected.length}):</strong></div>`);for(const msg of unexpected.slice(0,25))notices.push(`<div>⚠ ${esc(msg)}</div>`);if(unexpected.length>25)notices.push(`<div>… ещё ${unexpected.length-25}</div>`)}
  if(different.length){notices.push(`<div><strong>Необычные аудитории (${different.length}):</strong></div>`);for(const item of different.slice(0,15))notices.push(`<div>⚠ Строка ${item.i+1} (${esc(item.row.group||'?')}, ${esc(item.row.date||'?')}): ${esc(roomWarningText(item.match))}</div>`);if(different.length>15)notices.push(`<div>… и ещё ${different.length-15}</div>`)}
  $('stageNotes').innerHTML=notices.join('');
 }
@@ -224,15 +277,18 @@ function applyStage(){const selected=state.stage.filter(r=>r.selected);if(!selec
  list.push(normalizeLesson(l,group,date,number-1));list.sort((a,b)=>a.number-b.number)}markDirty();buildLists();renderGrid();const issues=runChecks(false);setImportStatus(`В черновик перенесено ${selected.length} строк (${bucket.size} слотов). Проверка: ${issues.filter(i=>i.level==='error').length} критических конфликтов, ${issues.filter(i=>i.level==='warning').length} предупреждений.`);toast('Импорт выполнен в черновик, без публикации')}
 function downloadCsv(){const csv=['Дата;Группа;Пара;Предмет;Преподаватель;Класс;Тип','23.11.2026;304;1;Самоподготовка;;;self_study','23.11.2026;304;2;Воздушная навигация;Якунин;41;lesson'].join('\r\n');exportFile('obrazec-raspisaniya.csv','\uFEFF'+csv,'text/csv;charset=utf-8')}
 function setupEvents(){for(const b of document.querySelectorAll('.tab'))b.addEventListener('click',()=>setTab(b.dataset.tab));$('weekSelect').addEventListener('change',()=>switchWeek($('weekSelect').value));$('courseSelect').addEventListener('change',()=>{state.course=Number($('courseSelect').value);renderGrid()});$('daySelect').addEventListener('change',()=>{state.day=Number($('daySelect').value);renderGrid()});$('addSlotBtn').onclick=()=>{const grid=$('scheduleGrid'),slots=grid.tBodies[0].rows.length;openLesson(weekGroups()[0],Math.min(slots+1,8),null)};
- $('newWeekBtn').onclick=()=>{$('newWeekDate').value=addDays(state.active,7);$('newWeekDialog').showModal()};$('newWeekForm').onsubmit=createWeek;$('closeNewWeekBtn').onclick=$('cancelNewWeekBtn').onclick=()=>$('newWeekDialog').close();$('lessonForm').onsubmit=saveLesson;$('lessonForm').addEventListener('input',renderRoomHint);$('lessonForm').addEventListener('change',renderRoomHint);$('lessonKind').onchange=adjustKind;$('closeLessonBtn').onclick=$('cancelLessonBtn').onclick=closeLesson;$('deleteLessonBtn').onclick=delLesson;
+ $('newWeekBtn').onclick=()=>{$('newWeekDate').value=addDays(state.active,7);$('newWeekDialog').showModal()};$('newWeekForm').onsubmit=createWeek;$('closeNewWeekBtn').onclick=$('cancelNewWeekBtn').onclick=()=>$('newWeekDialog').close();$('lessonForm').onsubmit=saveLesson;$('lessonForm').addEventListener('input',renderRoomHint);$('lessonForm').addEventListener('change',renderRoomHint);$('lessonKind').onchange=adjustKind;
+ $('fillSubjectSuggestion').onclick=()=>fillSuggestion($('lessonSubject'),$('lessonTeacher'),$('lessonRoom'));
+ $('splitFieldRows').addEventListener('click',e=>{const btn=e.target.closest('[data-fill-v]');if(!btn)return;const i=btn.dataset.fillV,find=f=>$('splitFieldRows').querySelector(`[data-v="${i}"][data-f="${f}"]`);fillSuggestion(find('subject'),find('teacher'),find('room'))});$('closeLessonBtn').onclick=$('cancelLessonBtn').onclick=closeLesson;$('deleteLessonBtn').onclick=delLesson;
  $('exportJsonBtn').onclick=exportWeek;$('exportManifestBtn').onclick=exportManifest;$('validateBtn').onclick=()=>setTab('checks');$('recheckBtn').onclick=()=>runChecks(true);$('downloadCsvBtn').onclick=downloadCsv;
  $('loadJsonBtn').onclick=()=>{const chooser=document.createElement('input');chooser.type='file';chooser.accept='.json';chooser.onchange=async()=>{if(!chooser.files?.[0])return;try{await importJsonFile(chooser.files[0])}catch(err){toast('Ошибка JSON: '+err.message)}};chooser.click()};
  $('pickFileBtn').onclick=()=>{$('docFile').click()};$('docFile').onchange=()=>{const f=$('docFile').files?.[0];if(f)importDocument(f)};$('clearStageBtn').onclick=()=>{state.stage=[];state.stageWarnings=[];$('importWork').hidden=true;setImportStatus('Предыдущий импорт очищен')};$('applyStageBtn').onclick=applyStage;
  const zone=$('dropzone');zone.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('docFile').click()}};for(const evt of ['dragenter','dragover'])zone.addEventListener(evt,e=>{e.preventDefault();zone.classList.add('dragover')});for(const evt of ['dragleave','drop'])zone.addEventListener(evt,e=>{e.preventDefault();zone.classList.remove('dragover')});zone.addEventListener('drop',e=>{if(e.dataTransfer.files[0])importDocument(e.dataTransfer.files[0])})}
 async function init(){setupEvents();try{
- const emb=$('embeddedEditorData');if(emb){const data=JSON.parse(emb.textContent);state.teachers=data.teachers.teachers||[];state.roomPatterns=data.roomPatterns||null;for(const [week,w] of Object.entries(data.weeks))state.weeks[week]=restoreDraft(w)}
- else{const [manifest,teachers,patterns]=await Promise.all([fetch('../data/weeks/manifest.json').then(r=>{if(!r.ok)throw new Error('manifest.json не найден');return r.json()}),fetch('../data/teachers.json').then(r=>r.json()),fetch('../data/room-patterns.json').then(r=>{if(!r.ok)throw new Error('room-patterns.json не найден');return r.json()})]);state.teachers=teachers.teachers||[];state.roomPatterns=patterns;for(const info of manifest){const w=await fetch('../'+info.file).then(r=>{if(!r.ok)throw new Error('Нет '+info.file);return r.json()});state.weeks[w.weekStart]=restoreDraft(w)}}
+ const emb=$('embeddedEditorData');if(emb){const data=JSON.parse(emb.textContent);state.teachers=data.teachers.teachers||[];I18n.registerTeachers(state.teachers);state.roomPatterns=data.roomPatterns||null;state.subjectDirectory=data.subjects?.subjects||[];for(const [week,w] of Object.entries(data.weeks))state.weeks[week]=restoreDraft(w)}
+ else{const [manifest,teachers,patterns,subjects]=await Promise.all([fetch('../data/weeks/manifest.json').then(r=>{if(!r.ok)throw new Error('manifest.json не найден');return r.json()}),fetch('../data/teachers.json').then(r=>r.json()),fetch('../data/room-patterns.json').then(r=>{if(!r.ok)throw new Error('room-patterns.json не найден');return r.json()}),fetch('../data/subjects.json').then(r=>{if(!r.ok)throw new Error('subjects.json не найден');return r.json()})]);state.teachers=teachers.teachers||[];I18n.registerTeachers(state.teachers);state.roomPatterns=patterns;state.subjectDirectory=subjects.subjects||[];for(const info of manifest){const w=await fetch('../'+info.file).then(r=>{if(!r.ok)throw new Error('Нет '+info.file);return r.json()});state.weeks[w.weekStart]=restoreDraft(w)}}
  state.active=Object.keys(state.weeks).sort().at(-1);if(!state.active)throw new Error('Не загружено ни одной учебной недели');state.day=0;populateWeeks();populateDay();buildLists();renderGrid();runChecks(false);$('dirtyBadge').textContent='Готово к редактированию';state.initialized=true
  }catch(err){console.error(err);$('storageStatus').textContent='Ошибка загрузки недель: '+err.message+' · Открой редактор через GitHub Pages или локальный HTTP-сервер.';toast('Не удалось загрузить исходные данные')}}
+window.addEventListener('raspissanie-language-change',()=>{if(!state.initialized)return;populateWeeks();populateDay();buildLists();renderGrid();runChecks(false);renderRoomHint();if(state.mode==='import'&&state.stage.length)renderStage()});
 init();
 })();

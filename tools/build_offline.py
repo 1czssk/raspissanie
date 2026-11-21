@@ -8,9 +8,15 @@ for p in sorted((ROOT/'data'/'weeks').glob('20??-??-??.json')):
     weeks[p.stem]=json.loads(p.read_text(encoding='utf-8'))
 manifest=json.loads((ROOT/'data'/'weeks'/'manifest.json').read_text(encoding='utf-8'))
 teachers=json.loads((ROOT/'data'/'teachers.json').read_text(encoding='utf-8'))
-bundle=json.dumps({'manifest':manifest,'teachers':teachers,'weeks':weeks},ensure_ascii=False,separators=(',',':'))
+subjects=json.loads((ROOT/'data'/'subjects.json').read_text(encoding='utf-8'))
+bundle=json.dumps({'manifest':manifest,'teachers':teachers,'subjects':subjects,'weeks':weeks},ensure_ascii=False,separators=(',',':'))
 bundle=bundle.replace('<',r'\u003c').replace('>',r'\u003e').replace('&',r'\u0026')
 src=(ROOT/'index.html').read_text(encoding='utf-8')
+i18n=json.loads((ROOT/'data/i18n.json').read_text('utf-8'))
+i18n_json=json.dumps(i18n,ensure_ascii=False,separators=(',',':')).replace('<',r'\u003c').replace('>',r'\u003e').replace('&',r'\u0026')
+i18n_js=(ROOT/'assets/i18n.js').read_text(encoding='utf-8')
+src=src.replace('<script src="./assets/i18n.js" data-locales="./data/i18n.json"></script>','<script id="embeddedI18n" type="application/json">'+i18n_json+'</script>\n<script>'+i18n_js+'</script>')
+assert 'src="./assets/i18n.js"' not in src
 # An offline HTML file must not request an external image.
 import re, base64
 img=(ROOT/'assets'/'raspissanie-mark.svg').read_bytes()

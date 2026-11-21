@@ -10,3 +10,17 @@
 .room-hint{background:#edf6fb;border:1px solid #cee4f1;border-radius:5px;padding:10px 12px;margin:4px 0 13px;font-size:12px;color:#3c6781;line-height:1.55}
 .room-hint.warning{background:#fff6de;border-color:#ebce8b;color:#79551a}
 .room-hint strong{font-weight:650}
+
+/* Ненавязчивые подсказки связок «предмет — преподаватель — аудитория». */
+.suggestion-action{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:5px 0 12px}.subject-hint{font-size:12px;line-height:1.5;color:#4d6e80;flex:1 1 250px}.suggestion-btn{font:inherit;font-size:12px;border:1px solid #b9d4e5;border-radius:4px;padding:7px 10px;background:#f2f9fd;color:#246084;cursor:pointer}.suggestion-btn:hover{background:#e3f1f9}.suggestion-btn[hidden],.subject-hint[hidden]{display:none!important}
+
+/* Subtle shared language selector at the bottom of the editor. */
+.language-control{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:12px;white-space:nowrap}
+.language-control label{display:flex;align-items:center;gap:6px;color:#6f8391;font-size:12px}
+.language-control select{border:1px solid #cadbe4;border-radius:7px;background:white;color:#254f68;font-size:12px;padding:8px 31px 8px 10px;max-width:220px;cursor:pointer}
+footer{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+@media(max-width:650px){.language-control{margin-left:0;width:100%;padding-left:0;justify-content:flex-start}}
+
+.language-notice{font-size:11px;color:#a16a46;white-space:normal;max-width:180px}
+
+.language-notice{font-size:11px;color:#987048;white-space:normal;max-width:230px}
