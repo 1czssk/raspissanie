@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "basedOnWeeks": [
+    "2026-11-16",
+    "2026-11-23"
+  ],
+  "method": "Аудитория считается обычной, если подтверждена двумя неделями и минимум 85% занятий. Это подсказка, а не обязательное правило.",
+  "teachers": {
+    "teacher-anufriev": {
+      "rooms": {
+        "35": 20
+      },
+      "weeks": [
+        "2026-11-16"
+      ],
+      "count": 20,
+      "preferredRoom": null,
+      "basis": null
+    },
+    "teacher-batagralieva": {
+      "rooms": {
+        "33": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "33",
+      "basis": "consistent"
+    },
+    "teacher-brazhnikova": {
+      "rooms": {
+        "24": 34
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 34,
+      "preferredRoom": "24",
+      "basis": "consistent"
+    },
+    "teacher-chizhov": {
+      "rooms": {
+        "30": 41
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 41,
+      "preferredRoom": "30",
+      "basis": "consistent"
+    },
+    "teacher-danilova": {
+      "rooms": {
+        "40": 1,
+        "48": 34
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 35,
+      "preferredRoom": "48",
+      "basis": "predominant"
+    },
+    "teacher-kapustyan": {
+      "rooms": {
+        "40": 28
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 28,
+      "preferredRoom": "40",
+      "basis": "consistent"
+    },
+    "teacher-kiselyov": {
+      "rooms": {
+        "49": 26
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 26,
+      "preferredRoom": "49",
+      "basis": "consistent"
+    },
+    "teacher-lifar": {
+      "rooms": {
+        "23": 33
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 33,
+      "preferredRoom": "23",
+      "basis": "consistent"
+    },
+    "teacher-peleshko": {
+      "rooms": {
+        "22": 38
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 38,
+      "preferredRoom": "22",
+      "basis": "consistent"
+    },
+    "teacher-ponkrashyov": {
+      "rooms": {
+        "38": 31
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 31,
+      "preferredRoom": "38",
+      "basis": "consistent"
+    },
+    "teacher-pshenichnikov": {
+      "rooms": {
+        "35": 3
+      },
+      "weeks": [
+        "2026-11-23"
+      ],
+      "count": 3,
+      "preferredRoom": null,
+      "basis": null
+    },
+    "teacher-rebenok": {
+      "rooms": {
+        "32": 32
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 32,
+      "preferredRoom": "32",
+      "basis": "consistent"
+    },
+    "teacher-saltykova": {
+      "rooms": {
+        "31": 36
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 36,
+      "preferredRoom": "31",
+      "basis": "consistent"
+    },
+    "teacher-shirotskiy": {
+      "rooms": {
+        "21": 37
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 37,
+      "preferredRoom": "21",
+      "basis": "consistent"
+    },
+    "teacher-sotnikov": {
+      "rooms": {
+        "с/з": 34
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 34,
+      "preferredRoom": "с/з",
+      "basis": "consistent"
+    },
+    "teacher-volodko": {
+      "rooms": {
+        "42": 43
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 43,
+      "preferredRoom": "42",
+      "basis": "consistent"
+    },
+    "teacher-yakunin": {
+      "rooms": {
+        "41": 33
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 33,
+      "preferredRoom": "41",
+      "basis": "consistent"
+    },
+    "teacher-zhdanova": {
+      "rooms": {
+        "37": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "37",
+      "basis": "consistent"
+    }
+  },
+  "teacherSubjects": [
+    {
+      "teacherId": "teacher-anufriev",
+      "subject": "Приборное оборудование многодвигательного ВС",
+      "rooms": {
+        "35": 11
+      },
+      "weeks": [
+        "2026-11-16"
+      ],
+      "count": 11,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-anufriev",
+      "subject": "Приборное оборудование однодвигательного ВС",
+      "rooms": {
+        "35": 6
+      },
+      "weeks": [
+        "2026-11-16"
+      ],
+      "count": 6,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-anufriev",
+      "subject": "Радиотехническое оборудование ВС",
+      "rooms": {
+        "35": 3
+      },
+      "weeks": [
+        "2026-11-16"
+      ],
+      "count": 3,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-batagralieva",
+      "subject": "Иностранный язык",
+      "rooms": {
+        "33": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "33",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-brazhnikova",
+      "subject": "Инженерная графика",
+      "rooms": {
+        "24": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "24",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-brazhnikova",
+      "subject": "Метрология, С.С.",
+      "rooms": {
+        "24": 4
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 4,
+      "preferredRoom": "24",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-brazhnikova",
+      "subject": "Охрана труда",
+      "rooms": {
+        "24": 10
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 10,
+      "preferredRoom": "24",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-chizhov",
+      "subject": "Общий курс беспилотных авиационных систем",
+      "rooms": {
+        "30": 1
+      },
+      "weeks": [
+        "2026-11-16"
+      ],
+      "count": 1,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-chizhov",
+      "subject": "Общий курс беспилотных транспортных систем",
+      "rooms": {
+        "30": 3
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 3,
+      "preferredRoom": "30",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-chizhov",
+      "subject": "Приборное оборудование ВС",
+      "rooms": {
+        "30": 4
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 4,
+      "preferredRoom": "30",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-chizhov",
+      "subject": "Техническая механика",
+      "rooms": {
+        "30": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "30",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-chizhov",
+      "subject": "УВД",
+      "rooms": {
+        "30": 13
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 13,
+      "preferredRoom": "30",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-danilova",
+      "subject": "Подготовка авиа/персонала в области Ч/Ф",
+      "rooms": {
+        "48": 15
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 15,
+      "preferredRoom": "48",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-danilova",
+      "subject": "Ресурсы отрасли",
+      "rooms": {
+        "40": 1,
+        "48": 19
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "48",
+      "basis": "predominant"
+    },
+    {
+      "teacherId": "teacher-kapustyan",
+      "subject": "Приборное оборудование многодвигательного ВС",
+      "rooms": {
+        "40": 11
+      },
+      "weeks": [
+        "2026-11-23"
+      ],
+      "count": 11,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-kapustyan",
+      "subject": "Приборное оборудование однодвигательного ВС",
+      "rooms": {
+        "40": 4
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 4,
+      "preferredRoom": "40",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-kapustyan",
+      "subject": "Радиотехническое оборудование м/д ВС",
+      "rooms": {
+        "40": 1
+      },
+      "weeks": [
+        "2026-11-16"
+      ],
+      "count": 1,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-kapustyan",
+      "subject": "Радиотехническое оборудование м/л ВС",
+      "rooms": {
+        "40": 2
+      },
+      "weeks": [
+        "2026-11-23"
+      ],
+      "count": 2,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-kapustyan",
+      "subject": "Электротехника и электроника",
+      "rooms": {
+        "40": 10
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 10,
+      "preferredRoom": "40",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-kiselyov",
+      "subject": "Аварийно-спасательная подготовка",
+      "rooms": {
+        "49": 4
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 4,
+      "preferredRoom": "49",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-kiselyov",
+      "subject": "Авиационная безопасность",
+      "rooms": {
+        "49": 10
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 10,
+      "preferredRoom": "49",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-kiselyov",
+      "subject": "Воздушное право РФ",
+      "rooms": {
+        "49": 10
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 10,
+      "preferredRoom": "49",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-kiselyov",
+      "subject": "Лётная эксплуатация многодвигательного ВС",
+      "rooms": {
+        "49": 2
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 2,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-lifar",
+      "subject": "Аэродинамика и динамика полёта",
+      "rooms": {
+        "23": 33
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 33,
+      "preferredRoom": "23",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-peleshko",
+      "subject": "Лётно-технические характеристики ВС",
+      "rooms": {
+        "22": 9
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 9,
+      "preferredRoom": "22",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-peleshko",
+      "subject": "Самолёт многодвигательный и его системы",
+      "rooms": {
+        "22": 13
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 13,
+      "preferredRoom": "22",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-peleshko",
+      "subject": "Самолёт однодвигательный и его системы",
+      "rooms": {
+        "22": 16
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 16,
+      "preferredRoom": "22",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-ponkrashyov",
+      "subject": "Аварийно-спасательная подготовка",
+      "rooms": {
+        "38": 6
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 6,
+      "preferredRoom": "38",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-ponkrashyov",
+      "subject": "Аварийно-спасательное оборудование ВС",
+      "rooms": {
+        "38": 6
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 6,
+      "preferredRoom": "38",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-ponkrashyov",
+      "subject": "Безопасность полётов",
+      "rooms": {
+        "38": 2
+      },
+      "weeks": [
+        "2026-11-23"
+      ],
+      "count": 2,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-ponkrashyov",
+      "subject": "Воздушное право",
+      "rooms": {
+        "38": 4
+      },
+      "weeks": [
+        "2026-11-16"
+      ],
+      "count": 4,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-ponkrashyov",
+      "subject": "Лётно-технические характеристики ВС",
+      "rooms": {
+        "38": 8
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 8,
+      "preferredRoom": "38",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-ponkrashyov",
+      "subject": "Правила полётов по приборам",
+      "rooms": {
+        "38": 5
+      },
+      "weeks": [
+        "2026-11-23"
+      ],
+      "count": 5,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-pshenichnikov",
+      "subject": "Приборное оборудование однодвигательного ВС",
+      "rooms": {
+        "35": 3
+      },
+      "weeks": [
+        "2026-11-23"
+      ],
+      "count": 3,
+      "preferredRoom": null,
+      "basis": null
+    },
+    {
+      "teacherId": "teacher-rebenok",
+      "subject": "Безопасность жизнедеятельности",
+      "rooms": {
+        "32": 6
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 6,
+      "preferredRoom": "32",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-rebenok",
+      "subject": "Основы экономики",
+      "rooms": {
+        "32": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "32",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-rebenok",
+      "subject": "Правовое обеспечение проф. деятельности",
+      "rooms": {
+        "32": 6
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 6,
+      "preferredRoom": "32",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-saltykova",
+      "subject": "Иностранный язык",
+      "rooms": {
+        "31": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "31",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-saltykova",
+      "subject": "Иностранный язык в проф. деятельности",
+      "rooms": {
+        "31": 16
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 16,
+      "preferredRoom": "31",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-shirotskiy",
+      "subject": "Двигатель с-та Cessna-172S",
+      "rooms": {
+        "21": 13
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 13,
+      "preferredRoom": "21",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-shirotskiy",
+      "subject": "Силовые установки ВС",
+      "rooms": {
+        "21": 10
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 10,
+      "preferredRoom": "21",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-shirotskiy",
+      "subject": "Силовые установки многодвигательного ВС",
+      "rooms": {
+        "21": 14
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 14,
+      "preferredRoom": "21",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-sotnikov",
+      "subject": "Физо",
+      "rooms": {
+        "с/з": 34
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 34,
+      "preferredRoom": "с/з",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-volodko",
+      "subject": "Воздушная навигация",
+      "rooms": {
+        "42": 6
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 6,
+      "preferredRoom": "42",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-volodko",
+      "subject": "Лётная эксплуатация многодвигательного ВС",
+      "rooms": {
+        "42": 16
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 16,
+      "preferredRoom": "42",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-volodko",
+      "subject": "Практическая а/дин-ка многодвигательного ВС",
+      "rooms": {
+        "42": 21
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 21,
+      "preferredRoom": "42",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-yakunin",
+      "subject": "Воздушная навигация",
+      "rooms": {
+        "41": 33
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 33,
+      "preferredRoom": "41",
+      "basis": "consistent"
+    },
+    {
+      "teacherId": "teacher-zhdanova",
+      "subject": "Математика",
+      "rooms": {
+        "37": 20
+      },
+      "weeks": [
+        "2026-11-16",
+        "2026-11-23"
+      ],
+      "count": 20,
+      "preferredRoom": "37",
+      "basis": "consistent"
+    }
+  ],
+  "exceptions": [
+    {
+      "teacherId": "teacher-danilova",
+      "subject": "Ресурсы отрасли",
+      "usualRoom": "48",
+      "week": "2026-11-23",
+      "date": "2026-11-28",
+      "group": "205",
+      "slot": 1,
+      "room": "40"
+    }
+  ]
+}

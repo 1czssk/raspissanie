@@ -48,7 +48,7 @@
         <div class="filter-field"><label for="filterRoom">Аудитория / класс</label><select id="filterRoom"></select></div>
         <div class="filter-field"><label for="filterText">Предмет или ключевое слово</label><input id="filterText" type="search" placeholder="Например, воздушная навигация" autocomplete="off"></div>
       </div>
-      <div class="filter-actions"><button class="btn btn-primary" type="submit">Показать расписание</button><button class="btn btn-outline" id="clearFilter" type="button">Очистить</button><span class="filter-info">В данных нет времени начала пар — показан только номер строки</span></div>
+      <div class="filter-actions"><button class="btn btn-primary" type="submit">Показать расписание</button><button class="btn btn-outline" id="clearFilter" type="button">Очистить</button></div>
     </form>
     <section aria-label="Найденное расписание">
       <div class="result-top"><div class="result-title"><h2 id="resultHeading">Все группы</h2><span id="resultMeta"></span></div><div class="result-controls">
@@ -134,7 +134,7 @@
     function lessonRows(){const out=[];for(const [g,gd] of Object.entries(state.data.groups))for(const [date,day] of Object.entries(gd.days))for(const l of day.lessons){out.push({group:g,date,lesson:l});}return out}
     const sortText=(a,b)=>a.localeCompare(b,'ru',{numeric:true});
     function populateOptions(){const groups=$('filterGroup'),teacher=$('filterTeacher'),room=$('filterRoom');
-      groups.innerHTML='<option value="">Все группы</option>'+[1,2,3].map(course=>'<optgroup label="'+course+' курс">'+Array.from({length:5},(_,i)=>''+course+'0'+(i+1)).map(g=>'<option value="'+g+'">'+g+' группа'+(state.data.groups[g]?'':' — нет данных')+'</option>').join('')+'</optgroup>').join('');
+      groups.innerHTML='<option value="">Все группы</option>'+[1,2,3].map(course=>'<optgroup label="'+course+' курс">'+Array.from({length:5},(_,i)=>''+course+'0'+(i+1)).map(g=>'<option value="'+g+'">'+g+(state.data.groups[g]?'':' — нет данных')+'</option>').join('')+'</optgroup>').join('');
       const rs=new Set();for(const {lesson:l} of lessonRows()){const items=l.variants?.length?l.variants:[l];for(const item of items){if(item.room)rs.add(item.room)}}
       const options=(values,label)=>'<option value="">'+label+'</option>'+Array.from(values).sort(sortText).map(t=>'<option value="'+esc(t)+'">'+esc(t)+'</option>').join('');
       teacher.innerHTML='<option value="">— любой —</option>'+teachers.map(t=>'<option value="'+esc(t.id)+'">'+esc(t.displayName)+'</option>').join('');room.innerHTML=options(rs,'— любой —');
@@ -149,7 +149,7 @@
       return true;
     }
     const filtered=()=>lessonRows().filter(passes);
-    function renderWeekNav(){ $('weekNav').innerHTML=allWeeks.map(w=>{const data=src[w]||manifest.find(m=>m.weekStart===w),selected=w===state.week,archive=w!==allWeeks[allWeeks.length-1];return '<button class="week-card '+(archive?'archive ':'')+(selected?'selected':'')+'" data-week="'+w+'" aria-pressed="'+selected+'"><strong>'+data.academicWeek+'-я учебная неделя</strong><span>'+niceDate(w)+' — '+niceDate(data.weekEnd)+'</span><em>'+(archive?'Архив':'Новая неделя')+'</em></button>'}).join('')+'<span class="week-detail">Каждая неделя составляется отдельно.<br>Предыдущие недели доступны в архиве.</span>';
+    function renderWeekNav(){ $('weekNav').innerHTML=allWeeks.map(w=>{const data=src[w]||manifest.find(m=>m.weekStart===w),selected=w===state.week,archive=w!==allWeeks[allWeeks.length-1];return '<button class="week-card '+(archive?'archive ':'')+(selected?'selected':'')+'" data-week="'+w+'" aria-pressed="'+selected+'"><strong>'+data.academicWeek+'-я учебная неделя</strong><span>'+niceDate(w)+' — '+niceDate(data.weekEnd)+'</span><em>'+(archive?'Архив':'Новая неделя')+'</em></button>'}).join('');
       for(const b of $('weekNav').querySelectorAll('[data-week]'))b.addEventListener('click',()=>{loadWeekAsync(b.dataset.week)});
     }
     function editButton(row){if(!state.edit)return '';return '<button type="button" class="edit-link" data-edit="'+esc(row.lesson.id)+'" data-group="'+esc(row.group)+'" data-date="'+esc(row.date)+'">изменить</button>'}
@@ -164,7 +164,7 @@
       $('periodSubheading').textContent=data.academicWeek+'-я учебная неделя · '+niceDate(data.weekStart)+' — '+niceDate(data.weekEnd)+' 2026 г.';
       renderWeekNav();
       $('editToggle').classList.toggle('is-active',state.edit);$('editToggle').textContent=state.edit?'✓ Режим правок включён':'✎ Локальные правки';
-      const groupKnown=!!data.groups[state.group],isMissing=state.group&&!groupKnown;let title=multi?'Все группы':'Группа '+state.group;
+      const groupKnown=!!data.groups[state.group],isMissing=state.group&&!groupKnown;let title=multi?'Все группы':state.group;
       if(state.teacher)title='Преподаватель: '+teacherName(state.teacher,'');if(state.room)title='Аудитория: '+state.room;
       $('resultHeading').textContent=title;
       const study=all.filter(r=>r.lesson.kind!=='self_study').length;

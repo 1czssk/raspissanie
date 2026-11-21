@@ -5,3 +5,8 @@
 
 /* Временный бренд; сетка и типографика остаются исходными */
 .brand-accent{color:#c64679}
+
+/* Подсказка привычной аудитории (не запрещает переносы) */
+.room-hint{background:#edf6fb;border:1px solid #cee4f1;border-radius:5px;padding:10px 12px;margin:4px 0 13px;font-size:12px;color:#3c6781;line-height:1.55}
+.room-hint.warning{background:#fff6de;border-color:#ebce8b;color:#79551a}
+.room-hint strong{font-weight:650}
