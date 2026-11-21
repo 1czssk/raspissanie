@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "teachers": [
+    {
+      "id": "teacher-anufriev",
+      "surname": "Ануфриев",
+      "displayName": "Ануфриев Н.А.",
+      "aliases": [],
+      "initials": "Н.А."
+    },
+    {
+      "id": "teacher-batagralieva",
+      "surname": "Батагралиева",
+      "displayName": "Батагралиева",
+      "aliases": []
+    },
+    {
+      "id": "teacher-brazhnikova",
+      "surname": "Бражникова",
+      "displayName": "Бражникова Е.Ю.",
+      "aliases": [],
+      "initials": "Е.Ю."
+    },
+    {
+      "id": "teacher-volodko",
+      "surname": "Володько",
+      "displayName": "Володько В.Г.",
+      "aliases": [],
+      "initials": "В.Г."
+    },
+    {
+      "id": "teacher-danilova",
+      "surname": "Данилова",
+      "displayName": "Данилова О.В.",
+      "aliases": [],
+      "initials": "О.В."
+    },
+    {
+      "id": "teacher-zhdanova",
+      "surname": "Жданова",
+      "displayName": "Жданова Н.Н.",
+      "aliases": [],
+      "initials": "Н.Н."
+    },
+    {
+      "id": "teacher-kapustyan",
+      "surname": "Капустян",
+      "displayName": "Капустян Ю.И.",
+      "aliases": [
+        "Капустин"
+      ],
+      "initials": "Ю.И."
+    },
+    {
+      "id": "teacher-kiselyov",
+      "surname": "Киселёв",
+      "displayName": "Киселёв М.А.",
+      "aliases": [],
+      "initials": "М.А."
+    },
+    {
+      "id": "teacher-lifar",
+      "surname": "Лифарь",
+      "displayName": "Лифарь В.Н.",
+      "aliases": [],
+      "initials": "В.Н."
+    },
+    {
+      "id": "teacher-peleshko",
+      "surname": "Пелешко",
+      "displayName": "Пелешко А.Н.",
+      "aliases": [],
+      "initials": "А.Н."
+    },
+    {
+      "id": "teacher-ponkrashyov",
+      "surname": "Понкрашёв",
+      "displayName": "Понкрашёв В.А.",
+      "aliases": [
+        "Покрышев"
+      ],
+      "initials": "В.А."
+    },
+    {
+      "id": "teacher-pshenichnikov",
+      "surname": "Пшеничников",
+      "displayName": "Пшеничников",
+      "aliases": []
+    },
+    {
+      "id": "teacher-rebenok",
+      "surname": "Ребенок",
+      "displayName": "Ребенок Н.В.",
+      "aliases": [],
+      "initials": "Н.В."
+    },
+    {
+      "id": "teacher-saltykova",
+      "surname": "Салтыкова",
+      "displayName": "Салтыкова Ю.В.",
+      "aliases": [],
+      "initials": "Ю.В."
+    },
+    {
+      "id": "teacher-sotnikov",
+      "surname": "Сотников",
+      "displayName": "Сотников Г.Н.",
+      "aliases": [],
+      "initials": "Г.Н."
+    },
+    {
+      "id": "teacher-chizhov",
+      "surname": "Чижов",
+      "displayName": "Чижов В.М.",
+      "aliases": [
+        "Чехов"
+      ],
+      "initials": "В.М."
+    },
+    {
+      "id": "teacher-shirotskiy",
+      "surname": "Широцкий",
+      "displayName": "Широцкий М.В.",
+      "aliases": [
+        "Широкий"
+      ],
+      "initials": "М.В."
+    },
+    {
+      "id": "teacher-yakunin",
+      "surname": "Якунин",
+      "displayName": "Якунин Г.А.",
+      "aliases": [],
+      "initials": "Г.А."
+    }
+  ]
+}

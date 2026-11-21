@@ -1,0 +1,13 @@
+{
+  "originalDesign": {
+    "name": "пара.",
+    "style": "Светлый табличный интерфейс с компактными таблицами и синим акцентом"
+  },
+  "testing": {
+    "name": "Расписсание",
+    "highlight": "ссание",
+    "accent": "#c64679"
+  },
+  "institutionalBrandingIncluded": false,
+  "designPreserved": true
+}

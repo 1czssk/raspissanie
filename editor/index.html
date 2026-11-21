@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Редактор — Расписсание</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" type="image/png" href="../assets/icons/favicon-48.png">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+</head>
+<body>
+<div class="top-rule"></div>
+<header class="site-header"><div class="header-inner">
+  <div class="brand"><img src="../assets/raspissanie-mark.svg" alt="Значок Расписсание"><div><strong>Распи<span class="brand-accent">ссание</span></strong></div></div>
+  <nav class="header-nav"><a href="../index.html">← К расписанию курсантов</a><span>Локальный черновик · без серверной записи</span></nav>
+</div></header>
+<main class="container">
+<div class="headline"><div><h1>Конструктор «Распи<span class="brand-accent">ссание</span>»</h1><p class="subheading">Создание и импорт недельного расписания с проверкой ошибок</p></div><span id="dirtyBadge" class="tag-muted">Не изменено</span></div>
+<section class="workspace-bar" aria-label="Рабочая неделя">
+<div class="workspace-header"><h2>Рабочая неделя</h2><button class="linkish" type="button" id="newWeekBtn">+ Создать неделю</button></div>
+<div class="workspace-actions"><label>Неделя <select id="weekSelect" aria-label="Выбор недели"></select></label><span id="weekRange" class="week-range"></span><label>Курс <select id="courseSelect"><option value="1">1 курс</option><option value="2">2 курс</option><option value="3" selected>3 курс</option></select></label><label>День <select id="daySelect"></select></label></div>
+<div class="workspace-status"><span id="storageStatus" role="status">Черновик сохраняется в этом браузере</span><div class="workspace-buttons"><button class="btn secondary" id="loadJsonBtn">Открыть JSON</button><button class="btn secondary" id="exportJsonBtn">Скачать JSON</button><button class="btn secondary" id="exportManifestBtn" title="Список недель для GitHub Pages">Скачать manifest</button><button class="btn primary" id="validateBtn">Проверить расписание</button></div></div>
+</section>
+<div class="tabs" role="tablist" aria-label="Режимы работы"><button class="tab active" role="tab" data-tab="manual" aria-selected="true">Ручной редактор</button><button class="tab" role="tab" data-tab="import" aria-selected="false">Импорт PDF / Excel</button><button class="tab" role="tab" data-tab="checks" aria-selected="false">Проверка <span id="issuesCount" class="tiny-count">0</span></button></div>
+<section id="manualPanel" class="panel" aria-labelledby="manualTitle"><div class="panel-head"><div><h2 id="manualTitle">Таблица занятий</h2><p>Нажми на ячейку, чтобы добавить или изменить занятие. В одной паре можно назначить две подгруппы.</p></div><button type="button" class="btn secondary" id="addSlotBtn">+ Строка пары</button></div>
+<div id="gridInfo" class="hint"></div><div class="table-wrap"><table class="editor-grid" id="scheduleGrid"><thead></thead><tbody></tbody></table></div><div class="grid-foot">Изменения сохраняются локально. Для публикации скачай JSON и замени файл недели в репозитории GitHub.</div></section>
+<section id="importPanel" class="panel" hidden><div class="panel-head"><div><h2>Импорт документа</h2><p>Импорт не публикуется сразу: сначала проверь распознанные строки, затем перенеси их в таблицу.</p></div></div>
+<div class="import-intro"><div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Загрузить PDF, Excel, CSV, JSON или фото"><span class="drop-icon">⇧</span><strong>Перетащи документ или выбери файл</strong><small>Excel (.xlsx), CSV, PDF с текстовым слоем, JSON, фото для ручной сверки</small><button id="pickFileBtn" class="btn primary" type="button">Выбрать файл</button><input id="docFile" type="file" accept=".xlsx,.csv,.tsv,.pdf,.json,.png,.jpg,.jpeg" hidden></div>
+<div class="how-to"><h3>Как работает импорт</h3><p><b>Excel:</b> поддерживается таблица с колонками «Дата / Группа / Пара / Предмет / Преподаватель / Класс», а также экспериментальное чтение широких таблиц по группам.</p><p><b>PDF:</b> извлекается текстовый слой. Скан без текста и фотография остаются источником для ручного переноса — облачное ИИ-распознавание пока не подключено.</p><button class="btn secondary" id="downloadCsvBtn" type="button">Скачать образец CSV для Excel</button></div></div>
+<div class="import-status" id="importStatus" role="status">Документ ещё не выбран.</div>
+<div id="importWork" hidden><div class="import-work-head"><div><h3 id="importFileTitle">Предпросмотр</h3><p id="importStats"></p></div><div class="import-actions"><button class="btn secondary" id="clearStageBtn">Очистить импорт</button><button class="btn primary" id="applyStageBtn">Перенести в черновик</button></div></div><div class="import-columns"><div class="preview"><h4>Исходный документ / распознанный текст</h4><div id="sourcePreview" class="source-view"></div></div><div class="review"><h4>Распознанные записи · можно исправить перед переносом</h4><div id="stageTableWrap" class="stage-scroll"></div><div id="stageNotes" class="hint"></div></div></div></div>
+</section>
+<section id="checksPanel" class="panel" hidden><div class="panel-head"><div><h2>Проверка расписания</h2><p>Проверяем незаполненные поля, неизвестные фамилии, повторяющиеся занятия и пересечения.</p></div><button class="btn primary" type="button" id="recheckBtn">Проверить ещё раз</button></div><div id="checkSummary" class="check-summary"></div><div id="checkList" class="issues"></div></section>
+<section class="help-note"><strong>Публикация пока ручная.</strong> Редактор не умеет менять публичное расписание на GitHub Pages. Для обновления нужно скачать JSON недели, заменить соответствующий <code>data/weeks/ГГГГ-ММ-ДД.json</code> в репозитории и, если неделя новая, добавить её в <code>manifest.json</code>. <a href="../data/weeks/manifest.json" target="_blank" rel="noopener">Посмотреть манифест</a>.</section>
+<footer>Расписсание · Независимый прототип, не связанный с администрацией учебного заведения. Данные из фотографий необходимо сверять с оригиналами. Локальные черновики доступны только в текущем браузере.</footer>
+</main>
+<dialog id="lessonDialog" class="modal"><form id="lessonForm"><div class="modal-header"><div><h2 id="lessonDialogTitle">Редактирование пары</h2><p id="lessonContext"></p></div><button type="button" id="closeLessonBtn" class="icon-button" aria-label="Закрыть">×</button></div><div class="modal-body"><div class="form-grid"><label>Номер пары <select id="lessonNumber"></select></label><label>Тип занятия <select id="lessonKind"><option value="lesson">Учебная пара</option><option value="self_study">Самоподготовка</option><option value="split">Подгруппы (2 занятия)</option></select></label></div><div id="singleFields" class="form-grid"><label class="full">Дисциплина<input id="lessonSubject" list="subjectsList" autocomplete="off" placeholder="Например, Воздушная навигация"><datalist id="subjectsList"></datalist></label><label>Преподаватель<input id="lessonTeacher" list="teachersList" autocomplete="off" placeholder="Фамилия"><datalist id="teachersList"></datalist></label><label>Аудитория<input id="lessonRoom" list="roomsList" autocomplete="off" placeholder="Например, 41"></label></div><div id="splitFields" hidden><p class="hint">Оба занятия проходят одновременно. Выбери преподавателя и аудиторию отдельно для каждой подгруппы.</p><div id="splitFieldRows"></div></div></div><div class="modal-actions"><button type="button" class="btn danger" id="deleteLessonBtn">Удалить</button><div class="grow"></div><button type="button" class="btn secondary" id="cancelLessonBtn">Отмена</button><button type="submit" class="btn primary">Сохранить</button></div></form></dialog>
+<dialog id="newWeekDialog" class="modal"><form id="newWeekForm"><div class="modal-header"><div><h2>Создать учебную неделю</h2><p>Старые недели останутся на месте</p></div><button type="button" class="icon-button" id="closeNewWeekBtn">×</button></div><div class="modal-body"><label class="block-label">Понедельник новой недели<input id="newWeekDate" type="date" required></label><label class="block-label">Основа<select id="newWeekMethod"><option value="blank">Пустая неделя (все 15 групп)</option><option value="copy">Скопировать занятия из выбранной недели</option></select></label><p class="hint">При копировании даты переносятся на новую неделю, а старые записи сохраняются. После создания можно исправить занятия вручную.</p></div><div class="modal-actions"><button type="button" class="btn secondary" id="cancelNewWeekBtn">Отмена</button><button type="submit" class="btn primary">Создать неделю</button></div></form></dialog>
+<datalist id="roomsList"></datalist>
+<div id="toast" role="status" class="toast"></div>
+<script src="./app.js"></script>
+<script defer src="../assets/pwa.js"></script>
+</body></html>

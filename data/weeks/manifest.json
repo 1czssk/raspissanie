@@ -1,0 +1,14 @@
+[
+  {
+    "weekStart": "2026-11-16",
+    "weekEnd": "2026-11-21",
+    "academicWeek": 12,
+    "file": "data/weeks/2026-11-16.json"
+  },
+  {
+    "weekStart": "2026-11-23",
+    "weekEnd": "2026-11-28",
+    "academicWeek": 13,
+    "file": "data/weeks/2026-11-23.json"
+  }
+]
