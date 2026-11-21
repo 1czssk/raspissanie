@@ -16,7 +16,7 @@ html=html.replace('<script defer src="../assets/pwa.js"></script>', '')
 html=html.replace('<link rel="manifest" href="../manifest.webmanifest">', '')
 html=html.replace('</head>',f'<style>\n{style}\n</style>\n</head>')
 html=html.replace('src="../assets/raspissanie-mark.svg"',f'src="{logo}"')
-html=html.replace('<a href="../index.html">← К расписанию курсантов</a>', '<span>Офлайн-редактор Расписсание</span>')
+html=html.replace('<a href="../index.html">← К расписанию курсантов</a>', '<span>Автономный режим редактора</span>')
 html=html.replace('<a href="../data/weeks/manifest.json" target="_blank" rel="noopener">Посмотреть манифест</a>', 'Список недель можно скачать кнопкой «Скачать manifest».')
 html=html.replace('<script src="./app.js"></script>',f'<script type="application/json" id="embeddedEditorData">{data}</script>\n<script>\n{script}\n</script>')
 output=root/'editor-offline.html'

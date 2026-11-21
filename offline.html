@@ -7,8 +7,8 @@
 
   <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="./assets/icons/favicon-48.png" />
-  <meta name="description" content="Расписсание — независимый тестовый сервис с группами, преподавателями и архивом учебных недель." />
-  <title>Расписсание — расписание занятий</title>
+  <meta name="description" content="Любительский проект расписания занятий." />
+  <title>Расписсание</title>
   <style>
     :root{color-scheme:light;--blue:#1265a3;--blueDark:#084b80;--blueLight:#eaf3fa;--green:#18865d;--ink:#232f39;--muted:#72808b;--border:#d9e0e5;--pale:#faf9e9;--row:#f6f9fb;--bg:#fff;--red:#cf4c6c}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.48}button,input,select{font:inherit}button,select{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #7ac4ef;outline-offset:2px}button:disabled{opacity:.48;cursor:not-allowed}a{color:var(--blue)}
@@ -34,7 +34,7 @@
 <body>
   <div class="top-rule"></div>
   <header class="site-header"><div class="header-inner">
-    <a class="brand" href="./index.html" aria-label="Расписсание — расписание занятий"><img class="brand-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NiA5NiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSLQoNCw0YHQv9C40YHRgdCw0L3QuNC1Ij4KICA8cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iOTAiIGhlaWdodD0iOTAiIHJ4PSIyMCIgZmlsbD0iIzBlNjU5YiIvPgogIDxyZWN0IHg9IjIwIiB5PSIyNCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU0IiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIvPgogIDxwYXRoIGQ9Ik0yMCAzMmE4IDggMCAwIDEgOC04aDQwYTggOCAwIDAgMSA4IDh2MTNIMjB6IiBmaWxsPSIjZGI0YzgwIi8+CiAgPHBhdGggZD0iTTM0IDE3djE1TTYyIDE3djE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGcgZmlsbD0iIzE2NzBhNSI+PHJlY3QgeD0iMjkiIHk9IjUzIiB3aWR0aD0iMTMiIGhlaWdodD0iOSIgcng9IjIiLz48cmVjdCB4PSI0OSIgeT0iNTMiIHdpZHRoPSIxNyIgaGVpZ2h0PSI5IiByeD0iMiIvPjxyZWN0IHg9IjI5IiB5PSI2NiIgd2lkdGg9IjEzIiBoZWlnaHQ9IjUiIHJ4PSIyIi8+PHJlY3QgeD0iNDkiIHk9IjY2IiB3aWR0aD0iMTciIGhlaWdodD0iNSIgcng9IjIiLz48L2c+Cjwvc3ZnPgo=" alt="Значок Расписсание" /><span class="brand-text"><strong>Распи<span class="brand-accent">ссание</span></strong></span></a>
+    <a class="brand" href="./index.html" aria-label="Расписсание"><img class="brand-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NiA5NiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSLQoNCw0YHQv9C40YHRgdCw0L3QuNC1Ij4KICA8cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iOTAiIGhlaWdodD0iOTAiIHJ4PSIyMCIgZmlsbD0iIzBlNjU5YiIvPgogIDxyZWN0IHg9IjIwIiB5PSIyNCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU0IiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIvPgogIDxwYXRoIGQ9Ik0yMCAzMmE4IDggMCAwIDEgOC04aDQwYTggOCAwIDAgMSA4IDh2MTNIMjB6IiBmaWxsPSIjZGI0YzgwIi8+CiAgPHBhdGggZD0iTTM0IDE3djE1TTYyIDE3djE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGcgZmlsbD0iIzE2NzBhNSI+PHJlY3QgeD0iMjkiIHk9IjUzIiB3aWR0aD0iMTMiIGhlaWdodD0iOSIgcng9IjIiLz48cmVjdCB4PSI0OSIgeT0iNTMiIHdpZHRoPSIxNyIgaGVpZ2h0PSI5IiByeD0iMiIvPjxyZWN0IHg9IjI5IiB5PSI2NiIgd2lkdGg9IjEzIiBoZWlnaHQ9IjUiIHJ4PSIyIi8+PHJlY3QgeD0iNDkiIHk9IjY2IiB3aWR0aD0iMTciIGhlaWdodD0iNSIgcng9IjIiLz48L2c+Cjwvc3ZnPgo=" alt="Значок Расписсание" /><span class="brand-text"><strong>Распи<span class="brand-accent">ссание</span></strong></span></a>
     <div class="header-right"><span>Учебный год <strong>2026/2027</strong></span><button type="button" id="installAppBtn" class="install-link">Установить приложение</button><a href="#help">Как пользоваться</a></div>
   </div></header>
   <main class="container">
@@ -51,7 +51,7 @@
       <div class="filter-actions"><button class="btn btn-primary" type="submit">Показать расписание</button><button class="btn btn-outline" id="clearFilter" type="button">Очистить</button><span class="filter-info">В данных нет времени начала пар — показан только номер строки</span></div>
     </form>
     <section aria-label="Найденное расписание">
-      <div class="result-top"><div class="result-title"><h2 id="resultHeading">Группа 304</h2><span id="resultMeta"></span></div><div class="result-controls">
+      <div class="result-top"><div class="result-title"><h2 id="resultHeading">Все группы</h2><span id="resultMeta"></span></div><div class="result-controls">
         <button class="mini-btn" id="showTeachers" type="button">♙ Преподаватели</button>
         <button class="mini-btn" id="editToggle" type="button">✎ Локальные правки</button>
         <button class="mini-btn" id="exportData" type="button">↓ JSON недели</button>
@@ -59,7 +59,7 @@
       </div></div>
       <div id="messageArea" aria-live="polite"></div><div id="results" class="results"></div>
     </section>
-    <footer class="footer" id="help"><span><strong>Расписсание</strong> — независимый тестовый проект по фотографиям расписания, не связанный с администрацией учебного заведения. Данные требуют сверки перед публикацией.</span><span>История недель сохранена · Локальные правки доступны только в этом браузере</span></footer>
+    <footer class="footer" id="help"><span><strong>Расписсание</strong> — любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.</span></footer>
   </main>
   <dialog id="teachersDialog" class="modal" aria-labelledby="teacherDirectoryTitle">
     <div class="modal-header"><h2 id="teacherDirectoryTitle">Справочник преподавателей</h2><button class="modal-close" id="closeTeachers" type="button" aria-label="Закрыть">×</button></div>
@@ -109,11 +109,23 @@
     function normalizeWeek(w){Object.values(w.groups||{}).forEach(g=>Object.values(g.days||{}).forEach(d=>d.lessons.forEach(normalizeLesson)));return w}
     function teacherForLesson(l){return l.variants?.length?l.variants.map(v=>teacherName(v.teacherId,v.teacher)).join(' / '):teacherName(l.teacherId,l.teacher)}
     function teacherMatches(l,id){return (l.variants?.length?l.variants:[l]).some(v=>(idForTeacher(v.teacher)||v.teacherId)===id)}
-    const state={week:null,data:null,group:'304',teacher:'',room:'',text:'',edit:false,editing:null};
+    const state={week:null,data:null,group:'',teacher:'',room:'',text:'',edit:false,editing:null};
     const niceDate=s=>new Date(s+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
     const dayName=s=>new Date(s+'T12:00:00').toLocaleDateString('ru-RU',{weekday:'long'});
     const dates=()=>Array.from({length:6},(_,i)=>{const [y,m,d]=state.week.split('-').map(Number);return new Date(Date.UTC(y,m-1,d+i)).toISOString().slice(0,10)});
     const key=week=>'raspissanie-local-v3:'+week;
+    // The preferred group is private to this browser. It is not tied to a specific week.
+    const preferredGroupKey='raspissanie-preferred-group-v1';
+    const validGroup=group=>/^(10[1-5]|20[1-5]|30[1-5])$/.test(group);
+    function readPreferredGroup(){
+      try {const value=localStorage.getItem(preferredGroupKey)||'';return validGroup(value)?value:''}
+      catch (_) {return ''}
+    }
+    function rememberPreferredGroup(group){
+      try {if(validGroup(group))localStorage.setItem(preferredGroupKey,group);
+        else localStorage.removeItem(preferredGroupKey)}
+      catch (_) { /* In private browsing, the selection still works for this session. */ }
+    }
     let toastHandle;
     function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastHandle);toastHandle=setTimeout(()=>t.classList.remove('show'),3000)}
     function valid(data){return !!(data&&data.groups&&data.weekStart===state.week&&typeof data.groups==='object'&&Object.values(data.groups).every(g=>g&&g.days&&Object.values(g.days).every(day=>Array.isArray(day.lessons))));}
@@ -199,7 +211,7 @@
       const embedded=$('embeddedArchive');
       if(embedded){const bundle=JSON.parse(embedded.textContent);registerTeachers(bundle.teachers.teachers);manifest=bundle.manifest;Object.assign(src,bundle.weeks)}
       else {const [mf,td]=await Promise.all([fetch('./data/weeks/manifest.json').then(r=>{if(!r.ok)throw new Error('manifest');return r.json()}),fetch('./data/teachers.json').then(r=>{if(!r.ok)throw new Error('teachers');return r.json()})]);manifest=mf;registerTeachers(td.teachers)}
-      allWeeks=manifest.map(m=>m.weekStart).sort();state.week=allWeeks[allWeeks.length-1];await loadWeekAsync(state.week)
+      allWeeks=manifest.map(m=>m.weekStart).sort();state.group=readPreferredGroup();state.week=allWeeks[allWeeks.length-1];await loadWeekAsync(state.week)
     }
     function renderTeacherDirectory(){
       const query=$('teachersSearch').value.trim().toLocaleLowerCase('ru');
@@ -215,8 +227,8 @@
     $('closeTeachers').onclick=()=>$('teachersDialog').close();
     $('teachersSearch').oninput=renderTeacherDirectory;
     $('teachersDialog').addEventListener('click',e=>{if(e.target===$('teachersDialog'))$('teachersDialog').close()});
-    $('filterForm').addEventListener('submit',e=>{e.preventDefault();state.group=$('filterGroup').value;state.teacher=$('filterTeacher').value;state.room=$('filterRoom').value;state.text=$('filterText').value.trim();render()});
-    $('clearFilter').onclick=()=>{state.group='304';state.teacher='';state.room='';state.text='';populateOptions();render()};
+    $('filterForm').addEventListener('submit',e=>{e.preventDefault();state.group=$('filterGroup').value;rememberPreferredGroup(state.group);state.teacher=$('filterTeacher').value;state.room=$('filterRoom').value;state.text=$('filterText').value.trim();render()});
+    $('clearFilter').onclick=()=>{state.group='';rememberPreferredGroup('');state.teacher='';state.room='';state.text='';populateOptions();render()};
     $('editToggle').onclick=()=>{state.edit=!state.edit;render()};$('exportData').onclick=exportJSON;$('printBtn').onclick=()=>window.print();
     $('editKind').onchange=adjustKind;$('editForm').onsubmit=saveEdit;$('closeEditor').onclick=closeEditor;$('cancelEditor').onclick=closeEditor;
     $('deleteLesson').onclick=()=>{const x=state.editing;if(!x||!x.id)return;if(!confirm('Удалить эту строку расписания?'))return;const a=state.data.groups[x.group].days[x.date].lessons;const i=a.findIndex(l=>l.id===x.id);if(i<0)return;a.splice(i,1);save();closeEditor();render();toast('Строка удалена локально')};
