@@ -10,6 +10,8 @@
   <meta name="description" content="Любительский проект расписания занятий." />
   <title>Расписсание</title>
   <script src="./assets/i18n.js" data-locales="./data/i18n.json"></script>
+  <link rel="stylesheet" href="./assets/themes.css" />
+  <script defer src="./assets/themes.js"></script>
   <style>
     :root{color-scheme:light;--blue:#1265a3;--blueDark:#084b80;--blueLight:#eaf3fa;--green:#18865d;--ink:#232f39;--muted:#72808b;--border:#d9e0e5;--pale:#faf9e9;--row:#f6f9fb;--bg:#fff;--red:#cf4c6c}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.48}button,input,select{font:inherit}button,select{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #7ac4ef;outline-offset:2px}button:disabled{opacity:.48;cursor:not-allowed}a{color:var(--blue)}
@@ -37,7 +39,7 @@
   <div class="top-rule"></div>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="./index.html" aria-label="Расписсание"><img class="brand-logo" src="./assets/raspissanie-mark.svg" alt="Значок Расписсание" /><span class="brand-text"><strong>Распи<span class="brand-accent">ссание</span></strong></span></a>
-    <div class="header-right"><span>Учебный год <strong>2026/2027</strong></span><button type="button" id="installAppBtn" class="install-link">Установить приложение</button></div>
+    <div class="header-right"><span>Учебный год <strong>2026/2027</strong></span><button type="button" id="installAppBtn" class="install-link">Установить приложение</button><button type="button" id="themeToggle" class="theme-toggle" aria-label="Включить тёмную тему" title="Тёмная тема">☀</button></div>
   </div></header>
   <main class="container">
     <div class="headline"><div><h1>Распи<span class="brand-accent">ссание</span></h1><p id="periodSubheading">13-я учебная неделя · 23–28 ноября 2026</p></div></div>
@@ -61,7 +63,7 @@
       </div></div>
       <div id="messageArea" aria-live="polite"></div><div id="results" class="results"></div>
     </section>
-    <footer class="footer"><span><strong>Расписсание</strong> — любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.</span><div class="language-control"><label for="siteLanguage">🌐 <span>Язык</span></label><select id="siteLanguage" aria-label="Выбор языка"><option value="ru">Русский</option></select></div></footer>
+    <footer class="footer"><span><strong>Расписсание</strong> — любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.</span><div class="theme-control"><label for="siteTheme">🎨 <span id="themeLabel">Тема</span></label><span class="theme-choice"><span id="themeSwatch" class="theme-swatch"></span><select id="siteTheme" aria-label="Цветовая тема"><option value="standard">Стандартная</option></select></span></div><div class="language-control"><label for="siteLanguage">🌐 <span>Язык</span></label><select id="siteLanguage" aria-label="Выбор языка"><option value="ru">Русский</option></select></div></footer>
   </main>
   <dialog id="teachersDialog" class="modal" aria-labelledby="teacherDirectoryTitle">
     <div class="modal-header"><h2 id="teacherDirectoryTitle">Справочник преподавателей</h2><button class="modal-close" id="closeTeachers" type="button" aria-label="Закрыть">×</button></div>

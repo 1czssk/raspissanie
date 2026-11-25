@@ -20,6 +20,12 @@ assert 'src="./assets/i18n.js"' not in src
 # An offline HTML file must not request an external image.
 import re, base64
 img=(ROOT/'assets'/'raspissanie-mark.svg').read_bytes()
+# Standalone mode includes the entire theme engine, without network requests.
+theme_style=(ROOT/'assets/themes.css').read_text('utf-8')
+theme_script=(ROOT/'assets/themes.js').read_text('utf-8')
+src=src.replace('  <link rel="stylesheet" href="./assets/themes.css" />', '')
+src=src.replace('  <script defer src="./assets/themes.js"></script>','<script>\n'+theme_script+'\n</script>')
+src=src.replace('</style>\n</head>','</style>\n<style>\n'+theme_style+'\n</style>\n</head>',1)
 src=src.replace('  <script defer src="./assets/pwa.js"></script>', '')
 src=src.replace('  <link rel="manifest" href="./manifest.webmanifest" />', '')
 src=src.replace('./assets/raspissanie-mark.svg','data:image/svg+xml;base64,'+base64.b64encode(img).decode('ascii'))

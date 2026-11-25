@@ -214,8 +214,9 @@ function localize(raw){if(!raw||language==='ru'||!bundle)return raw;
  const pair=raw.match(/^(\d+)\s+занят(?:ие|ия|ий)$/);if(pair)return count(Number(pair[1]),'lessons');
  const wk=raw.match(/^(\d+)-я учебная неделя$/);if(wk)return week(Number(wk[1]));
  const wkShort=raw.match(/^(\d+)-я неделя/);if(wkShort)return week(Number(wkShort[1]));
- const course=raw.match(/^(\d+) курс$/);if(course)return `${getU()['Курс']||'Year'} ${course[1]}`;
- const branch=raw.match(/^(\d+)-й курс · все 5 групп$/);if(branch)return `${getU()['Курс']||'Year'} ${branch[1]} · ${(getU()['Все группы']||'all groups')}`;
+ const course=raw.match(/^(\d+) курс$/);if(course)return (language==='ko-N'||language==='ko-S') ? `${course[1]}학년` : `${getU()['Курс']||'Year'} ${course[1]}`;
+ const branch=raw.match(/^(\d+)-й курс · все 5 групп$/);if(branch)return (language==='ko-N'||language==='ko-S') ? `${branch[1]}학년 · ${getU()['Все группы']||'모든 조'}` : `${getU()['Курс']||'Year'} ${branch[1]} · ${(getU()['Все группы']||'all groups')}`;
+ if(raw==='No data'&&language==='ko-N')return '자료 없음';
  if(raw==='— любой —')return '— '+({'de':'beliebig','fr':'tous','es':'cualquiera','isv':'ljuby','la':'quivis','bxr':'алишье','ns84':'любой','tlh':'Hoch','ja':'すべて','sv':'valfri'}[language]||'any')+' —';
  if(raw==='Учебная неделя')return getU()['Неделя']||'Week';
  if(raw==='Параллельно · подгруппы')return `${getU()['Подгруппы']||'Subgroups'} · 2`;
@@ -229,7 +230,7 @@ function localize(raw){if(!raw||language==='ru'||!bundle)return raw;
  if(raw.startsWith('+ Создать неделю'))return '+ '+(getU()['Создать неделю']||'Create week');
  if(raw.startsWith('+ Строка пары'))return '+ '+(getU()['Строка пары']||'Add period');
  if(raw==='+ Добавить')return '+ '+(getU()['Строка пары']||'Add');
- if(raw.endsWith(' — нет данных'))return raw.replace(' — нет данных',' — '+({'isv':'nema danych','la':'nulla data','bxr':'мэдээсэл үгы','ns84':'нетпо','tlh':'De’ tu’lu’be’','ja':'データなし','sv':'inga uppgifter'}[language]||'No data'));
+ if(raw.endsWith(' — нет данных'))return raw.replace(' — нет данных',' — '+({'isv':'nema danych','la':'nulla data','bxr':'мэдээсэл үгы','ns84':'нетпо','tlh':'De’ tu’lu’be’','ja':'データなし','ko-N':'자료 없음','ko-S':'자료 없음','sv':'inga uppgifter'}[language]||'No data'));
  if(raw==='с/з')return getU()['Спортзал']||'Sports hall';
  if(raw.startsWith('класс '))return (getU()['Класс']||'Room')+' '+raw.slice(6);
  if(raw.startsWith('ауд. '))return (getU()['Аудитория']||'Room')+' '+raw.slice(5);
@@ -335,7 +336,7 @@ function translateNode(node){if(node.nodeType!==3)return;const parent=node.paren
  const translated=(m?m[1]+localize(m[2])+m[3]:localize(memo.source));
  if(node.nodeValue!==translated){memo.last=translated;node.nodeValue=translated}else memo.last=translated;
 }
-function translateAttrs(node){if(!node.getAttribute)return;for(const key of ['placeholder','title','aria-label','alt']){
+function translateAttrs(node){if(!node.getAttribute)return;for(const key of (node.tagName==='OPTGROUP'?['placeholder','title','aria-label','alt','label']:['placeholder','title','aria-label','alt'])){
  if(!node.hasAttribute(key))continue;
  let mem=attributeSources.get(node);if(!mem){mem={};attributeSources.set(node,mem)}
  let m=mem[key],current=node.getAttribute(key);if(!m){m={source:current,last:null};mem[key]=m}
