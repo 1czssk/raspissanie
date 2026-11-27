@@ -33,6 +33,16 @@
     @media print{.top-rule{height:2px}.site-header{display:none}.container{max-width:none;padding:0}.headline h1{font-size:23px}.headline{margin:0 0 14px}.week-nav,.filter-panel,.search-intro,.result-controls,.edit-link,.add-day,.footer,.status-note{display:none!important}.results{gap:10px}.day{break-inside:avoid;page-break-inside:avoid}.schedule td{padding:6px 9px}.result-top{margin-top:5px}}
     /* На мобильном установка PWA остаётся доступной в шапке. */
     @media (max-width:750px){.header-right{display:flex;align-items:center;margin-left:auto;gap:0}.header-right>span,.header-right>a{display:none}.header-right .install-link{font-size:11px;white-space:nowrap}.brand-logo{height:39px;width:39px}.brand{gap:8px}.brand-text strong{font-size:17px}}
+    /* Small-screen header: only the sun/moon sits beside the logo.
+       PWA installation appears on its own second line when available. */
+    @media (max-width:750px){
+      .site-header .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;row-gap:2px;align-items:center}
+      .site-header .brand{min-width:0;grid-column:1;grid-row:1}
+      .site-header .header-right{display:contents}
+      .site-header .header-right>span,.site-header .header-right>a{display:none}
+      .site-header #themeToggle{grid-column:2;grid-row:1;justify-self:end}
+      .site-header #installAppBtn{grid-column:1 / -1;grid-row:2;justify-self:end;margin:0 1px 2px;padding:5px 0;max-width:100%;white-space:normal;text-align:right}
+    }
   </style>
 </head>
 <body>

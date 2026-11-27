@@ -28,6 +28,7 @@ src=src.replace('  <script defer src="./assets/themes.js"></script>','<script>\n
 src=src.replace('</style>\n</head>','</style>\n<style>\n'+theme_style+'\n</style>\n</head>',1)
 src=src.replace('  <script defer src="./assets/pwa.js"></script>', '')
 src=src.replace('  <link rel="manifest" href="./manifest.webmanifest" />', '')
+src=re.sub(r'^\s*<link[^>]+(?:apple-touch-icon|favicon-48)[^>]*>\s*$', '', src, flags=re.M)
 src=src.replace('./assets/raspissanie-mark.svg','data:image/svg+xml;base64,'+base64.b64encode(img).decode('ascii'))
 assert src.count('  <script>')==1
 src=src.replace('  <script>','  <script id="embeddedArchive" type="application/json">'+bundle+'</script>\n  <script>',1)

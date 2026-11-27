@@ -40,7 +40,7 @@ function date(iso,opt={day:'numeric',month:'long'}){
  try{return new Intl.DateTimeFormat(currentLocale(),{...opt,timeZone:'UTC'}).format(new Date(iso+'T12:00:00Z'))}catch(_){return new Intl.DateTimeFormat('en-GB',{...opt,timeZone:'UTC'}).format(new Date(iso+'T12:00:00Z'))}
 }
 function week(num){if(language==='ru')return num+'-я учебная неделя';
- const q={'en':'Academic week','de':'Unterrichtswoche','fr':'Semaine de cours','es':'Semana lectiva','it':'Settimana didattica','pt':'Semana letiva','pl':'Tydzień nauki','cs':'Výukový týden','eo':'Studsemajno','da':'Undervisningsuge','no':'Undervisningsuke','fi':'Opetusviikko','et':'Õppenädal','lv':'Mācību nedēļa','lt':'Mokymosi savaitė','hu':'Tanulmányi hét','el':'Εβδομάδα μαθημάτων','ja':'授業週','sv':'Undervisningsvecka','ko-S':'수업 주','ko-N':'수업 주','tok':'tenpo pi kama sona','isv':'Učebna sedmica','la':'Hebdomas studiorum','bxr':'Һуралсалай долоон хоног','ns84':'Учнед','tlh':'ghojmeH Hogh'};
+ const q={'en':'Academic week','de':'Unterrichtswoche','fr':'Semaine de cours','es':'Semana lectiva','it':'Settimana didattica','pt':'Semana letiva','pl':'Tydzień nauki','cs':'Výukový týden','eo':'Studsemajno','da':'Undervisningsuge','no':'Undervisningsuke','fi':'Opetusviikko','et':'Õppenädal','lv':'Mācību nedēļa','lt':'Mokymosi savaitė','hu':'Tanulmányi hét','el':'Εβδομάδα μαθημάτων','ja':'授業週','sv':'Undervisningsvecka','ko-S':'수업 주','ko-N':'수업 주','tok':'tenpo pi kama sona','isv':'Učebna sedmica','la':'Hebdomas studiorum','bxr':'Һуралсалай долоон хоног','ns84':'Учнед','tlh':'ghojmeH Hogh','bg':'Учебна седмица','ga':'Seachtain staidéir','mt':'Ġimgħa ta’ studju','nl':'Lesweek','ro':'Săptămâna de cursuri','sk':'Vyučovací týždeň','sl':'Študijski teden','hr':'Nastavni tjedan','cnr':'Nastavna sedmica','mk':'Наставна недела','is':'Kennsluvika','cy':'Wythnos astudio','gd':'Seachdain ionnsachaidh'};
  return (['ja','ko-S','ko-N'].includes(language)?'':'')+(q[language]||q.en)+' '+num;
 }
 function count(n,key){if(language==='ru'){
@@ -64,13 +64,20 @@ function count(n,key){if(language==='ru'){
  'la':['lectiones','partes studii privati','greges'],
  'bxr':['хэшээл','бэеэ даагаад һуралсаха үе','бүлэг'],
  'ns84':['занпо','сампо','группо'],
- 'tlh':['ghojmeH mIwmey','nIteb ghojmeH poH','ghommey']
+ 'tlh':['ghojmeH mIwmey','nIteb ghojmeH poH','ghommey'],
+ 'bg':['занятия','самоподготовки','заредени групи'],'ga':['ranganna','bloic féin-staidéir','grúpaí lódáilte'],
+ 'mt':['lezzjonijiet','blokki ta’ studju awtonomu','gruppi mtellgħin'],'nl':['lessen','zelfstudieblokken','geladen groepen'],
+ 'ro':['lecții','blocuri de studiu individual','grupuri încărcate'],'sk':['hodín','blokov samoštúdia','načítaných skupín'],
+ 'sl':['ur','blokov samostojnega učenja','naloženih skupin'],'hr':['sati','blokova samostalnog učenja','učitanih grupa'],
+ 'cnr':['časova','blokova samostalnog učenja','učitanih grupa'],'mk':['часови','блокови за самостојно учење','вчитани групи'],
+ 'is':['kennslustundir','sjálfsnámslotur','hlaðnir hópar'],'cy':['gwersi','blociau hunanastudio','grwpiau wedi’u llwytho'],
+ 'gd':['leasanan','blocaichean fèin-ionnsachaidh','buidhnean luchdaichte']
  };
  let a=nouns[language]||nouns.en;return n+' '+a[key==='lessons'?0:key==='self'?1:2];
 }
 function teacherLabel(t){if(!t)return '—';let item=typeof t==='string'?teacherList.find(x=>x.id===t||x.surname===t||x.displayName===t||x.aliases?.includes(t)):t;
  const orig=item?item.displayName||item.surname:String(t);
- if(['ru','bxr','ns84'].includes(language))return orig;
+ if(['ru','bxr','ns84','bg','mk'].includes(language))return orig;
  const surname=item?.surname||String(orig).match(/^[А-ЯЁ][а-яё-]+/)?.[0]||'';
  if(!surname)return orig;
  const idx=TEACHER_ORDER.indexOf(surname);
@@ -375,6 +382,12 @@ async function init(){try{
   const resp=await fetch(url);if(!resp.ok)throw new Error('i18n HTTP '+resp.status);bundle=await resp.json();
  }
  if(!bundle?.translations?.ru)throw new Error('Invalid i18n dictionary');
+ // Use the published dictionary as the source of truth for the language selector.
+ // The initial 28-language list remains only as a graceful fallback.
+ if(Array.isArray(bundle.languages)&&bundle.languages.length){
+  const entries=bundle.languages.filter(x=>x&&x.code&&bundle.translations[x.code]).map(x=>[x.code,x.label||x.code,x.locale||'ru-RU']);
+  if(entries.length){DEFAULTS.splice(0,DEFAULTS.length,...entries);Object.assign(LOCALE,Object.fromEntries(entries.map(x=>[x[0],x[2]])));}
+ }
  document.documentElement.lang=language==='ko-N'||language==='ko-S'?'ko':language==='ns84'?'x-newspeak':language;
  languageSelector();schedule();
  observer=new MutationObserver(()=>schedule());observer.observe(document.body,{childList:true,characterData:true,subtree:true,attributes:true,attributeFilter:['placeholder','title','aria-label','alt']});

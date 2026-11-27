@@ -25,6 +25,7 @@ html=html.replace('<script defer src="../assets/themes.js"></script>','<script>\
 html=html.replace('<link rel="stylesheet" href="./style.css">', '')
 html=html.replace('<script defer src="../assets/pwa.js"></script>', '')
 html=html.replace('<link rel="manifest" href="../manifest.webmanifest">', '')
+html=re.sub(r'^\s*<link[^>]+(?:apple-touch-icon|favicon-48)[^>]*>\s*$', '', html, flags=re.M)
 html=html.replace('</head>',f'<style>\n{style}\n</style>\n<style>\n{theme_style}\n</style>\n</head>')
 html=html.replace('src="../assets/raspissanie-mark.svg"',f'src="{logo}"')
 html=html.replace('<a href="../index.html">← К расписанию курсантов</a>', '<span>Автономный режим редактора</span>')

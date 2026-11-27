@@ -7,7 +7,8 @@
    ['glamour','Гламур','Glamour'],['petersburg','Санкт-Петербург','Saint Petersburg'],
    ['lsd','ЛСД','LSD'],['matrix','Матрица','Matrix'],['cockpit','Ночная кабина','Night cockpit'],
    ['notebook','Тетрадка','Notebook'],['ultraviolet','Ультрафиолет','Ultraviolet'],
-   ['simple','Простая','Plain'],['nineties','Девяностые','The Nineties']
+   ['simple','Простая','Plain'],['nineties','Девяностые','The Nineties'],
+   ['bright','Яркая','Bright'],['orange','Апельсин','Orange'],['dacha','Лето на даче','Summer at the cottage']
  ];
  const valid=new Set(themes.map(x=>x[0]));
  const read=(key,fallback)=>{try{return localStorage.getItem(key)||fallback}catch(_){return fallback}};
