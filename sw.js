@@ -1,5 +1,5 @@
 /* Расписсание — GitHub Pages PWA. No third-party network requests are intercepted. */
-const CACHE_NAME = 'raspissanie-12-themes-v20';
+const CACHE_NAME = 'raspissanie-14th-week-v21';
 const CORE = [
   './', './index.html', './editor/', './editor/index.html',
   './editor/app.js', './editor/style.css', './assets/pwa.js', './assets/i18n.js', './assets/themes.css', './assets/themes.js',

@@ -309,7 +309,10 @@
         "subject-technical-mechanics": "Техническая механика",
         "subject-air-traffic-control": "Управление воздушным движением",
         "subject-physical-training": "Физическая подготовка",
-        "subject-electrical-engineering-electronics": "Электротехника и электроника"
+        "subject-electrical-engineering-electronics": "Электротехника и электроника",
+        "subject-informatika": "Информатика",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Масса и центровка многодвигательного воздушного судна",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.",
@@ -466,7 +469,10 @@
         "subject-technical-mechanics": "Engineering Mechanics",
         "subject-air-traffic-control": "Air Traffic Control",
         "subject-physical-training": "Physical Education",
-        "subject-electrical-engineering-electronics": "Electrical Engineering and Electronics"
+        "subject-electrical-engineering-electronics": "Electrical Engineering and Electronics",
+        "subject-informatika": "Informatics",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Multi-Engine Aircraft Weight and Balance",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— a hobby project made to make studying easier. Don’t take it too seriously. Send me a DM if something goes wrong. Constructive feedback is welcome.",
@@ -623,7 +629,10 @@
         "subject-technical-mechanics": "Műszaki mechanika",
         "subject-air-traffic-control": "Légiforgalmi irányítás",
         "subject-physical-training": "Testnevelés",
-        "subject-electrical-engineering-electronics": "Elektrotechnika és elektronika"
+        "subject-electrical-engineering-electronics": "Elektrotechnika és elektronika",
+        "subject-informatika": "Informatika",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Többmotoros repülőgép tömege és súlyponthelyzete",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— amatőr projekt, amely a tanulást igyekszik kényelmesebbé tenni. Ne vedd túl komolyan. Probléma esetén írj nekem privátban. Az építő kritikát szívesen fogadom.",
@@ -780,7 +789,10 @@
         "subject-technical-mechanics": "Τεχνική μηχανική",
         "subject-air-traffic-control": "Έλεγχος εναέριας κυκλοφορίας",
         "subject-physical-training": "Φυσική αγωγή",
-        "subject-electrical-engineering-electronics": "Ηλεκτροτεχνία και ηλεκτρονική"
+        "subject-electrical-engineering-electronics": "Ηλεκτροτεχνία και ηλεκτρονική",
+        "subject-informatika": "Πληροφορική",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Βάρος και ζυγοστάθμιση πολυκινητήριου αεροσκάφους",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— ένα ερασιτεχνικό έργο για να γίνει το διάβασμα ευκολότερο. Μην το παίρνεις πολύ σοβαρά. Για προβλήματα στείλε μου προσωπικό μήνυμα. Η εποικοδομητική κριτική είναι ευπρόσδεκτη.",
@@ -937,7 +949,10 @@
         "subject-technical-mechanics": "Teknisk mekanik",
         "subject-air-traffic-control": "Flyvekontrol",
         "subject-physical-training": "Idræt",
-        "subject-electrical-engineering-electronics": "Elektroteknik og elektronik"
+        "subject-electrical-engineering-electronics": "Elektroteknik og elektronik",
+        "subject-informatika": "Informatik",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Vægt og balance for flermotoret fly",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— et hobbyprojekt lavet for at gøre det lettere at studere. Tag det ikke alt for alvorligt. Skriv en privat besked ved problemer. Konstruktiv kritik er velkommen.",
@@ -1094,7 +1109,10 @@
         "subject-technical-mechanics": "Mecánica técnica",
         "subject-air-traffic-control": "Control del tránsito aéreo",
         "subject-physical-training": "Educación física",
-        "subject-electrical-engineering-electronics": "Ingeniería eléctrica y electrónica"
+        "subject-electrical-engineering-electronics": "Ingeniería eléctrica y electrónica",
+        "subject-informatika": "Informática",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Peso y centrado de aeronaves multimotor",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— un proyecto aficionado creado para hacer más fácil estudiar. No te lo tomes demasiado en serio. Si hay problemas, escríbeme por privado. Se agradecen las críticas constructivas.",
@@ -1251,7 +1269,10 @@
         "subject-technical-mechanics": "Meccanica tecnica",
         "subject-air-traffic-control": "Controllo del traffico aereo",
         "subject-physical-training": "Educazione fisica",
-        "subject-electrical-engineering-electronics": "Elettrotecnica ed elettronica"
+        "subject-electrical-engineering-electronics": "Elettrotecnica ed elettronica",
+        "subject-informatika": "Informatica",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Massa e centraggio degli aeromobili plurimotore",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— un progetto amatoriale nato per rendere più comodo studiare. Non prenderlo troppo sul serio. Se ci sono problemi, scrivimi in privato. Le critiche costruttive sono benvenute.",
@@ -1408,7 +1429,10 @@
         "subject-technical-mechanics": "기술 력학",
         "subject-air-traffic-control": "항공 교통 관제",
         "subject-physical-training": "체육",
-        "subject-electrical-engineering-electronics": "전기공학과 전자공학"
+        "subject-electrical-engineering-electronics": "전기공학과 전자공학",
+        "subject-informatika": "정보학",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "다발동력 비행기의 무게와 무게중심",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— 학습을 편리하게 하려고 만든 개인 취미 계획입니다. 너무 심각하게 받아들이지 마시오. 문제가 있으면 개인통보를 보내시오. 건설적인 비판은 환영합니다.",
@@ -1565,7 +1589,10 @@
         "subject-technical-mechanics": "공업 역학",
         "subject-air-traffic-control": "항공 교통 관제",
         "subject-physical-training": "체육",
-        "subject-electrical-engineering-electronics": "전기공학 및 전자공학"
+        "subject-electrical-engineering-electronics": "전기공학 및 전자공학",
+        "subject-informatika": "정보학",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "다발 엔진 항공기의 중량 및 무게중심",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— 공부를 더 편하게 하려고 만든 개인 취미 프로젝트입니다. 너무 진지하게 받아들이지 마세요. 문제가 있으면 개인 메시지를 보내 주세요. 건설적인 의견은 환영합니다.",
@@ -1722,7 +1749,10 @@
         "subject-technical-mechanics": "Tehniskā mehānika",
         "subject-air-traffic-control": "Gaisa satiksmes vadība",
         "subject-physical-training": "Fiziskā sagatavotība",
-        "subject-electrical-engineering-electronics": "Elektrotehnika un elektronika"
+        "subject-electrical-engineering-electronics": "Elektrotehnika un elektronika",
+        "subject-informatika": "Informātika",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Daudzdzinēju gaisa kuģa masa un centrējums",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— amatieru projekts, kas veidots, lai mācības būtu ērtākas. Neuztver to pārāk nopietni. Ja ir problēmas, raksti man privāti. Konstruktīva kritika ir gaidīta.",
@@ -1879,7 +1909,10 @@
         "subject-technical-mechanics": "Techninė mechanika",
         "subject-air-traffic-control": "Oro eismo valdymas",
         "subject-physical-training": "Fizinis ugdymas",
-        "subject-electrical-engineering-electronics": "Elektrotechnika ir elektronika"
+        "subject-electrical-engineering-electronics": "Elektrotechnika ir elektronika",
+        "subject-informatika": "Informatika",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Daugiavariklio orlaivio masė ir centravimas",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— mėgėjiškas projektas, sukurtas patogesnėms studijoms. Nepriimk jo pernelyg rimtai. Apie problemas parašyk man asmeniškai. Konstruktyvi kritika laukiama.",
@@ -2036,7 +2069,10 @@
         "subject-technical-mechanics": "Technische Mechanik",
         "subject-air-traffic-control": "Flugverkehrskontrolle",
         "subject-physical-training": "Sportunterricht",
-        "subject-electrical-engineering-electronics": "Elektrotechnik und Elektronik"
+        "subject-electrical-engineering-electronics": "Elektrotechnik und Elektronik",
+        "subject-informatika": "Informatik",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Masse und Schwerpunktlage mehrmotoriger Luftfahrzeuge",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— ein Hobbyprojekt, das das Lernen erleichtern soll. Nimm es nicht zu ernst. Bei Problemen schreib mir privat. Sachliche Kritik ist willkommen.",
@@ -2193,7 +2229,10 @@
         "subject-technical-mechanics": "Teknisk mekanikk",
         "subject-air-traffic-control": "Lufttrafikktjeneste og flygekontroll",
         "subject-physical-training": "Kroppsøving",
-        "subject-electrical-engineering-electronics": "Elektroteknikk og elektronikk"
+        "subject-electrical-engineering-electronics": "Elektroteknikk og elektronikk",
+        "subject-informatika": "Informatikk",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Vekt og balanse for flermotors fly",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— et hobbyprosjekt laget for å gjøre studiene enklere. Ikke ta det for alvorlig. Send meg en privat melding om problemer. Konstruktiv kritikk er velkommen.",
@@ -2350,7 +2389,10 @@
         "subject-technical-mechanics": "Mechanika techniczna",
         "subject-air-traffic-control": "Kontrola ruchu lotniczego",
         "subject-physical-training": "Wychowanie fizyczne",
-        "subject-electrical-engineering-electronics": "Elektrotechnika i elektronika"
+        "subject-electrical-engineering-electronics": "Elektrotechnika i elektronika",
+        "subject-informatika": "Informatyka",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Masa i wyważenie samolotu wielosilnikowego",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— amatorski projekt stworzony dla wygody nauki. Nie bierz go zbyt serio. Jeśli jest problem, napisz do mnie prywatnie. Konstruktywna krytyka mile widziana.",
@@ -2507,7 +2549,10 @@
         "subject-technical-mechanics": "Mecânica técnica",
         "subject-air-traffic-control": "Controlo de tráfego aéreo",
         "subject-physical-training": "Educação física",
-        "subject-electrical-engineering-electronics": "Engenharia eletrotécnica e eletrónica"
+        "subject-electrical-engineering-electronics": "Engenharia eletrotécnica e eletrónica",
+        "subject-informatika": "Informática",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Peso e centragem de aeronaves multimotoras",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— um projeto amador feito para facilitar os estudos. Não o leves demasiado a sério. Se houver problemas, escreve-me em privado. As críticas construtivas são bem-vindas.",
@@ -2664,7 +2709,10 @@
         "subject-technical-mechanics": "sona pi tawa ilo (mechanics)",
         "subject-air-traffic-control": "lawa pi tawa tomo tawa kon (ATC)",
         "subject-physical-training": "awen e sijelo pona",
-        "subject-electrical-engineering-electronics": "sona pi wawa seli en ilo lili (electronics)"
+        "subject-electrical-engineering-electronics": "sona pi wawa seli en ilo lili (electronics)",
+        "subject-informatika": "sona pi ilo nanpa",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "suli en awen pi tomo tawa kon pi ilo tawa mute",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— ilo ni li pali musi pi pona pi kama sona. o pilin ike ala. pakala la o toki tawa mi. toki pona pi ante ilo li pona.",
@@ -2821,7 +2869,10 @@
         "subject-technical-mechanics": "Tekninen mekaniikka",
         "subject-air-traffic-control": "Lennonjohto",
         "subject-physical-training": "Liikunta",
-        "subject-electrical-engineering-electronics": "Sähkötekniikka ja elektroniikka"
+        "subject-electrical-engineering-electronics": "Sähkötekniikka ja elektroniikka",
+        "subject-informatika": "Tietojenkäsittely",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Monimoottorisen ilma-aluksen massa ja painopiste",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— harrastusprojekti, joka tehtiin opiskelun helpottamiseksi. Älä ota sitä liian vakavasti. Ongelmista voi viestiä yksityisesti. Rakentava palaute on tervetullutta.",
@@ -2978,7 +3029,10 @@
         "subject-technical-mechanics": "Mécanique technique",
         "subject-air-traffic-control": "Contrôle de la circulation aérienne",
         "subject-physical-training": "Éducation physique",
-        "subject-electrical-engineering-electronics": "Électrotechnique et électronique"
+        "subject-electrical-engineering-electronics": "Électrotechnique et électronique",
+        "subject-informatika": "Informatique",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Masse et centrage des aéronefs multimoteurs",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— un projet amateur créé pour faciliter les études. Ne le prends pas trop à cœur. Écris-moi en privé en cas de problème. Les critiques constructives sont les bienvenues.",
@@ -3135,7 +3189,10 @@
         "subject-technical-mechanics": "Technická mechanika",
         "subject-air-traffic-control": "Řízení letového provozu",
         "subject-physical-training": "Tělesná výchova",
-        "subject-electrical-engineering-electronics": "Elektrotechnika a elektronika"
+        "subject-electrical-engineering-electronics": "Elektrotechnika a elektronika",
+        "subject-informatika": "Informatika",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Hmotnost a vyvážení vícemotorového letadla",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— amatérský projekt, který má usnadnit studium. Neber ho příliš vážně. S problémy mi napiš soukromě. Konstruktivní kritika je vítána.",
@@ -3292,7 +3349,10 @@
         "subject-technical-mechanics": "Teknika mekaniko",
         "subject-air-traffic-control": "Regado de aertrafiko",
         "subject-physical-training": "Korpa edukado",
-        "subject-electrical-engineering-electronics": "Elektrotekniko kaj elektroniko"
+        "subject-electrical-engineering-electronics": "Elektrotekniko kaj elektroniko",
+        "subject-informatika": "Informatiko",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Maso kaj pezocentro de plurmotoraj aviadiloj",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— amatora projekto por pli komforta lernado. Ne prenu ĝin tro serioze. Pri problemoj skribu al mi private. Konstrua kritiko bonvenas.",
@@ -3449,7 +3509,10 @@
         "subject-technical-mechanics": "Tehniline mehaanika",
         "subject-air-traffic-control": "Lennujuhtimine",
         "subject-physical-training": "Kehaline kasvatus",
-        "subject-electrical-engineering-electronics": "Elektrotehnika ja elektroonika"
+        "subject-electrical-engineering-electronics": "Elektrotehnika ja elektroonika",
+        "subject-informatika": "Informaatika",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Mitmemootorilise õhusõiduki mass ja raskuskese",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— hobiprojekt, mis teeb õppimise mugavamaks. Ära võta seda liiga tõsiselt. Probleemide korral kirjuta mulle privaatselt. Asjalik kriitika on teretulnud.",
@@ -3606,7 +3669,10 @@
         "subject-technical-mechanics": "工業力学",
         "subject-air-traffic-control": "航空交通管制",
         "subject-physical-training": "体育",
-        "subject-electrical-engineering-electronics": "電気工学と電子工学"
+        "subject-electrical-engineering-electronics": "電気工学と電子工学",
+        "subject-informatika": "情報科学",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "多発機の重量と重心位置",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— 勉強を少し便利にするための個人制作プロジェクトです。あまり真剣に受け止めないでください。問題があればDMをどうぞ。建設的な意見を歓迎します。",
@@ -3793,7 +3859,10 @@
         "subject-technical-mechanics": "Tehnična mehanika",
         "subject-air-traffic-control": "Upravjanje vzdušnym dviženjem",
         "subject-physical-training": "Fizična priprava",
-        "subject-electrical-engineering-electronics": "Elektrotehnika i elektronika"
+        "subject-electrical-engineering-electronics": "Elektrotehnika i elektronika",
+        "subject-informatika": "Informatika",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Masa i centracija mnogomotornego lětadla",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— amatersky projekt, stvorjeny dlja udobstva učenja. Ne priimaj jego prěmnogo seriozno. O problemach piši v privatne soobčenje. Konstruktivna kritika jest dobro došla.",
@@ -3950,7 +4019,10 @@
         "subject-technical-mechanics": "Mechanica technica",
         "subject-air-traffic-control": "Moderatio commeatus aerei",
         "subject-physical-training": "Exercitatio corporis",
-        "subject-electrical-engineering-electronics": "Electrotechnica et electronica"
+        "subject-electrical-engineering-electronics": "Electrotechnica et electronica",
+        "subject-informatika": "Informatica",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Massa et aequilibratio aeronavis plurimotoriae",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— opus amateuristicum ad studia commodius agenda. Noli nimis serio accipere. De difficultatibus privatim scribe. Censura constructiva grata est.",
@@ -4107,7 +4179,10 @@
         "subject-technical-mechanics": "Техническэ механика",
         "subject-air-traffic-control": "Агаарай хүдэлөөе хүтэлбэрилхэ",
         "subject-physical-training": "Бэеын тамир",
-        "subject-electrical-engineering-electronics": "Электротехника ба электроника"
+        "subject-electrical-engineering-electronics": "Электротехника ба электроника",
+        "subject-informatika": "Информатика",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Олон хүдэлгүүртэй агаарай онгосын масса ба тэнсүүр",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— һуралсалые аятай болгохо һонирхогшодой проект. Үнэхөөр ехээр бү аба. Асуудал гарабал хубиин зурвас бэшээрэй. Ашатай һанамжа дэмжэгдэнэ.",
@@ -4264,7 +4339,10 @@
         "subject-technical-mechanics": "Техмех",
         "subject-air-traffic-control": "Авиауправ",
         "subject-physical-training": "Физо",
-        "subject-electrical-engineering-electronics": "Электропро"
+        "subject-electrical-engineering-electronics": "Электропро",
+        "subject-informatika": "Инфопро",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Многодвиг-масцентра",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— учебудоб любпроект. Сердцблиз не бери. Пробпиш в личпо. Конструкто-крит добро.",
@@ -4421,7 +4499,10 @@
         "subject-technical-mechanics": "janmey vangmeH QeD",
         "subject-air-traffic-control": "muD Dujmey SeHmeH mIw",
         "subject-physical-training": "porgh HoSmoHmeH ghoj",
-        "subject-electrical-engineering-electronics": "'ul janmey QeD"
+        "subject-electrical-engineering-electronics": "'ul janmey QeD",
+        "subject-informatika": "De'wI' QeD",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "jonta'mey law' ghajbogh muD Duj 'ughghach je ngaDghach",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— ghojmeH Qu'vaD nabHom neH. tlhoy yISaHbe'. Qagh DaSamchugh jIHvaD yIjatlh! mu'mey QaQ vIparHa'.",
@@ -4607,7 +4688,10 @@
         "subject-technical-mechanics": "Teknisk mekanik",
         "subject-air-traffic-control": "Flygtrafikledning",
         "subject-physical-training": "Idrott och fysisk träning",
-        "subject-electrical-engineering-electronics": "Elektroteknik och elektronik"
+        "subject-electrical-engineering-electronics": "Elektroteknik och elektronik",
+        "subject-informatika": "Informatik",
+        "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna": "Massa och tyngdpunktsläge för flermotorigt flygplan",
+        "subject-srpbz": "СРПБЗ"
       },
       "extras": {
         "— любительский проект, сделанный во имя удобства учёбы. Не принимай его близко к сердцу. О проблемах пиши в личку. Конструктивная критика приветствуется.": "— ett hobbyprojekt för att göra studierna enklare. Ta det inte för allvarligt. Skriv ett privat meddelande om något krånglar. Konstruktiv kritik är välkommen.",

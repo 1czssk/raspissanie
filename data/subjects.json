@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "basedOnWeeks": [
     "2026-11-16",
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-30"
   ],
   "method": "Рекомендации основаны на наблюдениях из опубликованных недель. Преподаватели и аудитории не закреплены жёстко.",
   "subjects": [
@@ -10,39 +11,42 @@
       "id": "subject-emergency-rescue-training",
       "name": "Аварийно-спасательная подготовка",
       "aliases": [],
-      "lessonCount": 10,
+      "lessonCount": 15,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "38": 6,
-        "49": 4
+        "38": 9,
+        "49": 6
       },
       "teachers": [
         {
           "teacherId": "teacher-ponkrashyov",
           "teacherName": "Понкрашёв В.А.",
-          "lessonCount": 6,
+          "lessonCount": 9,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "38": 6
+            "38": 9
           },
           "usualRoom": "38"
         },
         {
           "teacherId": "teacher-kiselyov",
           "teacherName": "Киселёв М.А.",
-          "lessonCount": 4,
+          "lessonCount": 6,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "49": 4
+            "49": 6
           },
           "usualRoom": "49"
         }
@@ -54,25 +58,27 @@
       "aliases": [
         "Аварийно-спасательное оборудование ВС"
       ],
-      "lessonCount": 6,
+      "lessonCount": 8,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "38": 6
+        "38": 8
       },
       "teachers": [
         {
           "teacherId": "teacher-ponkrashyov",
           "teacherName": "Понкрашёв В.А.",
-          "lessonCount": 6,
+          "lessonCount": 8,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "38": 6
+            "38": 8
           },
           "usualRoom": "38"
         }
@@ -82,25 +88,27 @@
       "id": "subject-aviation-security",
       "name": "Авиационная безопасность",
       "aliases": [],
-      "lessonCount": 10,
+      "lessonCount": 15,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "49": 10
+        "49": 15
       },
       "teachers": [
         {
           "teacherId": "teacher-kiselyov",
           "teacherName": "Киселёв М.А.",
-          "lessonCount": 10,
+          "lessonCount": 15,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "49": 10
+            "49": 15
           },
           "usualRoom": "49"
         }
@@ -110,25 +118,27 @@
       "id": "subject-aerodynamics-flight-dynamics",
       "name": "Аэродинамика и динамика полёта",
       "aliases": [],
-      "lessonCount": 33,
+      "lessonCount": 48,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "23": 33
+        "23": 48
       },
       "teachers": [
         {
           "teacherId": "teacher-lifar",
           "teacherName": "Лифарь В.Н.",
-          "lessonCount": 33,
+          "lessonCount": 48,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "23": 33
+            "23": 48
           },
           "usualRoom": "23"
         }
@@ -138,25 +148,27 @@
       "id": "subject-life-safety",
       "name": "Безопасность жизнедеятельности",
       "aliases": [],
-      "lessonCount": 6,
+      "lessonCount": 10,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "32": 6
+        "32": 10
       },
       "teachers": [
         {
           "teacherId": "teacher-rebenok",
           "teacherName": "Ребенок Н.В.",
-          "lessonCount": 6,
+          "lessonCount": 10,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "32": 6
+            "32": 10
           },
           "usualRoom": "32"
         }
@@ -166,23 +178,25 @@
       "id": "subject-flight-safety",
       "name": "Безопасность полётов",
       "aliases": [],
-      "lessonCount": 2,
+      "lessonCount": 4,
       "weeks": [
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "38": 2
+        "38": 4
       },
       "teachers": [
         {
           "teacherId": "teacher-ponkrashyov",
           "teacherName": "Понкрашёв В.А.",
-          "lessonCount": 2,
+          "lessonCount": 4,
           "weeks": [
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "38": 2
+            "38": 4
           },
           "usualRoom": "38"
         }
@@ -192,39 +206,42 @@
       "id": "subject-air-navigation",
       "name": "Воздушная навигация",
       "aliases": [],
-      "lessonCount": 39,
+      "lessonCount": 54,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "41": 33,
-        "42": 6
+        "41": 45,
+        "42": 9
       },
       "teachers": [
         {
           "teacherId": "teacher-yakunin",
           "teacherName": "Якунин Г.А.",
-          "lessonCount": 33,
+          "lessonCount": 45,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "41": 33
+            "41": 45
           },
           "usualRoom": "41"
         },
         {
           "teacherId": "teacher-volodko",
           "teacherName": "Володько В.Г.",
-          "lessonCount": 6,
+          "lessonCount": 9,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "42": 6
+            "42": 9
           },
           "usualRoom": "42"
         }
@@ -262,25 +279,27 @@
       "aliases": [
         "Воздушное право РФ"
       ],
-      "lessonCount": 10,
+      "lessonCount": 20,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "49": 10
+        "49": 20
       },
       "teachers": [
         {
           "teacherId": "teacher-kiselyov",
           "teacherName": "Киселёв М.А.",
-          "lessonCount": 10,
+          "lessonCount": 20,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "49": 10
+            "49": 20
           },
           "usualRoom": "49"
         }
@@ -292,25 +311,27 @@
       "aliases": [
         "Двигатель с-та Cessna-172S"
       ],
-      "lessonCount": 13,
+      "lessonCount": 23,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "21": 13
+        "21": 23
       },
       "teachers": [
         {
           "teacherId": "teacher-shirotskiy",
           "teacherName": "Широцкий М.В.",
-          "lessonCount": 13,
+          "lessonCount": 23,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "21": 13
+            "21": 23
           },
           "usualRoom": "21"
         }
@@ -320,25 +341,27 @@
       "id": "subject-engineering-drawing",
       "name": "Инженерная графика",
       "aliases": [],
-      "lessonCount": 20,
+      "lessonCount": 30,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "24": 20
+        "24": 30
       },
       "teachers": [
         {
           "teacherId": "teacher-brazhnikova",
           "teacherName": "Бражникова Е.Ю.",
-          "lessonCount": 20,
+          "lessonCount": 30,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "24": 20
+            "24": 30
           },
           "usualRoom": "24"
         }
@@ -348,39 +371,42 @@
       "id": "subject-foreign-language",
       "name": "Иностранный язык",
       "aliases": [],
-      "lessonCount": 40,
+      "lessonCount": 60,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "31": 20,
-        "33": 20
+        "31": 30,
+        "33": 30
       },
       "teachers": [
         {
           "teacherId": "teacher-batagralieva",
           "teacherName": "Батагралиева",
-          "lessonCount": 20,
+          "lessonCount": 30,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "33": 20
+            "33": 30
           },
           "usualRoom": "33"
         },
         {
           "teacherId": "teacher-saltykova",
           "teacherName": "Салтыкова Ю.В.",
-          "lessonCount": 20,
+          "lessonCount": 30,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "31": 20
+            "31": 30
           },
           "usualRoom": "31"
         }
@@ -392,27 +418,55 @@
       "aliases": [
         "Иностранный язык в проф. деятельности"
       ],
-      "lessonCount": 16,
+      "lessonCount": 24,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "31": 16
+        "31": 24
       },
       "teachers": [
         {
           "teacherId": "teacher-saltykova",
           "teacherName": "Салтыкова Ю.В.",
-          "lessonCount": 16,
+          "lessonCount": 24,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "31": 16
+            "31": 24
           },
           "usualRoom": "31"
+        }
+      ]
+    },
+    {
+      "id": "subject-informatika",
+      "name": "Информатика",
+      "aliases": [],
+      "lessonCount": 6,
+      "weeks": [
+        "2026-11-30"
+      ],
+      "rooms": {
+        "37": 6
+      },
+      "teachers": [
+        {
+          "teacherId": "teacher-zhdanova",
+          "teacherName": "Жданова Н.Н.",
+          "lessonCount": 6,
+          "weeks": [
+            "2026-11-30"
+          ],
+          "rooms": {
+            "37": 6
+          },
+          "usualRoom": "37"
         }
       ]
     },
@@ -422,39 +476,42 @@
       "aliases": [
         "Лётная эксплуатация многодвигательного ВС"
       ],
-      "lessonCount": 18,
+      "lessonCount": 28,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "42": 16,
-        "49": 2
+        "42": 25,
+        "49": 3
       },
       "teachers": [
         {
           "teacherId": "teacher-volodko",
           "teacherName": "Володько В.Г.",
-          "lessonCount": 16,
+          "lessonCount": 25,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "42": 16
+            "42": 25
           },
           "usualRoom": "42"
         },
         {
           "teacherId": "teacher-kiselyov",
           "teacherName": "Киселёв М.А.",
-          "lessonCount": 2,
+          "lessonCount": 3,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "49": 2
+            "49": 3
           },
           "usualRoom": "49"
         }
@@ -466,41 +523,70 @@
       "aliases": [
         "Лётно-технические характеристики ВС"
       ],
-      "lessonCount": 17,
+      "lessonCount": 25,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "22": 9,
-        "38": 8
+        "22": 15,
+        "38": 10
       },
       "teachers": [
         {
           "teacherId": "teacher-peleshko",
           "teacherName": "Пелешко А.Н.",
-          "lessonCount": 9,
+          "lessonCount": 15,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "22": 9
+            "22": 15
           },
           "usualRoom": "22"
         },
         {
           "teacherId": "teacher-ponkrashyov",
           "teacherName": "Понкрашёв В.А.",
-          "lessonCount": 8,
+          "lessonCount": 10,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "38": 8
+            "38": 10
           },
           "usualRoom": "38"
+        }
+      ]
+    },
+    {
+      "id": "subject-massa-i-tsentrovka-mnogodvigatelnogo-vozdushnogo-sudna",
+      "name": "Масса и центровка многодвигательного воздушного судна",
+      "aliases": [],
+      "lessonCount": 2,
+      "weeks": [
+        "2026-11-30"
+      ],
+      "rooms": {
+        "42": 2
+      },
+      "teachers": [
+        {
+          "teacherId": "teacher-volodko",
+          "teacherName": "Володько В.Г.",
+          "lessonCount": 2,
+          "weeks": [
+            "2026-11-30"
+          ],
+          "rooms": {
+            "42": 2
+          },
+          "usualRoom": "42"
         }
       ]
     },
@@ -508,25 +594,27 @@
       "id": "subject-mathematics",
       "name": "Математика",
       "aliases": [],
-      "lessonCount": 20,
+      "lessonCount": 27,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "37": 20
+        "37": 27
       },
       "teachers": [
         {
           "teacherId": "teacher-zhdanova",
           "teacherName": "Жданова Н.Н.",
-          "lessonCount": 20,
+          "lessonCount": 27,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "37": 20
+            "37": 27
           },
           "usualRoom": "37"
         }
@@ -538,25 +626,27 @@
       "aliases": [
         "Метрология, С.С."
       ],
-      "lessonCount": 4,
+      "lessonCount": 6,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "24": 4
+        "24": 6
       },
       "teachers": [
         {
           "teacherId": "teacher-brazhnikova",
           "teacherName": "Бражникова Е.Ю.",
-          "lessonCount": 4,
+          "lessonCount": 6,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "24": 4
+            "24": 6
           },
           "usualRoom": "24"
         }
@@ -568,25 +658,27 @@
       "aliases": [
         "Самолёт многодвигательный и его системы"
       ],
-      "lessonCount": 13,
+      "lessonCount": 19,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "22": 13
+        "22": 19
       },
       "teachers": [
         {
           "teacherId": "teacher-peleshko",
           "teacherName": "Пелешко А.Н.",
-          "lessonCount": 13,
+          "lessonCount": 19,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "22": 13
+            "22": 19
           },
           "usualRoom": "22"
         }
@@ -598,25 +690,27 @@
       "aliases": [
         "Общий курс беспилотных транспортных систем"
       ],
-      "lessonCount": 4,
+      "lessonCount": 6,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "30": 4
+        "30": 6
       },
       "teachers": [
         {
           "teacherId": "teacher-chizhov",
           "teacherName": "Чижов В.М.",
-          "lessonCount": 4,
+          "lessonCount": 6,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "30": 4
+            "30": 6
           },
           "usualRoom": "30"
         }
@@ -630,25 +724,27 @@
       "aliases": [
         "Самолёт однодвигательный и его системы"
       ],
-      "lessonCount": 16,
+      "lessonCount": 21,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "22": 16
+        "22": 21
       },
       "teachers": [
         {
           "teacherId": "teacher-peleshko",
           "teacherName": "Пелешко А.Н.",
-          "lessonCount": 16,
+          "lessonCount": 21,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "22": 16
+            "22": 21
           },
           "usualRoom": "22"
         }
@@ -658,25 +754,27 @@
       "id": "subject-economics-fundamentals",
       "name": "Основы экономики",
       "aliases": [],
-      "lessonCount": 20,
+      "lessonCount": 30,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "32": 20
+        "32": 30
       },
       "teachers": [
         {
           "teacherId": "teacher-rebenok",
           "teacherName": "Ребенок Н.В.",
-          "lessonCount": 20,
+          "lessonCount": 30,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "32": 20
+            "32": 30
           },
           "usualRoom": "32"
         }
@@ -686,25 +784,27 @@
       "id": "subject-occupational-safety",
       "name": "Охрана труда",
       "aliases": [],
-      "lessonCount": 10,
+      "lessonCount": 15,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "24": 10
+        "24": 15
       },
       "teachers": [
         {
           "teacherId": "teacher-brazhnikova",
           "teacherName": "Бражникова Е.Ю.",
-          "lessonCount": 10,
+          "lessonCount": 15,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "24": 10
+            "24": 15
           },
           "usualRoom": "24"
         }
@@ -716,25 +816,27 @@
       "aliases": [
         "Подготовка авиа/персонала в области Ч/Ф"
       ],
-      "lessonCount": 15,
+      "lessonCount": 20,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "48": 15
+        "48": 20
       },
       "teachers": [
         {
           "teacherId": "teacher-danilova",
           "teacherName": "Данилова О.В.",
-          "lessonCount": 15,
+          "lessonCount": 20,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "48": 15
+            "48": 20
           },
           "usualRoom": "48"
         }
@@ -744,23 +846,25 @@
       "id": "subject-instrument-flight-rules",
       "name": "Правила полётов по приборам",
       "aliases": [],
-      "lessonCount": 5,
+      "lessonCount": 10,
       "weeks": [
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "38": 5
+        "38": 10
       },
       "teachers": [
         {
           "teacherId": "teacher-ponkrashyov",
           "teacherName": "Понкрашёв В.А.",
-          "lessonCount": 5,
+          "lessonCount": 10,
           "weeks": [
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "38": 5
+            "38": 10
           },
           "usualRoom": "38"
         }
@@ -772,25 +876,27 @@
       "aliases": [
         "Правовое обеспечение проф. деятельности"
       ],
-      "lessonCount": 6,
+      "lessonCount": 11,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "32": 6
+        "32": 11
       },
       "teachers": [
         {
           "teacherId": "teacher-rebenok",
           "teacherName": "Ребенок Н.В.",
-          "lessonCount": 6,
+          "lessonCount": 11,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "32": 6
+            "32": 11
           },
           "usualRoom": "32"
         }
@@ -802,25 +908,27 @@
       "aliases": [
         "Практическая а/дин-ка многодвигательного ВС"
       ],
-      "lessonCount": 21,
+      "lessonCount": 30,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "42": 21
+        "42": 30
       },
       "teachers": [
         {
           "teacherId": "teacher-volodko",
           "teacherName": "Володько В.Г.",
-          "lessonCount": 21,
+          "lessonCount": 30,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "42": 21
+            "42": 30
           },
           "usualRoom": "42"
         }
@@ -832,25 +940,27 @@
       "aliases": [
         "Приборное оборудование ВС"
       ],
-      "lessonCount": 4,
+      "lessonCount": 6,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "30": 4
+        "30": 6
       },
       "teachers": [
         {
           "teacherId": "teacher-chizhov",
           "teacherName": "Чижов В.М.",
-          "lessonCount": 4,
+          "lessonCount": 6,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "30": 4
+            "30": 6
           },
           "usualRoom": "30"
         }
@@ -862,16 +972,30 @@
       "aliases": [
         "Приборное оборудование многодвигательного ВС"
       ],
-      "lessonCount": 22,
+      "lessonCount": 24,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
         "35": 11,
-        "40": 11
+        "40": 13
       },
       "teachers": [
+        {
+          "teacherId": "teacher-kapustyan",
+          "teacherName": "Капустян Ю.И.",
+          "lessonCount": 13,
+          "weeks": [
+            "2026-11-23",
+            "2026-11-30"
+          ],
+          "rooms": {
+            "40": 13
+          },
+          "usualRoom": "40"
+        },
         {
           "teacherId": "teacher-anufriev",
           "teacherName": "Ануфриев Н.А.",
@@ -883,18 +1007,6 @@
             "35": 11
           },
           "usualRoom": "35"
-        },
-        {
-          "teacherId": "teacher-kapustyan",
-          "teacherName": "Капустян Ю.И.",
-          "lessonCount": 11,
-          "weeks": [
-            "2026-11-23"
-          ],
-          "rooms": {
-            "40": 11
-          },
-          "usualRoom": "40"
         }
       ]
     },
@@ -904,16 +1016,30 @@
       "aliases": [
         "Приборное оборудование однодвигательного ВС"
       ],
-      "lessonCount": 13,
+      "lessonCount": 21,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "35": 9,
-        "40": 4
+        "35": 15,
+        "40": 6
       },
       "teachers": [
+        {
+          "teacherId": "teacher-pshenichnikov",
+          "teacherName": "Пшеничников А.А.",
+          "lessonCount": 9,
+          "weeks": [
+            "2026-11-23",
+            "2026-11-30"
+          ],
+          "rooms": {
+            "35": 9
+          },
+          "usualRoom": "35"
+        },
         {
           "teacherId": "teacher-anufriev",
           "teacherName": "Ануфриев Н.А.",
@@ -929,27 +1055,16 @@
         {
           "teacherId": "teacher-kapustyan",
           "teacherName": "Капустян Ю.И.",
-          "lessonCount": 4,
+          "lessonCount": 6,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "40": 4
+            "40": 6
           },
           "usualRoom": "40"
-        },
-        {
-          "teacherId": "teacher-pshenichnikov",
-          "teacherName": "Пшеничников",
-          "lessonCount": 3,
-          "weeks": [
-            "2026-11-23"
-          ],
-          "rooms": {
-            "35": 3
-          },
-          "usualRoom": "35"
         }
       ]
     },
@@ -1016,27 +1131,29 @@
       "id": "subject-industry-resources",
       "name": "Ресурсы отрасли",
       "aliases": [],
-      "lessonCount": 20,
+      "lessonCount": 30,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
         "40": 1,
-        "48": 19
+        "48": 29
       },
       "teachers": [
         {
           "teacherId": "teacher-danilova",
           "teacherName": "Данилова О.В.",
-          "lessonCount": 20,
+          "lessonCount": 30,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
             "40": 1,
-            "48": 19
+            "48": 29
           },
           "usualRoom": "48"
         }
@@ -1048,25 +1165,27 @@
       "aliases": [
         "Силовые установки ВС"
       ],
-      "lessonCount": 10,
+      "lessonCount": 12,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "21": 10
+        "21": 12
       },
       "teachers": [
         {
           "teacherId": "teacher-shirotskiy",
           "teacherName": "Широцкий М.В.",
-          "lessonCount": 10,
+          "lessonCount": 12,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "21": 10
+            "21": 12
           },
           "usualRoom": "21"
         }
@@ -1078,53 +1197,85 @@
       "aliases": [
         "Силовые установки многодвигательного ВС"
       ],
-      "lessonCount": 14,
+      "lessonCount": 19,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "21": 14
+        "21": 19
       },
       "teachers": [
         {
           "teacherId": "teacher-shirotskiy",
           "teacherName": "Широцкий М.В.",
-          "lessonCount": 14,
+          "lessonCount": 19,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "21": 14
+            "21": 19
           },
           "usualRoom": "21"
         }
       ]
     },
     {
+      "id": "subject-srpbz",
+      "name": "СРПБЗ",
+      "aliases": [],
+      "lessonCount": 10,
+      "weeks": [
+        "2026-11-30"
+      ],
+      "rooms": {
+        "40": 10
+      },
+      "teachers": [
+        {
+          "teacherId": "teacher-kapustyan",
+          "teacherName": "Капустян Ю.И.",
+          "lessonCount": 10,
+          "weeks": [
+            "2026-11-30"
+          ],
+          "rooms": {
+            "40": 10
+          },
+          "usualRoom": "40"
+        }
+      ],
+      "needsConfirmation": true,
+      "note": "Новое сокращение из расписания 30.11–05.12.2026. Расшифровка неизвестна; требуется уточнение перед развёрнутым переводом."
+    },
+    {
       "id": "subject-technical-mechanics",
       "name": "Техническая механика",
       "aliases": [],
-      "lessonCount": 20,
+      "lessonCount": 30,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "30": 20
+        "30": 30
       },
       "teachers": [
         {
           "teacherId": "teacher-chizhov",
           "teacherName": "Чижов В.М.",
-          "lessonCount": 20,
+          "lessonCount": 30,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "30": 20
+            "30": 30
           },
           "usualRoom": "30"
         }
@@ -1136,25 +1287,27 @@
       "aliases": [
         "УВД"
       ],
-      "lessonCount": 13,
+      "lessonCount": 21,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "30": 13
+        "30": 21
       },
       "teachers": [
         {
           "teacherId": "teacher-chizhov",
           "teacherName": "Чижов В.М.",
-          "lessonCount": 13,
+          "lessonCount": 21,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "30": 13
+            "30": 21
           },
           "usualRoom": "30"
         }
@@ -1166,25 +1319,27 @@
       "aliases": [
         "Физо"
       ],
-      "lessonCount": 34,
+      "lessonCount": 51,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "с/з": 34
+        "с/з": 51
       },
       "teachers": [
         {
           "teacherId": "teacher-sotnikov",
           "teacherName": "Сотников Г.Н.",
-          "lessonCount": 34,
+          "lessonCount": 51,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "с/з": 34
+            "с/з": 51
           },
           "usualRoom": "с/з"
         }
@@ -1194,25 +1349,27 @@
       "id": "subject-electrical-engineering-electronics",
       "name": "Электротехника и электроника",
       "aliases": [],
-      "lessonCount": 10,
+      "lessonCount": 15,
       "weeks": [
         "2026-11-16",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-30"
       ],
       "rooms": {
-        "40": 10
+        "40": 15
       },
       "teachers": [
         {
           "teacherId": "teacher-kapustyan",
           "teacherName": "Капустян Ю.И.",
-          "lessonCount": 10,
+          "lessonCount": 15,
           "weeks": [
             "2026-11-16",
-            "2026-11-23"
+            "2026-11-23",
+            "2026-11-30"
           ],
           "rooms": {
-            "40": 10
+            "40": 15
           },
           "usualRoom": "40"
         }
