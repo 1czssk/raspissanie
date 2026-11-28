@@ -22,6 +22,8 @@ const getSubjects=()=>getDict()?.subjects||{};
 function roman(s){return Array.from(s).map(c=>{const t=RU_LETTER[c.toLocaleLowerCase('ru')];return t===undefined?c:(c===c.toUpperCase()?t.charAt(0).toUpperCase()+t.slice(1):t)}).join('')}
 
 const CUSTOM_DATE={
+ 'ru-pre':{months:['января','февраля','марта','апрѣля','мая','іюня','іюля','августа','сентября','октября','ноября','декабря'],days:['Воскресенье','Понедѣльникъ','Вторникъ','Среда','Четвергъ','Пятница','Суббота']},
+ 'ru-old':{months:['ꙗнваря','февраля','марта','апрѣля','мая','іюня','іюля','авгѹста','сентꙗбря','октꙗбря','ноꙗбря','декабря'],days:['Недѣля','Понедѣльникъ','Въторникъ','Срѣда','Четвьртъкъ','Пѧтьница','Сѹбота']},
  'isv':{months:['januar','februar','marec','april','maj','junij','julij','avgust','septembr','oktobr','novembr','decembr'],days:['nedělja','ponedělok','vtornik','srěda','četvrtok','petok','subota']},
  'la':{months:['Ianuarii','Februarii','Martii','Aprilis','Maii','Iunii','Iulii','Augusti','Septembris','Octobris','Novembris','Decembris'],days:['dies Solis','dies Lunae','dies Martis','dies Mercurii','dies Iovis','dies Veneris','dies Saturni']},
  'bxr':{months:['январиин','февралиин','мартын','апрелиин','майн','июниин','июлиин','августын','сентябриин','октябриин','ноябриин','декабриин'],days:['Ням','Дабаа','Мягмар','Лхагва','Пүрбэ','Баасан','Бямба']},
@@ -39,11 +41,14 @@ function date(iso,opt={day:'numeric',month:'long'}){
  }
  try{return new Intl.DateTimeFormat(currentLocale(),{...opt,timeZone:'UTC'}).format(new Date(iso+'T12:00:00Z'))}catch(_){return new Intl.DateTimeFormat('en-GB',{...opt,timeZone:'UTC'}).format(new Date(iso+'T12:00:00Z'))}
 }
-function week(num){if(language==='ru')return num+'-я учебная неделя';
+function week(num){if(language==='ru')return num+'-я учебная неделя';if(language==='ru-pre')return num+'-я учебная недѣля';if(language==='ru-old')return num+'-я седмица оученій';
  const q={'en':'Academic week','de':'Unterrichtswoche','fr':'Semaine de cours','es':'Semana lectiva','it':'Settimana didattica','pt':'Semana letiva','pl':'Tydzień nauki','cs':'Výukový týden','eo':'Studsemajno','da':'Undervisningsuge','no':'Undervisningsuke','fi':'Opetusviikko','et':'Õppenädal','lv':'Mācību nedēļa','lt':'Mokymosi savaitė','hu':'Tanulmányi hét','el':'Εβδομάδα μαθημάτων','ja':'授業週','sv':'Undervisningsvecka','ko-S':'수업 주','ko-N':'수업 주','tok':'tenpo pi kama sona','isv':'Učebna sedmica','la':'Hebdomas studiorum','bxr':'Һуралсалай долоон хоног','ns84':'Учнед','tlh':'ghojmeH Hogh','bg':'Учебна седмица','ga':'Seachtain staidéir','mt':'Ġimgħa ta’ studju','nl':'Lesweek','ro':'Săptămâna de cursuri','sk':'Vyučovací týždeň','sl':'Študijski teden','hr':'Nastavni tjedan','cnr':'Nastavna sedmica','mk':'Наставна недела','is':'Kennsluvika','cy':'Wythnos astudio','gd':'Seachdain ionnsachaidh'};
  return (['ja','ko-S','ko-N'].includes(language)?'':'')+(q[language]||q.en)+' '+num;
 }
-function count(n,key){if(language==='ru'){
+function count(n,key){if(language==='ru-pre'||language==='ru-old'){
+  const nouns=language==='ru-old'?['оученій','часовъ самостоꙗтельнаго оученія','грѹпъ въ лѣтописи']:['занятій','блоковъ самоподготовки','загруженныхъ группъ'];
+  return n+' '+nouns[key==='lessons'?0:key==='self'?1:2];
+ }if(language==='ru'){
    const fmt=(o,f,m)=>n%100>=11&&n%100<=14?m:n%10===1?o:n%10>=2&&n%10<=4?f:m;
    if(key==='lessons')return n+' '+fmt('занятие','занятия','занятий');
    if(key==='self')return n+' '+fmt('блок самоподготовки','блока самоподготовки','блоков самоподготовки');
@@ -77,6 +82,11 @@ function count(n,key){if(language==='ru'){
 }
 function teacherLabel(t){if(!t)return '—';let item=typeof t==='string'?teacherList.find(x=>x.id===t||x.surname===t||x.displayName===t||x.aliases?.includes(t)):t;
  const orig=item?item.displayName||item.surname:String(t);
+ if(language==='ru-pre'||language==='ru-old'){
+   const full=String(orig);const first=full.match(/^([А-ЯЁа-яё-]+)/)?.[0]||'';
+   const decorated=first&&/[бвгджзклмнпрстфхцчшщ]$/i.test(first)?first+'ъ':first;
+   return decorated+full.slice(first.length);
+ }
  if(['ru','bxr','ns84','bg','mk'].includes(language))return orig;
  const surname=item?.surname||String(orig).match(/^[А-ЯЁ][а-яё-]+/)?.[0]||'';
  if(!surname)return orig;
@@ -217,16 +227,19 @@ function localize(raw){if(!raw||language==='ru'||!bundle)return raw;
       'No changes':"choHbe'", 'No classes listed':"ghojmeH mIw tu'lu'be'"};
    if(t[raw])return t[raw];
  }
- if(FALLBACK_EN[raw])return FALLBACK_EN[raw];
+ if(!['ru-pre','ru-old'].includes(language)&&FALLBACK_EN[raw])return FALLBACK_EN[raw];
  const pair=raw.match(/^(\d+)\s+занят(?:ие|ия|ий)$/);if(pair)return count(Number(pair[1]),'lessons');
  const wk=raw.match(/^(\d+)-я учебная неделя$/);if(wk)return week(Number(wk[1]));
  const wkShort=raw.match(/^(\d+)-я неделя/);if(wkShort)return week(Number(wkShort[1]));
- const course=raw.match(/^(\d+) курс$/);if(course)return (language==='ko-N'||language==='ko-S') ? `${course[1]}학년` : `${getU()['Курс']||'Year'} ${course[1]}`;
- const branch=raw.match(/^(\d+)-й курс · все 5 групп$/);if(branch)return (language==='ko-N'||language==='ko-S') ? `${branch[1]}학년 · ${getU()['Все группы']||'모든 조'}` : `${getU()['Курс']||'Year'} ${branch[1]} · ${(getU()['Все группы']||'all groups')}`;
+ const course=raw.match(/^(\d+) курс$/);if(course&&language==='ru-old')return course[1]+'-е лѣто учёбы';if(course&&language==='ru-pre')return course[1]+' курсъ';if(course)return (language==='ko-N'||language==='ko-S') ? `${course[1]}학년` : `${getU()['Курс']||'Year'} ${course[1]}`;
+ const branch=raw.match(/^(\d+)-й курс · все 5 групп$/);if(branch&&language==='ru-old')return branch[1]+'-е лѣто учёбы · всѧ грѹпы';if(branch&&language==='ru-pre')return branch[1]+' курсъ · всѣ группы';if(branch)return (language==='ko-N'||language==='ko-S') ? `${branch[1]}학년 · ${getU()['Все группы']||'모든 조'}` : `${getU()['Курс']||'Year'} ${branch[1]} · ${(getU()['Все группы']||'all groups')}`;
  if(raw==='No data'&&language==='ko-N')return '자료 없음';
+ if(raw==='— любой —'&&language==='ru-pre')return '— всякій —';
+ if(raw==='— любой —'&&language==='ru-old')return '— любый —';
  if(raw==='— любой —')return '— '+({'de':'beliebig','fr':'tous','es':'cualquiera','isv':'ljuby','la':'quivis','bxr':'алишье','ns84':'любой','tlh':'Hoch','ja':'すべて','sv':'valfri'}[language]||'any')+' —';
  if(raw==='Учебная неделя')return getU()['Неделя']||'Week';
  if(raw==='Параллельно · подгруппы')return `${getU()['Подгруппы']||'Subgroups'} · 2`;
+ if(language==='ru-old'&&raw==='✓ Режим правок включён')return '✓ Правити дозволено';if(language==='ru-pre'&&raw==='✓ Режим правок включён')return '✓ Исправленіе включено';
  if(raw==='✓ Режим правок включён')return '✓ '+(getU()['Локальные правки']||'Editing enabled');
  if(raw==='✎ Локальные правки')return '✎ '+(getU()['Локальные правки']||'Local edits');
  if(raw==='↓ JSON недели')return '↓ '+(getU()['JSON недели']||'Week JSON');
@@ -242,6 +255,8 @@ function localize(raw){if(!raw||language==='ru'||!bundle)return raw;
  if(raw.startsWith('класс '))return (getU()['Класс']||'Room')+' '+raw.slice(6);
  if(raw.startsWith('ауд. '))return (getU()['Аудитория']||'Room')+' '+raw.slice(5);
  if(raw.startsWith('Подгруппа '))return (getU()['Подгруппы']||'Subgroup')+' '+raw.slice(10);
+if(language==='ru-old'&&raw.startsWith('Группа '))return 'Грѹпа '+raw.slice(7);
+ if(language==='ru-pre'&&raw.startsWith('Группа '))return 'Группа '+raw.slice(7);
  if(raw.startsWith('Группа '))return (getU()['Группа']||'Group')+' '+raw.slice(7);
  // Avoid splitting arbitrary text containing slashes (e.g. PDF / Excel).
  if(raw.includes(' / ')&&raw.split(' / ').every(x=>getSubjectId(x)))return raw.split(' / ').map(x=>subject(getSubjectId(x),x)).join(' / ');
@@ -309,7 +324,13 @@ function localize(raw){if(!raw||language==='ru'||!bundle)return raw;
    };
    let out=raw,changed=false;
    for(const [from,to] of Object.entries(svenska))if(out.includes(from)){out=out.split(from).join(to);changed=true;}
-   for(const t of teacherList){for(const value of [t.displayName,t.surname])if(value&&out.includes(value)){out=out.split(value).join(teacherLabel(t));changed=true;}}
+   for(const t of teacherList){
+   if(['ru-pre','ru-old'].includes(language)){
+     // Rendered historical surnames already have the ъ suffix. Do not relocalize
+     // the bare surname inside "Капустянъ Ю.И.", which would duplicate initials.
+     if(t.displayName&&out.includes(t.displayName)){out=out.split(t.displayName).join(teacherLabel(t));changed=true;}
+   }else for(const value of [t.displayName,t.surname])if(value&&out.includes(value)){out=out.split(value).join(teacherLabel(t));changed=true;}
+ }
    for(const [id,russian] of Object.entries(bundle.translations.ru.subjects||{}))if(russian&&out.includes(russian)){out=out.split(russian).join(subject(id,russian));changed=true;}
    if(changed)return out;
  }
@@ -325,12 +346,18 @@ function localize(raw){if(!raw||language==='ru'||!bundle)return raw;
  if(loaded&&language==='ja')return `${loaded[2]} グループ中 ${loaded[1]} グループを読み込みました。未登録のグループは空きとみなしません。`;
  if(loaded&&language==='tlh')return `${loaded[2]} ghommeyvo' ${loaded[1]} ghommey De' tu'lu'. Hutlhbogh ghommey chIm 'oHbe'.`;
  if(loaded)return language==='sv'?`${loaded[1]} av ${loaded[2]} grupper inlästa. Grupper som saknas räknas inte som lediga.`:`${loaded[1]} of ${loaded[2]} groups loaded. Missing groups are not considered free.`;
- const unusual=out.match(/^Необычная аудитория: (.+?)\. Преподаватель: (.+?); обычная аудитория — (.+?) \(\d+ из (\d+) занятий за две недели\)\. Проверь по оригиналу; перенос возможен\.$/);
+ const unusual=out.match(/^Необычная аудитория: (.+?)\. Преподаватель: (.+?); обычная аудитория — (.+?) \(\d+ из (\d+) занятий в архиве\)\. Проверь по оригиналу; перенос возможен\.$/);
  if(unusual){const t=teacherList.find(x=>x.displayName===unusual[2]||x.surname===unusual[2]);if(language==='ja')return `普段と異なる教室：${unusual[1]}。教員：${t?teacherLabel(t):unusual[2]}。普段の教室：${unusual[3]}（2週間で${unusual[5]}授業中）。原本を確認してください。`;if(language==='tlh')return `pa' motlhbe': ${unusual[1]}. ghojmoHwI': ${t?teacherLabel(t):unusual[2]}; motlh pa': ${unusual[3]}. De' yInuD.`;return language==='sv'?`Ovanlig sal: ${unusual[1]}. Lärare: ${t?teacherLabel(t):unusual[2]}; vanlig sal: ${unusual[3]} (${unusual[4]} av ${unusual[5]} lektioner under två veckor). Kontrollera originalet; bytet kan vara avsiktligt.`:`Unusual room: ${unusual[1]}. Teacher: ${t?teacherLabel(t):unusual[2]}; typical room: ${unusual[3]} (${unusual[4]} of ${unusual[5]} lessons across two weeks). Check the original; the change may be intentional.`;}
 
  // This only affects rendered text; no changes to the canonical JSON records.
  for(const [from,to] of Object.entries(localPhrases[language]||phrases))if(out.includes(from)){out=out.split(from).join(to);changed=true;}
- for(const t of teacherList){for(const value of [t.displayName,t.surname])if(value&&out.includes(value)){out=out.split(value).join(teacherLabel(t));changed=true;}}
+ for(const t of teacherList){
+   if(['ru-pre','ru-old'].includes(language)){
+     // Rendered historical surnames already have the ъ suffix. Do not relocalize
+     // the bare surname inside "Капустянъ Ю.И.", which would duplicate initials.
+     if(t.displayName&&out.includes(t.displayName)){out=out.split(t.displayName).join(teacherLabel(t));changed=true;}
+   }else for(const value of [t.displayName,t.surname])if(value&&out.includes(value)){out=out.split(value).join(teacherLabel(t));changed=true;}
+ }
  for(const [id,russian] of Object.entries(bundle.translations.ru.subjects||{}))if(russian&&out.includes(russian)){out=out.split(russian).join(subject(id,russian));changed=true;}
  return changed?out:raw;
 }

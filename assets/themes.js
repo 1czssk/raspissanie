@@ -8,7 +8,7 @@
    ['lsd','ЛСД','LSD'],['matrix','Матрица','Matrix'],['cockpit','Ночная кабина','Night cockpit'],
    ['notebook','Тетрадка','Notebook'],['ultraviolet','Ультрафиолет','Ultraviolet'],
    ['simple','Простая','Plain'],['nineties','Девяностые','The Nineties'],
-   ['bright','Яркая','Bright'],['orange','Апельсин','Orange'],['dacha','Лето на даче','Summer at the cottage']
+   ['bright','Яркая','Bright'],['orange','Апельсин','Orange'],['dacha','Лето на даче','Summer at the cottage'],['mi8','Кабина Ми-8','Mi-8 cockpit']
  ];
  const valid=new Set(themes.map(x=>x[0]));
  const read=(key,fallback)=>{try{return localStorage.getItem(key)||fallback}catch(_){return fallback}};

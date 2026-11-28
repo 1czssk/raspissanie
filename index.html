@@ -43,6 +43,12 @@
       .site-header #themeToggle{grid-column:2;grid-row:1;justify-self:end}
       .site-header #installAppBtn{grid-column:1 / -1;grid-row:2;justify-self:end;margin:0 1px 2px;padding:5px 0;max-width:100%;white-space:normal;text-align:right}
     }
+    .week-card.current-week{position:relative;border-color:var(--t-green,#18865d)!important}
+    .week-card.current-week em{color:var(--t-green,#18865d)!important;font-weight:750}
+    .day.current-day>.day-head{box-shadow:inset 4px 0 0 var(--t-green,#18865d)!important}
+    #dayView{min-height:34px;max-width:190px;cursor:pointer}
+    .today-btn{white-space:nowrap;font-weight:700}
+    @media(max-width:520px){#dayView{max-width:140px}.result-controls{gap:6px}}
   </style>
 </head>
 <body>
@@ -66,6 +72,7 @@
     </form>
     <section aria-label="Найденное расписание">
       <div class="result-top"><div class="result-title"><h2 id="resultHeading">Все группы</h2><span id="resultMeta"></span></div><div class="result-controls">
+        <select id="dayView" class="mini-btn" aria-label="Просмотр дня"><option value="all">Все дни</option></select><button class="mini-btn today-btn" id="todayBtn" type="button">◉ Сегодня</button>
         <button class="mini-btn" id="showTeachers" type="button">♙ Преподаватели</button>
         <button class="mini-btn" id="editToggle" type="button">✎ Локальные правки</button>
         <button class="mini-btn" id="exportData" type="button">↓ JSON недели</button>
@@ -131,7 +138,25 @@
     function normalizeWeek(w){Object.values(w.groups||{}).forEach(g=>Object.values(g.days||{}).forEach(d=>d.lessons.forEach(normalizeLesson)));return w}
     function teacherForLesson(l){return l.variants?.length?l.variants.map(v=>teacherName(v.teacherId,v.teacher)).join(' / '):teacherName(l.teacherId,l.teacher)}
     function teacherMatches(l,id){return (l.variants?.length?l.variants:[l]).some(v=>(idForTeacher(v.teacher)||v.teacherId)===id)}
-    const state={week:null,data:null,group:'',teacher:'',room:'',text:'',edit:false,editing:null};
+    const state={week:null,data:null,group:'',teacher:'',room:'',text:'',edit:false,editing:null,dayView:'all',todayNotice:''};
+    // Use the visitor's calendar date, not the build date or the last published week.
+    const todayISO=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+    const todayWeek=()=>{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-(d.getDay()+6)%7);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+    function initialWeek(){const current=todayWeek();if(allWeeks.includes(current))return current;
+      const n=Date.parse(current);return allWeeks.reduce((best,w)=>!best||Math.abs(Date.parse(w)-n)<Math.abs(Date.parse(best)-n)?w:best,'')}
+    function syncDayView(){const select=$('dayView');if(!select)return;select.innerHTML='<option value="all">'+esc(I18n.localize('Все дни'))+'</option>'+dates().map(date=>'<option value="'+date+'">'+esc(dayName(date).replace(/^./,c=>c.toUpperCase())+' · '+niceDate(date))+'</option>').join('');if(state.dayView!=='all'&&!dates().includes(state.dayView)){
+      if(state.dayView===todayISO()&&new Date().getDay()===0){
+         select.insertAdjacentHTML('beforeend','<option value="'+state.dayView+'">'+esc(I18n.localize('Воскресенье')+' · '+niceDate(state.dayView))+'</option>');
+      }else state.dayView='all';
+    }select.value=state.dayView}
+    async function jumpToday(){const date=todayISO(),week=todayWeek();if(!allWeeks.includes(week)){
+      state.todayNotice='Расписание на текущую неделю ещё не загружено.';
+      state.dayView='all';render();return;
+    }
+      if(state.week!==week)await loadWeekAsync(week);
+      state.dayView=date;state.todayNotice=new Date().getDay()===0?'Сегодня воскресенье — занятий нет.':'';
+      render();const todayCard=document.getElementById('day-'+date);if(todayCard)todayCard.scrollIntoView({block:'start',behavior:'smooth'});
+    }
     const niceDate=s=>I18n.date(s,{day:'numeric',month:'long'});
     const dayName=s=>I18n.date(s,{weekday:'long'});
     const dates=()=>Array.from({length:6},(_,i)=>{const [y,m,d]=state.week.split('-').map(Number);return new Date(Date.UTC(y,m-1,d+i)).toISOString().slice(0,10)});
@@ -171,7 +196,7 @@
       return true;
     }
     const filtered=()=>lessonRows().filter(passes);
-    function renderWeekNav(){ $('weekNav').innerHTML=allWeeks.map(w=>{const data=src[w]||manifest.find(m=>m.weekStart===w),selected=w===state.week,archive=w!==allWeeks[allWeeks.length-1];return '<button class="week-card '+(archive?'archive ':'')+(selected?'selected':'')+'" data-week="'+w+'" aria-pressed="'+selected+'"><strong>'+I18n.week(data.academicWeek)+'</strong><span>'+niceDate(w)+' — '+niceDate(data.weekEnd)+'</span><em>'+(archive?'Архив':'Новая неделя')+'</em></button>'}).join('');
+    function renderWeekNav(){ $('weekNav').innerHTML=allWeeks.map(w=>{const data=src[w]||manifest.find(m=>m.weekStart===w),selected=w===state.week,archive=w!==allWeeks[allWeeks.length-1],current=w===todayWeek();return '<button class="week-card '+(archive?'archive ':'')+(selected?'selected':'')+(current?' current-week':'')+'" data-week="'+w+'" aria-pressed="'+selected+'"><strong>'+I18n.week(data.academicWeek)+'</strong><span>'+niceDate(w)+' — '+niceDate(data.weekEnd)+'</span><em>'+(current?'● '+I18n.localize('Текущая неделя'):(archive?'Архив':'Новая неделя'))+'</em></button>'}).join('');
       for(const b of $('weekNav').querySelectorAll('[data-week]'))b.addEventListener('click',()=>{loadWeekAsync(b.dataset.week)});
     }
     function editButton(row){if(!state.edit)return '';return '<button type="button" class="edit-link" data-edit="'+esc(row.lesson.id)+'" data-group="'+esc(row.group)+'" data-date="'+esc(row.date)+'">изменить</button>'}
@@ -184,7 +209,7 @@
     function tableRow(row,multi){const l=row.lesson,self=l.kind==='self_study';return '<tr class="'+(self?'self-row':'')+'"><td class="pair-cell"><span class="pair-no">'+esc(l.number)+'</span></td><td class="subject-cell">'+lessonSubject(l)+editButton(row)+(l.reviewNote?'<div class="review-note">'+esc(l.reviewNote)+'</div>':'')+'</td><td class="person-cell">'+teacherText(l)+'</td><td class="room-cell">'+roomText(l)+'</td>'+(multi?'<td class="group-cell"><b>'+esc(row.group)+'</b></td>':'')+'</tr>'}
     function render(){const data=state.data,all=filtered(),multi=!state.group;
       $('periodSubheading').textContent=I18n.week(data.academicWeek)+' · '+niceDate(data.weekStart)+' — '+niceDate(data.weekEnd)+' · '+data.weekStart.slice(0,4);
-      renderWeekNav();
+      renderWeekNav();syncDayView();
       $('editToggle').classList.toggle('is-active',state.edit);$('editToggle').textContent=state.edit?'✓ Режим правок включён':'✎ Локальные правки';
       const groupKnown=!!data.groups[state.group],isMissing=state.group&&!groupKnown;let title=multi?'Все группы':state.group;
       if(state.teacher)title='Преподаватель: '+teacherName(state.teacher,'');if(state.room)title='Аудитория: '+state.room;
@@ -195,15 +220,16 @@
       if(isMissing)notes.push('<div class="status-note warning">Для группы '+esc(state.group)+' на эту неделю данные пока не загружены. Это не означает, что занятий нет. <button type="button" class="edit-link" id="switchAll">Посмотреть доступные группы</button></div>');
       else if(!state.group&&Object.keys(data.groups).length<15)notes.push('<div class="status-note">На эту неделю загружено '+Object.keys(data.groups).length+' из 15 групп. Остальные появятся после получения расписания.</div>');
       if(state.edit)notes.push('<div class="status-note warning">Режим локальных правок: изменения видны только в этом браузере. После проверки скачайте JSON недели, чтобы включить их в опубликованную версию.</div>');
-      if(archived&&!state.edit)notes.push('<div class="status-note">Архивная неделя. Данные сохранены отдельно от новой недели.</div>');
+      if(state.todayNotice)notes.push('<div class="status-note">'+esc(I18n.localize(state.todayNotice))+'</div>');
+      if(archived&&!state.edit&&state.week!==todayWeek())notes.push('<div class="status-note">Архивная неделя. Данные сохранены отдельно от новой недели.</div>');
       $('messageArea').innerHTML=notes.join('');const s=$('switchAll');if(s)s.onclick=()=>{state.group='';$('filterGroup').value='';render()};
-      let html='';for(const date of dates()){
+      let html='';for(const date of (state.dayView==='all'?dates():[state.dayView])){
         const rows=all.filter(r=>r.date===date).sort((a,b)=>a.lesson.number-b.lesson.number||sortText(a.group,b.group));
         const n=rows.filter(r=>r.lesson.kind!=='self_study').length;
-        if(!rows.length&&state.teacher||!rows.length&&state.room||!rows.length&&state.text)continue;
+        if(!rows.length&&date!==todayISO()&&(state.teacher||state.room||state.text))continue;
         if(!rows.length&&isMissing)continue;
-        html+='<section class="day"><div class="day-head"><div><strong>'+dayName(date).replace(/^./,c=>c.toUpperCase())+'</strong><span>'+niceDate(date)+'</span></div><div class="day-extra">'+lessonCount(n)+(state.edit&&state.group&&data.groups[state.group]?'<button type="button" class="add-day" data-add="'+date+'">+ Добавить</button>':'')+'</div></div>';
-        if(!rows.length)html+='<div class="empty-day">Занятий не указано</div>';else html+='<table class="schedule"><thead><tr><th class="col-pair">№</th><th class="col-subject">Дисциплина</th><th class="col-person">Преподаватель</th><th class="col-room">Класс</th>'+(multi?'<th class="col-group">Группа</th>':'')+'</tr></thead><tbody>'+rows.map(r=>tableRow(r,multi)).join('')+'</tbody></table>';
+        html+='<section id="day-'+date+'" class="day '+(date===todayISO()?'current-day':'')+'"><div class="day-head"> <div><strong>'+dayName(date).replace(/^./,c=>c.toUpperCase())+'</strong><span>'+niceDate(date)+'</span></div><div class="day-extra">'+lessonCount(n)+(state.edit&&state.group&&data.groups[state.group]&&dates().includes(date)?'<button type="button" class="add-day" data-add="'+date+'">+ Добавить</button>':'')+'</div></div>';
+        if(!rows.length)html+='<div class="empty-day">'+(date===todayISO()&&new Date().getDay()===0?'Сегодня воскресенье — занятий нет.':'Занятий не указано')+'</div>';else html+='<table class="schedule"><thead><tr><th class="col-pair">№</th><th class="col-subject">Дисциплина</th><th class="col-person">Преподаватель</th><th class="col-room">Класс</th>'+(multi?'<th class="col-group">Группа</th>':'')+'</tr></thead><tbody>'+rows.map(r=>tableRow(r,multi)).join('')+'</tbody></table>';
         html+='</section>';
       }
       $('results').innerHTML=html||'<div class="empty-all"><b>'+(isMissing?'Расписание пока не загружено':'Ничего не найдено')+'</b>'+(isMissing?'Выберите другую группу или откройте предыдущую неделю.':'Попробуйте изменить фильтры или очистить поиск.')+'</div>';
@@ -233,7 +259,7 @@
       const embedded=$('embeddedArchive');
       if(embedded){const bundle=JSON.parse(embedded.textContent);registerTeachers(bundle.teachers.teachers);registerSubjects(bundle.subjects?.subjects||[]);manifest=bundle.manifest;Object.assign(src,bundle.weeks)}
       else {const [mf,td,sd]=await Promise.all([fetch('./data/weeks/manifest.json').then(r=>{if(!r.ok)throw new Error('manifest');return r.json()}),fetch('./data/teachers.json').then(r=>{if(!r.ok)throw new Error('teachers');return r.json()}),fetch('./data/subjects.json').then(r=>{if(!r.ok)throw new Error('subjects');return r.json()})]);manifest=mf;registerTeachers(td.teachers);registerSubjects(sd.subjects)}
-      allWeeks=manifest.map(m=>m.weekStart).sort();state.group=readPreferredGroup();state.week=allWeeks[allWeeks.length-1];await loadWeekAsync(state.week)
+      allWeeks=manifest.map(m=>m.weekStart).sort();state.group=readPreferredGroup();state.week=initialWeek();await loadWeekAsync(state.week)
     }
     function renderTeacherDirectory(){
       const query=$('teachersSearch').value.trim().toLocaleLowerCase('ru');
@@ -245,6 +271,7 @@
       });
     }
 
+    $('dayView').onchange=()=>{state.dayView=$('dayView').value;state.todayNotice='';render()};$('todayBtn').onclick=()=>jumpToday().catch(console.error);
     $('showTeachers').onclick=()=>{$('teachersSearch').value='';renderTeacherDirectory();$('teachersDialog').showModal()};
     $('closeTeachers').onclick=()=>$('teachersDialog').close();
     $('teachersSearch').oninput=renderTeacherDirectory;

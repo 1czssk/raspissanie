@@ -1,5 +1,5 @@
 /* Расписсание — GitHub Pages PWA. No third-party network requests are intercepted. */
-const CACHE_NAME = 'raspissanie-15-themes-fonts-mobile-v24';
+const CACHE_NAME = 'raspissanie-mi8-historic-teacher-editor-today-v25';
 const CORE = [
   './', './index.html', './editor/', './editor/index.html',
   './editor/app.js', './editor/style.css', './assets/pwa.js', './assets/i18n.js', './assets/themes.css', './assets/themes.js',

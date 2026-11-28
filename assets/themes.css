@@ -290,3 +290,281 @@ a,.linkish{color:var(--t-accent)!important}
 :root[data-theme="simple"] body,:root[data-theme="simple"] button,
 :root[data-theme="simple"] input,:root[data-theme="simple"] select{font-family:Arial,Helvetica,sans-serif!important}
 @media print{:root[data-theme="notebook"] body{background:#fff!important}}
+
+
+/* Cabin Mi-8: self-contained skin for the existing layout, no external assets. */
+:root[data-theme="mi8"] {
+  --t-bg:#2e5354;
+  --t-panel:#426966;
+  --t-panel2:#345c5a;
+  --t-row:#3b615f;
+  --t-text:#f5f7f2;
+  --t-title:#fffdf5;
+  --t-muted:#d7e5e1;
+  --t-border:#7b9994;
+  --t-accent:#fff5de;
+  --t-accent-hover:#ffffff;
+  --t-accent-text:#214340;
+  --t-soft:#557a75;
+  --t-filter:#385f5e;
+  --t-input:#2b5050;
+  --t-green:#f1f4e8;
+  --t-pink:#fff5e6;
+  --t-radius:5px;
+  --t-font:'Bahnschrift','Segoe UI',Tahoma,Arial,sans-serif;
+  --t-display-font:'Bahnschrift SemiCondensed','Bahnschrift','Arial Narrow',Tahoma,Arial,sans-serif;
+  --t-warn-bg:#796548;
+  --t-warn-ink:#fff8df;
+}
+:root[data-theme="mi8"][data-mode="dark"] {
+  /* Milky instrument lettering takes on a warm red tint from red cockpit light. */
+  --t-bg:#06100f;
+  --t-panel:#0b1d1b;
+  --t-panel2:#102522;
+  --t-row:#0e211e;
+  --t-text:#f0ccc5;
+  --t-title:#ffe0d7;
+  --t-muted:#cda49e;
+  --t-border:#3a514b;
+  --t-accent:#efaca0;
+  --t-accent-hover:#ffd1c5;
+  --t-accent-text:#1a1d1b;
+  --t-soft:#29372e;
+  --t-filter:#0d1e1c;
+  --t-input:#0a1716;
+  --t-green:#f1c3b9;
+  --t-pink:#ffb4a8;
+  --t-warn-bg:#3f2021;
+  --t-warn-ink:#ffcbc1;
+}
+/* Cabinet-grade matte finish: fine brushing, no fake dashboard or altered table structure. */
+:root[data-theme="mi8"] body {
+  background-color:var(--t-bg)!important;
+  background-image:
+    repeating-linear-gradient(91deg,rgba(255,255,255,.011) 0,rgba(255,255,255,.011) 1px,transparent 1px,transparent 6px),
+    linear-gradient(135deg,rgba(8,31,34,.25),transparent 42%,rgba(15,32,28,.12))!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] body {
+  background-image:
+    repeating-linear-gradient(91deg,rgba(197,221,218,.008) 0,rgba(197,221,218,.008) 1px,transparent 1px,transparent 9px),
+    linear-gradient(135deg,#050c0c,transparent 43%,#07100f)!important;
+}
+:root[data-theme="mi8"] .top-rule {
+  height:5px;
+  background:repeating-linear-gradient(90deg,#cbd7d0 0 26px,#627f7a 26px 28px,#aebeb5 28px 30px)!important;
+  border-bottom:1px solid #162c2b;
+}
+:root[data-theme="mi8"][data-mode="dark"] .top-rule {
+  background:repeating-linear-gradient(90deg,#671f20 0 18px,#ac3831 18px 20px,#4b1a1b 20px 24px)!important;
+  border-color:#2d0e0e;
+  box-shadow:0 0 9px #bb37342f;
+}
+:root[data-theme="mi8"] .site-header,
+:root[data-theme="mi8"] .filter-panel,
+:root[data-theme="mi8"] .day,
+:root[data-theme="mi8"] .week-card {
+  box-shadow:inset 0 1px 0 #ffffff19,0 2px 7px #102e2c26!important;
+}
+:root[data-theme="mi8"] .day-head {
+  background-image:
+    radial-gradient(circle at 13px 12px,#b5c7bf 0 1px,#1e3d3b 2px 4px,transparent 5px),
+    radial-gradient(circle at calc(100% - 13px) 12px,#b5c7bf 0 1px,#1e3d3b 2px 4px,transparent 5px)!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .day-head {
+  background-image:
+    radial-gradient(circle at 13px 12px,#a69c90 0 1px,#1b2928 2px 4px,transparent 5px),
+    radial-gradient(circle at calc(100% - 13px) 12px,#a69c90 0 1px,#1b2928 2px 4px,transparent 5px)!important;
+}
+:root[data-theme="mi8"] .headline h1,
+:root[data-theme="mi8"] .brand-text strong,
+:root[data-theme="mi8"] .result-title h2,
+:root[data-theme="mi8"] .day-head strong,
+:root[data-theme="mi8"] .week-card strong {
+  letter-spacing:.025em;
+  font-family:var(--t-display-font)!important;
+}
+:root[data-theme="mi8"] .filter-field label,
+:root[data-theme="mi8"] .language-control label,
+:root[data-theme="mi8"] .theme-control label {
+  letter-spacing:.045em;
+  font-weight:650;
+}
+:root[data-theme="mi8"] .week-card.selected {
+  border:1px solid #f0f4e2!important;
+  background:#587d78!important;
+  box-shadow:inset 3px 0 0 #fff5df,0 0 0 1px #fff7de36!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .week-card.selected {
+  border-color:#a75c52!important;
+  background:#1b2a28!important;
+  box-shadow:inset 3px 0 0 #d77463,0 0 10px #cf4a2c22!important;
+}
+:root[data-theme="mi8"] .theme-toggle {
+  border-radius:3px!important;
+  border:1px solid var(--t-border)!important;
+  background:var(--t-panel2)!important;
+  color:var(--t-title)!important;
+  box-shadow:inset 0 1px 0 #ffffff26!important;
+}
+:root[data-theme="mi8"] .theme-toggle:hover{background:var(--t-soft)!important}
+:root[data-theme="mi8"] .btn-primary {
+  font-weight:700;
+  letter-spacing:.018em;
+  box-shadow:inset 0 1px 0 #ffffff42,0 2px 0 #15353450!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .btn-primary {
+  background:#6b2424!important;
+  border-color:#ba5d4d!important;
+  color:#ffe1d9!important;
+  box-shadow:inset 0 1px 0 #efa79b40,0 0 14px #bd33251c!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .btn-primary:hover {
+  background:#85302d!important;
+}
+/* Night illumination: letters are red-tinted themselves, plus a gentle unflickering red halo. */
+:root[data-theme="mi8"][data-mode="dark"] .brand-text strong,
+:root[data-theme="mi8"][data-mode="dark"] .brand-accent,
+:root[data-theme="mi8"][data-mode="dark"] .headline h1,
+:root[data-theme="mi8"][data-mode="dark"] .result-title h2,
+:root[data-theme="mi8"][data-mode="dark"] .day-head strong,
+:root[data-theme="mi8"][data-mode="dark"] .week-card strong {
+  color:#ffe0d7!important;
+  text-shadow:0 0 3px #ec645f70,0 0 9px #d7373037!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .schedule .lesson-name,
+:root[data-theme="mi8"][data-mode="dark"] .schedule .pair-no,
+:root[data-theme="mi8"][data-mode="dark"] .meta-line,
+:root[data-theme="mi8"][data-mode="dark"] .filter-field label,
+:root[data-theme="mi8"][data-mode="dark"] .header-right strong {
+  color:#f3d1c9!important;
+  text-shadow:0 0 2px #ed68604c,0 0 7px #c9362d1b!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .week-card.selected,
+:root[data-theme="mi8"][data-mode="dark"] .theme-toggle,
+:root[data-theme="mi8"][data-mode="dark"] .day {
+  box-shadow:inset 0 1px 0 #e45a4720,0 2px 12px #0005!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .theme-toggle {
+  border-color:#a5594d!important;
+  color:#ffd7cd!important;
+  box-shadow:inset 0 0 0 1px #e35c4438,0 0 11px #c43b2e2b!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .day-head {
+  border-bottom:1px solid #7c423b!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .week-card.selected {
+  box-shadow:inset 3px 0 0 #d77463,0 0 10px #cf4a2c22!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .day-head .day-extra,
+:root[data-theme="mi8"][data-mode="dark"] .day-head span {
+  color:#dcb4aa!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .top-rule{opacity:.95}
+@media(prefers-reduced-motion:reduce){:root[data-theme="mi8"] *{transition:none!important}}
+@media print {
+  :root[data-theme="mi8"] body{background:#fff!important;background-image:none!important}
+  :root[data-theme="mi8"] *{text-shadow:none!important;box-shadow:none!important}
+}
+
+/* Polish leftover blue defaults in the imported application skin. */
+:root[data-theme="mi8"] .install-link{
+  color:var(--t-title)!important;
+  border-bottom:1px solid var(--t-border)!important;
+  font-family:var(--t-display-font)!important;
+  letter-spacing:.025em;
+}
+:root[data-theme="mi8"][data-mode="dark"] .install-link{
+  color:#ffd4c9!important;
+  text-shadow:0 0 3px #f26a5d70!important;
+}
+:root[data-theme="mi8"] .status-note{
+  color:var(--t-title)!important;
+  background:var(--t-panel2)!important;
+  border-left-color:#d3e3d8!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .status-note{
+  border-left-color:#a65b50!important;
+  background:#152725!important;
+}
+:root[data-theme="mi8"] .status-note.warning{
+  background:var(--t-warn-bg)!important;
+  color:var(--t-warn-ink)!important;
+  border-left-color:#d8a86b!important;
+}
+:root[data-theme="mi8"] .pwa-note,
+:root[data-theme="mi8"] .result-meta,
+:root[data-theme="mi8"] .footer a{
+  color:var(--t-muted)!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .brand-logo{
+  filter:drop-shadow(0 0 5px #b33c342c)!important;
+}
+
+
+/* The tint follows ALL ordinary text, including smaller lesson details and control labels. */
+:root[data-theme="mi8"][data-mode="dark"] .schedule td,
+:root[data-theme="mi8"][data-mode="dark"] .schedule th,
+:root[data-theme="mi8"][data-mode="dark"] .schedule td.person-cell,
+:root[data-theme="mi8"][data-mode="dark"] .schedule td.room-cell,
+:root[data-theme="mi8"][data-mode="dark"] .schedule td.group-cell,
+:root[data-theme="mi8"][data-mode="dark"] .filter-field select,
+:root[data-theme="mi8"][data-mode="dark"] .filter-field input,
+:root[data-theme="mi8"][data-mode="dark"] .theme-control select,
+:root[data-theme="mi8"][data-mode="dark"] .language-control select,
+:root[data-theme="mi8"][data-mode="dark"] .week-card,
+:root[data-theme="mi8"][data-mode="dark"] .btn-plain,
+:root[data-theme="mi8"][data-mode="dark"] .mini-btn {
+  color:var(--t-text)!important;
+  text-shadow:0 0 3px rgba(225,76,64,.16)!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .schedule .lesson-name,
+:root[data-theme="mi8"][data-mode="dark"] .schedule .pair-no,
+:root[data-theme="mi8"][data-mode="dark"] .day-head strong,
+:root[data-theme="mi8"][data-mode="dark"] .result-title h2,
+:root[data-theme="mi8"][data-mode="dark"] .headline h1 {
+  color:var(--t-title)!important;
+  text-shadow:0 0 2px rgba(240,80,65,.4),0 0 10px rgba(191,34,25,.13)!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .day-head span,
+:root[data-theme="mi8"][data-mode="dark"] .day-head .day-extra,
+:root[data-theme="mi8"][data-mode="dark"] .meta-line,
+:root[data-theme="mi8"][data-mode="dark"] .self-row .lesson-name,
+:root[data-theme="mi8"][data-mode="dark"] .self-row .pair-no,
+:root[data-theme="mi8"][data-mode="dark"] .result-title span,
+:root[data-theme="mi8"][data-mode="dark"] .footer,
+:root[data-theme="mi8"][data-mode="dark"] .header-right,
+:root[data-theme="mi8"][data-mode="dark"] .header-right strong {
+  color:var(--t-muted)!important;
+  text-shadow:0 0 3px rgba(228,84,66,.13)!important;
+}
+:root[data-theme="mi8"][data-mode="dark"] .day-head{
+  background-image:linear-gradient(180deg,rgba(128,31,28,.055),transparent)!important;
+}
+/* Keep the day/night switch accessible even on small phones in this test page. */
+@media(max-width:750px){
+  :root[data-theme="mi8"] .header-right{display:flex!important;align-items:center;gap:8px}
+  :root[data-theme="mi8"] .header-right>span{display:none!important}
+  :root[data-theme="mi8"] .header-right .install-link{display:none!important}
+  :root[data-theme="mi8"] .header-inner{gap:10px}
+  :root[data-theme="mi8"] .brand-text strong{font-size:19px!important}
+  :root[data-theme="mi8"] .theme-toggle{width:38px;height:38px;flex-basis:38px}
+}
+
+
+
+/* Historic localization: old Cyrillic letters need fonts with sufficient coverage.
+   No downloadable fonts and no change to the selected palette or layout. */
+:root[lang="ru-pre"] .headline h1,
+:root[lang="ru-pre"] .week-card strong,
+:root[lang="ru-pre"] .day-head strong,
+:root[lang="ru-pre"] .lesson-name,
+:root[lang="ru-pre"] .editor-grid .cell-lesson span {
+  font-family:Georgia,'Times New Roman',serif!important;
+}
+:root[lang="ru-old"] .headline h1,
+:root[lang="ru-old"] .week-card strong,
+:root[lang="ru-old"] .day-head strong,
+:root[lang="ru-old"] .lesson-name,
+:root[lang="ru-old"] .editor-grid .cell-lesson span {
+  font-family:'Noto Serif','DejaVu Serif',Georgia,serif!important;
+}
